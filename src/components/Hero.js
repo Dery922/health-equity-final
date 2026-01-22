@@ -25,10 +25,13 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-content">
-        <h2>Bridging Healthcare Gaps for Equitable Outcomes</h2>
+        <h2>Transforming Ideas into Lasting Impact</h2>
         <p>
-          Expert consultancy services to help organizations implement sustainable 
-          health equity strategies and create inclusive healthcare systems.
+         At <strong> AJHealth.Research </strong> we empower change-makers to create sustainable solutions that 
+         improve lives across sub-Saharan Africa. As a not-for-profit 
+         firm, we specialize in supporting businesses and nonprofits 
+         in navigating challenges and unlocking opportunities in the 
+         areas of 
         </p>
         <div className="hero-buttons">
           <button className="primary-btn" onClick={handleContactClick}>

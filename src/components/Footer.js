@@ -84,7 +84,7 @@ const Footer = () => {
       
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} Health Equity Consultancy Services. 
+          &copy; {new Date().getFullYear()} AJHealth.Research Equity 
           All rights reserved.
         </p>
         <div className="footer-links">

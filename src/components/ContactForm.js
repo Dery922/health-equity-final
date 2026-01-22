@@ -170,17 +170,18 @@ const ContactForm = () => {
           <div className="info-item">
             <div className="info-icon">📧</div>
             <h4>Email Us</h4>
-            <p>contact@healthequityconsult.com</p>
+            <p>AJHealth.Research@gmail.com</p>
           </div>
           <div className="info-item">
             <div className="info-icon">📞</div>
             <h4>Call Us</h4>
-            <p>+1 (555) 123-4567</p>
+            <p>+233 244 297 950 / +233 244 288 266</p>
+            <p></p>
           </div>
           <div className="info-item">
             <div className="info-icon">⏰</div>
             <h4>Business Hours</h4>
-            <p>Mon-Fri 9am-6pm EST</p>
+            <p>Mon-Fri 8am-5pm GMT</p>
           </div>
         </div>
       </div>

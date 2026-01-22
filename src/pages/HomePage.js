@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import Team from '../components/Team';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import './HomePage.css';
@@ -53,15 +54,15 @@ const HomePage = () => {
           <div className="mission-content">
             <h2>Our Mission: Transformative Health Equity Solutions</h2>
             <p>
-              We partner with healthcare organizations to identify and eliminate 
-              disparities in health outcomes. Our evidence-based approach combines 
-              data analytics, community engagement, and policy expertise to create 
-              sustainable change.
+           Our mission is to advance health equity and system resilience in 
+           Ghana by
+            providing expert, integrated consultancy 
+           services that translate evidence into actionable strategies, .
             </p>
             <p>
-              From rural clinics to urban hospital systems, we tailor solutions 
-              that address the unique challenges of diverse populations and 
-              healthcare settings.
+          strengthen local capacity, and optimize resource utilization across 
+          public health programs, supply chains, and clinical care—ensuring quality, 
+          safety, and sustainability in every intervention.
             </p>
           </div>
           <div className="mission-image">
@@ -69,6 +70,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <Team />
       
       <ContactForm />
       <Footer />
