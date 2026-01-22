@@ -1,0 +1,65 @@
+import React from 'react';
+import './Services.css';
+
+const Services = () => {
+  const services = [
+    {
+      id: 1,
+      title: "Research",
+      description: "Comprehensive health equity research and evidence-based solutions for healthcare disparities.",
+      icon: "📊"
+    },
+    {
+      id: 2,
+      title: "Data Analytics",
+      description: "Advanced data analysis to identify patterns and measure health equity interventions.",
+      icon: "📈"
+    },
+    {
+      id: 3,
+      title: "Project Management",
+      description: "End-to-end management of health equity projects from planning to implementation.",
+      icon: "👥"
+    },
+    {
+      id: 4,
+      title: "Health Economics Evaluation",
+      description: "Cost-effectiveness analysis and economic evaluation of health programs.",
+      icon: "💰"
+    },
+    {
+      id: 5,
+      title: "Logistics & Supply Chain",
+      description: "Optimizing healthcare supply chains for equitable resource distribution.",
+      icon: "🚚"
+    },
+    {
+      id: 6,
+      title: "Capacity Building",
+      description: "Training and development programs for healthcare professionals.",
+      icon: "🏋️"
+    }
+  ];
+
+  return (
+    <section id="services" className="services">
+      <h2>Our Services</h2>
+      <p className="services-subtitle">
+        Comprehensive solutions to advance health equity in healthcare systems
+      </p>
+      
+      <div className="services-grid">
+        {services.map(service => (
+          <div key={service.id} className="service-card">
+            <div className="service-icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <a href="#contact" className="service-link">Learn More →</a>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Services;
