@@ -13,7 +13,7 @@ const Header = () => {
     { label: 'Resources', path: '#resources' },
     { label: 'Publications', path: '#publications' },
     { label: 'Partners', path: '#partners' },
-    { label: 'Contact', path: '#contact' }
+  
   ];
 
   // Handle scroll effect
@@ -92,7 +92,7 @@ const Header = () => {
             className="mobile-cta-button"
             onClick={(e) => handleNavClick('#contact', e)}
           >
-            Get Started
+           Contact Us
           </button>
         </nav>
       </div>

@@ -1,0 +1,580 @@
+/* Publications.css */
+.publications-section {
+  padding: 6rem 1rem;
+  background: white;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.publications-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.publications-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.publications-header h2 {
+  font-size: 2.5rem;
+  color: #1d504d;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.publications-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  background: white;
+  border: 2px solid #e0f0ef;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-btn:hover {
+  border-color: #4a9d9c;
+  color: #2a6e6a;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--category-color, #2a6e6a);
+  border-color: var(--category-color, #2a6e6a);
+  color: white;
+  box-shadow: 0 4px 12px rgba(42, 110, 106, 0.2);
+}
+
+.category-icon {
+  font-size: 1.1rem;
+}
+
+/* Publications Grid */
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.publication-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e0f0ef;
+  position: relative;
+}
+
+.publication-card.featured {
+  border: 2px solid #2a6e6a;
+  box-shadow: 0 8px 25px rgba(42, 110, 106, 0.15);
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Publication Image */
+.publication-image {
+  position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(29, 80, 77, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.publication-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.view-text {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.category-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: #2a6e6a;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+/* Publication Info */
+.publication-info {
+  padding: 1.5rem;
+}
+
+.publication-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.year {
+  background: #e6f7f6;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.authors {
+  max-width: 60%;
+  text-align: right;
+  font-style: italic;
+}
+
+.publication-title {
+  font-size: 1.3rem;
+  color: #1d504d;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.publication-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  height: 60px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Publication Actions */
+.publication-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.view-btn, .download-btn {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.view-btn {
+  background: transparent;
+  border: 2px solid #2a6e6a;
+  color: #2a6e6a;
+}
+
+.view-btn:hover {
+  background: #2a6e6a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.download-btn {
+  background: #2a6e6a;
+  border: 2px solid #2a6e6a;
+  color: white;
+}
+
+.download-btn:hover {
+  background: #1d504d;
+  border-color: #1d504d;
+  transform: translateY(-2px);
+}
+
+/* View More Button */
+.view-more-container {
+  text-align: center;
+}
+
+.view-more-btn {
+  padding: 1rem 3rem;
+  background: transparent;
+  border: 2px solid #2a6e6a;
+  color: #2a6e6a;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background: #2a6e6a;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(42, 110, 106, 0.2);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.lightbox-image-container {
+  height: 400px;
+  overflow: hidden;
+}
+
+.lightbox-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lightbox-info {
+  padding: 2rem;
+  max-height: calc(90vh - 400px);
+  overflow-y: auto;
+}
+
+.lightbox-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.lightbox-category {
+  background: #e6f7f6;
+  color: #2a6e6a;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.lightbox-year {
+  color: #666;
+  font-weight: 500;
+}
+
+.lightbox-title {
+  font-size: 1.8rem;
+  color: #1d504d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.lightbox-authors {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.lightbox-description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.lightbox-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.lightbox-download-btn,
+.lightbox-close-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.lightbox-download-btn {
+  background: #2a6e6a;
+  color: white;
+  border: 2px solid #2a6e6a;
+}
+
+.lightbox-download-btn:hover {
+  background: #1d504d;
+  border-color: #1d504d;
+  transform: translateY(-2px);
+}
+
+.lightbox-close-btn {
+  background: transparent;
+  color: #2a6e6a;
+  border: 2px solid #2a6e6a;
+}
+
+.lightbox-close-btn:hover {
+  background: #2a6e6a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .publications-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .publications-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .filter-tabs {
+    gap: 0.8rem;
+  }
+  
+  .filter-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .lightbox-content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .publications-section {
+    padding: 4rem 1rem;
+  }
+  
+  .publications-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .publications-subtitle {
+    font-size: 1rem;
+  }
+  
+  .publications-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .publication-image {
+    height: 200px;
+  }
+  
+  .publication-title {
+    font-size: 1.2rem;
+  }
+  
+  .filter-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+  
+  .lightbox-content {
+    width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  
+  .lightbox-image-container {
+    height: 300px;
+  }
+  
+  .lightbox-info {
+    max-height: calc(100vh - 300px);
+  }
+  
+  .lightbox-title {
+    font-size: 1.5rem;
+  }
+  
+  .lightbox-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .publication-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .authors {
+    text-align: left;
+    max-width: 100%;
+  }
+  
+  .publication-actions {
+    flex-direction: column;
+  }
+  
+  .filter-btn {
+    min-width: 100px;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .category-icon {
+    display: none;
+  }
+}
+
+/* Animation for cards */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.publication-card {
+  animation: cardAppear 0.5s ease-out;
+}
+
+/* Grid animation delay */
+.publication-card:nth-child(1) { animation-delay: 0.1s; }
+.publication-card:nth-child(2) { animation-delay: 0.2s; }
+.publication-card:nth-child(3) { animation-delay: 0.3s; }
+.publication-card:nth-child(4) { animation-delay: 0.4s; }
+.publication-card:nth-child(5) { animation-delay: 0.5s; }
+.publication-card:nth-child(6) { animation-delay: 0.6s; }
