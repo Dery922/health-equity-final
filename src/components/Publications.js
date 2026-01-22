@@ -43,7 +43,7 @@ const Publications = () => {
       year: '2023',
       authors: 'Dr. Sarah Johnson et al.',
       description: 'Comprehensive study on healthcare access disparities in rural areas.',
-      imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&fit=crop',
+      imageUrl: '/assets/images/1.jpg',
       downloadLink: '#',
       featured: true
     },
@@ -54,7 +54,7 @@ const Publications = () => {
       year: '2023',
       authors: 'Various Speakers',
       description: 'Proceedings from the annual global health equity conference.',
-      imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w-800&auto=format&fit=crop',
+      imageUrl: '/assets/images/2.jpg',
       downloadLink: '#'
     },
     {
@@ -64,7 +64,7 @@ const Publications = () => {
       year: '2022',
       authors: 'HealthEquity Team',
       description: 'Comprehensive overview of our impact and achievements.',
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop',
+      imageUrl: '/assets/images/1.jpg',
       downloadLink: '#',
       featured: true
     },
@@ -75,7 +75,7 @@ const Publications = () => {
       year: '2023',
       authors: 'Michael Chen',
       description: 'Technical guide on using data analytics for health equity.',
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop',
+      imageUrl: '/assets/images/3.jpg',
       downloadLink: '#'
     },
     {
@@ -85,7 +85,7 @@ const Publications = () => {
       year: '2023',
       authors: 'Dr. Maria Rodriguez',
       description: 'Evaluation of maternal health programs in West Africa.',
-      imageUrl: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&auto=format&fit=crop',
+      imageUrl: '/assets/images/2.jpg',
       downloadLink: '#'
     },
     {
