@@ -1,0 +1,363 @@
+/* Partners.css - Horizontal Carousel */
+.partners-section {
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f9f9 100%);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.partners-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.partners-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.partners-header h2 {
+  font-size: 2.5rem;
+  color: #1d504d;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.partners-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 3rem;
+  padding: 0 50px;
+  max-width: 1200px;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 2px solid #2a6e6a;
+  border-radius: 50%;
+  color: #2a6e6a;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #2a6e6a;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(42, 110, 106, 0.3);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Carousel */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  transition: transform 0.5s ease;
+  padding: 1rem 0;
+}
+
+/* Partner Card */
+.partner-card {
+  flex: 0 0 calc((100% / 5) - 2rem);
+  min-width: 200px;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e0f0ef;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #4a9d9c;
+}
+
+.partner-logo {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  color: #2a6e6a;
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+  transform: scale(1.1);
+}
+
+.partner-info h4 {
+  font-size: 1.1rem;
+  color: #1d504d;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.partner-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Dots Indicator */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c2e9eb;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #2a6e6a;
+  transform: scale(1.3);
+}
+
+.dot:hover {
+  background: #4a9d9c;
+  transform: scale(1.2);
+}
+
+/* Stats */
+.partners-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2a6e6a;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* CTA */
+.partners-cta {
+  text-align: center;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(42, 110, 106, 0.2);
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #1d504d, #2a6e6a);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(42, 110, 106, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .partner-card {
+    flex: 0 0 calc((100% / 4) - 2rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .partners-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .partner-card {
+    flex: 0 0 calc((100% / 3) - 2rem);
+  }
+  
+  .carousel-container {
+    padding: 0 60px;
+  }
+  
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 4rem 1rem;
+  }
+  
+  .partners-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .partners-subtitle {
+    font-size: 1rem;
+  }
+  
+  .partner-card {
+    flex: 0 0 calc((100% / 2) - 2rem);
+    min-width: 180px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .partner-logo {
+    font-size: 2.5rem;
+  }
+  
+  .partner-info h4 {
+    font-size: 1rem;
+  }
+  
+  .carousel-container {
+    padding: 0 50px;
+  }
+  
+  .partners-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .partner-card {
+    flex: 0 0 100%;
+    min-width: 250px;
+  }
+  
+  .carousel-container {
+    padding: 0 40px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .partners-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.partner-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Infinite scroll effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-track.scrolling {
+  animation: scroll 30s linear infinite;
+}
+
+/* Pause animation on hover */
+.carousel-container:hover .carousel-track.scrolling {
+  animation-play-state: paused;
+}

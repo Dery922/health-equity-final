@@ -6,6 +6,7 @@ import Team from '../components/Team';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import './HomePage.css';
+import Partners from '../components/Partners';
 
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -73,6 +74,7 @@ const HomePage = () => {
       <Team />
       
       <ContactForm />
+      <Partners />
       <Footer />
       
       {showScrollTop && (
