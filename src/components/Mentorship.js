@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './Mentorship.css';
 
+import heroImg1 from "../assets/images/m1.jpeg";
+import heroImg2 from "../assets/images/m2.jpeg";
+import heroImg3 from "../assets/images/m3.jpeg";
+
+
 const Mentorship = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -23,7 +28,7 @@ const Mentorship = () => {
       date: 'March 2024',
       location: 'Accra, Ghana',
       description: 'Training early-career researchers in advanced health research methodologies.',
-      imageUrl: '/assets/images/mentorship/m1.jpeg',
+      imageUrl: heroImg1,
       attendees: '50+ Participants',
       featured: true
     },
@@ -34,7 +39,7 @@ const Mentorship = () => {
       date: 'February 2024',
       location: 'Kumasi, Ghana',
       description: 'Hands-on training in healthcare data analysis using modern tools.',
-      imageUrl: '/assets/images/mentorship/m2.jpg',
+      imageUrl: heroImg2,
       attendees: '35 Health Professionals',
       featured: true
     },
@@ -45,7 +50,7 @@ const Mentorship = () => {
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
-      imageUrl: '/assets/images/mentorship/m3.jpg',
+      imageUrl: heroImg3,
       attendees: '200+ Online Participants',
       featured: false
     },

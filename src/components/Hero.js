@@ -3,9 +3,9 @@ import './Hero.css';
 
 // Import your hero images
 import heroImg1 from "../assets/images/1.jpg";
-import heroImg2 from "../assets/images/2.jpg";
+import heroImg2 from "../assets/images/our.jpeg";
 import heroImg3 from "../assets/images/3.jpg";
-import heroImg4 from "../assets/images/4.jpg";
+import heroImg4 from "../assets/images/hero.jpeg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -4,6 +4,7 @@ import './Publications.css';
 const Publications = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(0);
 
   // Publication categories
   const publicationCategories = [
@@ -49,6 +50,12 @@ const Publications = () => {
         { label: 'Duration', value: '6 months' },
         { label: 'Sites', value: '15 rural communities' },
         { label: 'Participants', value: '500+' }
+      ],
+      details: [
+        'Examined healthcare access in 15 rural communities',
+        'Collected data from 500+ participants',
+        'Published in International Health Journal',
+        'Used mixed-methods research approach'
       ]
     },
     {
@@ -64,6 +71,12 @@ const Publications = () => {
         { label: 'Speakers', value: '25+' },
         { label: 'Countries', value: '15' },
         { label: 'Sessions', value: '30+' }
+      ],
+      details: [
+        'Featured 25+ international speakers',
+        'Representation from 15 countries',
+        '30+ technical sessions',
+        'Networking with 500+ professionals'
       ]
     },
     {
@@ -80,6 +93,12 @@ const Publications = () => {
         { label: 'Projects', value: '50+' },
         { label: 'Partners', value: '30+' },
         { label: 'Countries', value: '10' }
+      ],
+      details: [
+        'Implemented 50+ health equity projects',
+        'Collaborated with 30+ partner organizations',
+        'Worked across 10 African countries',
+        'Trained 200+ healthcare professionals'
       ]
     },
     {
@@ -95,6 +114,12 @@ const Publications = () => {
         { label: 'Pages', value: '85' },
         { label: 'Case Studies', value: '12' },
         { label: 'Tools Covered', value: '8' }
+      ],
+      details: [
+        'Comprehensive 85-page technical guide',
+        'Includes 12 real-world case studies',
+        'Covers 8 data analytics tools',
+        'Step-by-step implementation guide'
       ]
     },
     {
@@ -110,6 +135,12 @@ const Publications = () => {
         { label: 'Duration', value: '18 months' },
         { label: 'Health Facilities', value: '25' },
         { label: 'Women Reached', value: '10,000+' }
+      ],
+      details: [
+        '18-month comprehensive evaluation',
+        'Covered 25 health facilities',
+        'Reached 10,000+ women',
+        'Reduced maternal mortality by 30%'
       ]
     }
   ];
@@ -120,8 +151,8 @@ const Publications = () => {
     : publications.filter(pub => pub.category === activeFilter);
 
   // Open image modal
-  const openImageModal = (publication) => {
-    setSelectedImage(publication);
+  const openImageModal = (imageUrl, title) => {
+    setSelectedImage({ imageUrl, title });
     document.body.style.overflow = 'hidden';
   };
 
@@ -131,15 +162,20 @@ const Publications = () => {
     document.body.style.overflow = 'auto';
   };
 
+  // Select project
+  const selectProject = (index) => {
+    setSelectedProject(index);
+  };
+
   return (
     <section id="publications" className="publications-section">
       <div className="publications-container">
         {/* Header */}
         <div className="publications-header">
-          <h2>Publications & Resources</h2>
+          <h2>Publications & Projects</h2>
           <p className="publications-subtitle">
-            Explore our research papers, conference proceedings, annual reports, 
-            and technical briefs that advance health equity knowledge and practice.
+            Explore our research papers, conference proceedings, and project outcomes 
+            that demonstrate our impact in advancing health equity.
           </p>
         </div>
 
@@ -149,7 +185,7 @@ const Publications = () => {
             className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
             onClick={() => setActiveFilter('all')}
           >
-            All Publications
+            All Projects
           </button>
           {publicationCategories.map(category => (
             <button
@@ -164,100 +200,157 @@ const Publications = () => {
           ))}
         </div>
 
-        {/* Publications List - New Layout */}
-        <div className="publications-list">
-          {filteredPublications.map(publication => (
-            <div 
-              key={publication.id} 
-              className={`publication-item ${publication.featured ? 'featured' : ''}`}
-            >
-              {/* Left Side - Image */}
-              <div className="publication-image-side">
-                <div 
-                  className="publication-image-container"
-                  onClick={() => openImageModal(publication)}
-                >
-                  <img 
-                    src={publication.imageUrl} 
-                    alt={publication.title}
-                    className="publication-image"
-                  />
-                  <div className="image-overlay">
-                    <span className="view-text">Click to Enlarge</span>
-                  </div>
-                  
-                  {/* Category Badge */}
-                  <div className="category-badge">
-                    {publicationCategories.find(c => c.id === publication.category)?.icon}
-                    {publication.category.charAt(0).toUpperCase() + publication.category.slice(1)}
-                  </div>
-                  
-                  {/* Featured Badge */}
-                  {publication.featured && (
-                    <div className="featured-badge">Featured</div>
-                  )}
-                </div>
-              </div>
-
-              {/* Right Side - Content */}
-              <div className="publication-content-side">
-                <div className="publication-header">
-                  <div className="publication-meta">
-                    <span className="year">{publication.year}</span>
-                    <span className="category-tag">
-                      {publication.category.charAt(0).toUpperCase() + publication.category.slice(1)}
-                    </span>
-                  </div>
-                  <h3 className="publication-title">{publication.title}</h3>
-                  <p className="publication-authors">{publication.authors}</p>
-                </div>
-
-                <div className="publication-description">
-                  <p>{publication.description}</p>
-                </div>
-
-                {/* Stats */}
-                <div className="publication-stats">
-                  {publication.stats && publication.stats.map((stat, index) => (
-                    <div key={index} className="stat-item">
-                      <div className="stat-value">{stat.value}</div>
-                      <div className="stat-label">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div className="publication-actions">
-                  <button 
-                    className="view-btn"
-                    onClick={() => openImageModal(publication)}
-                  >
-                    <span className="btn-icon">👁️</span>
-                    View Full Details
-                  </button>
-                  <a 
-                    href={publication.downloadLink} 
-                    className="download-btn"
-                    download
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert('Downloading: ' + publication.title);
-                    }}
-                  >
-                    <span className="btn-icon">📥</span>
-                    Download PDF
-                  </a>
-                </div>
-              </div>
+        {/* Two Column Layout */}
+        <div className="publications-two-column">
+          {/* LEFT COLUMN - Image Gallery */}
+          <div className="image-gallery-column">
+            <div className="gallery-header">
+              <h3>Project Gallery</h3>
+              <p>Click on any image to view details</p>
             </div>
-          ))}
-        </div>
+            
+            <div className="image-gallery">
+              {filteredPublications.map((publication, index) => (
+                <div 
+                  key={publication.id}
+                  className={`gallery-item ${index === selectedProject ? 'active' : ''}`}
+                  onClick={() => selectProject(index)}
+                >
+                  <div className="gallery-image-container">
+                    <img 
+                      src={publication.imageUrl} 
+                      alt={publication.title}
+                      className="gallery-image"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openImageModal(publication.imageUrl, publication.title);
+                      }}
+                    />
+                    <div className="gallery-overlay">
+                      <span className="view-full">View Full</span>
+                    </div>
+                    
+                    {/* Category Badge */}
+                    <div className="category-badge">
+                      {publicationCategories.find(c => c.id === publication.category)?.icon}
+                    </div>
+                    
+                    {/* Featured Badge */}
+                    {publication.featured && (
+                      <div className="featured-badge">Featured</div>
+                    )}
+                  </div>
+                  
+                  <div className="gallery-caption">
+                    <h4>{publication.title}</h4>
+                    <p className="gallery-category">{publication.category}</p>
+                    <p className="gallery-year">{publication.year}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* View More Button */}
-        <div className="view-more-container">
-          <button className="view-more-btn">
-            View All Publications →
-          </button>
+          {/* RIGHT COLUMN - Project Details */}
+          <div className="project-details-column">
+            <div className="project-details-container">
+              {filteredPublications.length > 0 ? (
+                <>
+                  <div className="project-header">
+                    <div className="project-meta">
+                      <span className="project-category">
+                        {filteredPublications[selectedProject].category.toUpperCase()}
+                      </span>
+                      <span className="project-year">
+                        {filteredPublications[selectedProject].year}
+                      </span>
+                    </div>
+                    
+                    <h3 className="project-title">
+                      {filteredPublications[selectedProject].title}
+                    </h3>
+                    
+                    <p className="project-authors">
+                      {filteredPublications[selectedProject].authors}
+                    </p>
+                    
+                    {filteredPublications[selectedProject].featured && (
+                      <div className="project-featured-badge">
+                        <span className="featured-star">★</span> Featured Project
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="project-description">
+                    <p>{filteredPublications[selectedProject].description}</p>
+                  </div>
+
+                  {/* Project Stats */}
+                  <div className="project-stats">
+                    <h4>Project Highlights</h4>
+                    <div className="stats-grid">
+                      {filteredPublications[selectedProject].stats.map((stat, index) => (
+                        <div key={index} className="stat-card">
+                          <div className="stat-value">{stat.value}</div>
+                          <div className="stat-label">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="project-details-list">
+                    <h4>Key Achievements</h4>
+                    <ul className="details-list">
+                      {filteredPublications[selectedProject].details.map((detail, index) => (
+                        <li key={index}>
+                          <span className="check-icon">✓</span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="project-actions">
+                    <button 
+                      className="view-image-btn"
+                      onClick={() => openImageModal(
+                        filteredPublications[selectedProject].imageUrl,
+                        filteredPublications[selectedProject].title
+                      )}
+                    >
+                      <span className="btn-icon">🖼️</span>
+                      View Full Image
+                    </button>
+                    
+                    <a 
+                      href={filteredPublications[selectedProject].downloadLink}
+                      className="download-report-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        alert(`Downloading: ${filteredPublications[selectedProject].title}`);
+                      }}
+                    >
+                      <span className="btn-icon">📥</span>
+                      Download Full Report
+                    </a>
+                    
+                    <button className="learn-more-btn">
+                      <span className="btn-icon">📚</span>
+                      Learn More About This Project
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <div className="no-projects">
+                  <div className="no-projects-icon">📄</div>
+                  <h3>No Projects Found</h3>
+                  <p>Try selecting a different category or check back later.</p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -275,27 +368,8 @@ const Publications = () => {
                 alt={selectedImage.title}
                 className="modal-image"
               />
-            </div>
-            
-            <div className="modal-info">
-              <h3 className="modal-title">{selectedImage.title}</h3>
-              <p className="modal-meta">
-                <span className="modal-year">{selectedImage.year}</span> • 
-                <span className="modal-authors"> {selectedImage.authors}</span>
-              </p>
-              <p className="modal-description">{selectedImage.description}</p>
-              
-              <div className="modal-actions">
-                <a 
-                  href={selectedImage.downloadLink} 
-                  className="modal-download-btn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    alert('Downloading: ' + selectedImage.title);
-                  }}
-                >
-                  Download Full Document
-                </a>
+              <div className="modal-caption">
+                <h3>{selectedImage.title}</h3>
               </div>
             </div>
           </div>
