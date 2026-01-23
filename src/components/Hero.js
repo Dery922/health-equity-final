@@ -166,12 +166,12 @@ const Hero = () => {
 
       {/* Stats Section */}
       <div className="hero-stats">
-        {stats.map((stat, index) => (
+        {/* {stats.map((stat, index) => (
           <div key={index} className="stat-item">
             <h3>{stat.value}</h3>
             <p>{stat.label}</p>
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   );

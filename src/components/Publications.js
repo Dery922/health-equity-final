@@ -3,10 +3,9 @@ import './Publications.css';
 
 const Publications = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Publication categories with images
+  // Publication categories
   const publicationCategories = [
     {
       id: 'research',
@@ -34,7 +33,7 @@ const Publications = () => {
     }
   ];
 
-  // Mock publication data with images (Replace with your actual images)
+  // Publication data with images
   const publications = [
     {
       id: 1,
@@ -42,10 +41,15 @@ const Publications = () => {
       category: 'research',
       year: '2023',
       authors: 'Dr. Sarah Johnson et al.',
-      description: 'Comprehensive study on healthcare access disparities in rural areas.',
+      description: 'Comprehensive study on healthcare access disparities in rural areas across Ghana. This research examines socioeconomic factors affecting healthcare delivery.',
       imageUrl: '/assets/images/1.jpg',
       downloadLink: '#',
-      featured: true
+      featured: true,
+      stats: [
+        { label: 'Duration', value: '6 months' },
+        { label: 'Sites', value: '15 rural communities' },
+        { label: 'Participants', value: '500+' }
+      ]
     },
     {
       id: 2,
@@ -53,20 +57,30 @@ const Publications = () => {
       category: 'conferences',
       year: '2023',
       authors: 'Various Speakers',
-      description: 'Proceedings from the annual global health equity conference.',
+      description: 'Proceedings from the annual global health equity conference featuring international experts discussing innovative approaches to healthcare delivery.',
       imageUrl: '/assets/images/2.jpg',
-      downloadLink: '#'
+      downloadLink: '#',
+      stats: [
+        { label: 'Speakers', value: '25+' },
+        { label: 'Countries', value: '15' },
+        { label: 'Sessions', value: '30+' }
+      ]
     },
     {
       id: 3,
       title: 'Annual Impact Report 2022',
       category: 'reports',
       year: '2022',
-      authors: 'HealthEquity Team',
-      description: 'Comprehensive overview of our impact and achievements.',
+      authors: 'AJHealth Research Team',
+      description: 'Comprehensive overview of our impact and achievements in advancing health equity across Sub-Saharan Africa through evidence-based interventions.',
       imageUrl: '/assets/images/1.jpg',
       downloadLink: '#',
-      featured: true
+      featured: true,
+      stats: [
+        { label: 'Projects', value: '50+' },
+        { label: 'Partners', value: '30+' },
+        { label: 'Countries', value: '10' }
+      ]
     },
     {
       id: 4,
@@ -74,9 +88,14 @@ const Publications = () => {
       category: 'briefs',
       year: '2023',
       authors: 'Michael Chen',
-      description: 'Technical guide on using data analytics for health equity.',
+      description: 'Technical guide on using data analytics for health equity. Covers methodologies, tools, and best practices for healthcare data analysis.',
       imageUrl: '/assets/images/3.jpg',
-      downloadLink: '#'
+      downloadLink: '#',
+      stats: [
+        { label: 'Pages', value: '85' },
+        { label: 'Case Studies', value: '12' },
+        { label: 'Tools Covered', value: '8' }
+      ]
     },
     {
       id: 5,
@@ -84,49 +103,14 @@ const Publications = () => {
       category: 'research',
       year: '2023',
       authors: 'Dr. Maria Rodriguez',
-      description: 'Evaluation of maternal health programs in West Africa.',
+      description: 'Evaluation of maternal health programs in West Africa focusing on reducing maternal mortality through community-based interventions.',
       imageUrl: '/assets/images/2.jpg',
-      downloadLink: '#'
-    },
-    {
-      id: 6,
-      title: 'Health Policy Symposium',
-      category: 'conferences',
-      year: '2023',
-      authors: 'Policy Experts',
-      description: 'Key insights from health policy discussions.',
-      imageUrl: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=800&auto=format&fit=crop',
-      downloadLink: '#'
-    },
-    {
-      id: 7,
-      title: 'Supply Chain Optimization',
-      category: 'briefs',
-      year: '2023',
-      authors: 'Logistics Team',
-      description: 'Improving healthcare supply chains for better access.',
-      imageUrl: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop',
-      downloadLink: '#'
-    },
-    {
-      id: 8,
-      title: 'Community Health Workers Study',
-      category: 'research',
-      year: '2022',
-      authors: 'Dr. James Wilson',
-      description: 'Impact assessment of community health worker programs.',
-      imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
-      downloadLink: '#'
-    },
-    {
-      id: 9,
-      title: 'Digital Health Innovations',
-      category: 'conferences',
-      year: '2023',
-      authors: 'Tech Experts',
-      description: 'Emerging technologies in healthcare delivery.',
-      imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&fit=crop',
-      downloadLink: '#'
+      downloadLink: '#',
+      stats: [
+        { label: 'Duration', value: '18 months' },
+        { label: 'Health Facilities', value: '25' },
+        { label: 'Women Reached', value: '10,000+' }
+      ]
     }
   ];
 
@@ -135,35 +119,17 @@ const Publications = () => {
     ? publications 
     : publications.filter(pub => pub.category === activeFilter);
 
-  // Open lightbox with selected image
-  const openLightbox = (publication) => {
+  // Open image modal
+  const openImageModal = (publication) => {
     setSelectedImage(publication);
-    setLightboxOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    document.body.style.overflow = 'hidden';
   };
 
-  // Close lightbox
-  const closeLightbox = () => {
-    setLightboxOpen(false);
+  // Close image modal
+  const closeImageModal = () => {
     setSelectedImage(null);
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.body.style.overflow = 'auto';
   };
-
-  // Handle keyboard navigation for lightbox
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
-      closeLightbox();
-    }
-  };
-
-  React.useEffect(() => {
-    if (lightboxOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-    }
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [lightboxOpen]);
 
   return (
     <section id="publications" className="publications-section">
@@ -198,60 +164,87 @@ const Publications = () => {
           ))}
         </div>
 
-        {/* Publications Grid */}
-        <div className="publications-grid">
+        {/* Publications List - New Layout */}
+        <div className="publications-list">
           {filteredPublications.map(publication => (
             <div 
               key={publication.id} 
-              className={`publication-card ${publication.featured ? 'featured' : ''}`}
+              className={`publication-item ${publication.featured ? 'featured' : ''}`}
             >
-              {/* Publication Image */}
-              <div 
-                className="publication-image"
-                onClick={() => openLightbox(publication)}
-                style={{ 
-                  backgroundImage: `url(${publication.imageUrl})`,
-                  cursor: 'pointer'
-                }}
-                aria-label={`View ${publication.title}`}
-              >
-                <div className="image-overlay">
-                  <span className="view-text">Click to View</span>
+              {/* Left Side - Image */}
+              <div className="publication-image-side">
+                <div 
+                  className="publication-image-container"
+                  onClick={() => openImageModal(publication)}
+                >
+                  <img 
+                    src={publication.imageUrl} 
+                    alt={publication.title}
+                    className="publication-image"
+                  />
+                  <div className="image-overlay">
+                    <span className="view-text">Click to Enlarge</span>
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="category-badge">
+                    {publicationCategories.find(c => c.id === publication.category)?.icon}
+                    {publication.category.charAt(0).toUpperCase() + publication.category.slice(1)}
+                  </div>
+                  
+                  {/* Featured Badge */}
+                  {publication.featured && (
+                    <div className="featured-badge">Featured</div>
+                  )}
                 </div>
-                <div className="category-badge" style={{ backgroundColor: publicationCategories.find(c => c.id === publication.category)?.color }}>
-                  {publicationCategories.find(c => c.id === publication.category)?.icon}
-                  {publication.category.charAt(0).toUpperCase() + publication.category.slice(1)}
-                </div>
-                {publication.featured && (
-                  <div className="featured-badge">Featured</div>
-                )}
               </div>
 
-              {/* Publication Info */}
-              <div className="publication-info">
-                <div className="publication-meta">
-                  <span className="year">{publication.year}</span>
-                  <span className="authors">{publication.authors}</span>
+              {/* Right Side - Content */}
+              <div className="publication-content-side">
+                <div className="publication-header">
+                  <div className="publication-meta">
+                    <span className="year">{publication.year}</span>
+                    <span className="category-tag">
+                      {publication.category.charAt(0).toUpperCase() + publication.category.slice(1)}
+                    </span>
+                  </div>
+                  <h3 className="publication-title">{publication.title}</h3>
+                  <p className="publication-authors">{publication.authors}</p>
                 </div>
-                <h3 className="publication-title">{publication.title}</h3>
-                <p className="publication-description">{publication.description}</p>
-                
+
+                <div className="publication-description">
+                  <p>{publication.description}</p>
+                </div>
+
+                {/* Stats */}
+                <div className="publication-stats">
+                  {publication.stats && publication.stats.map((stat, index) => (
+                    <div key={index} className="stat-item">
+                      <div className="stat-value">{stat.value}</div>
+                      <div className="stat-label">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Actions */}
                 <div className="publication-actions">
                   <button 
                     className="view-btn"
-                    onClick={() => openLightbox(publication)}
+                    onClick={() => openImageModal(publication)}
                   >
-                    View Details
+                    <span className="btn-icon">👁️</span>
+                    View Full Details
                   </button>
                   <a 
                     href={publication.downloadLink} 
                     className="download-btn"
                     download
                     onClick={(e) => {
-                      e.stopPropagation();
-                      alert('Downloading publication: ' + publication.title);
+                      e.preventDefault();
+                      alert('Downloading: ' + publication.title);
                     }}
                   >
+                    <span className="btn-icon">📥</span>
                     Download PDF
                   </a>
                 </div>
@@ -263,54 +256,46 @@ const Publications = () => {
         {/* View More Button */}
         <div className="view-more-container">
           <button className="view-more-btn">
-            View All Publications
+            View All Publications →
           </button>
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {lightboxOpen && selectedImage && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close" onClick={closeLightbox}>
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="image-modal" onClick={closeImageModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeImageModal}>
               &times;
             </button>
             
-            <div className="lightbox-image-container">
+            <div className="modal-image-container">
               <img 
                 src={selectedImage.imageUrl} 
                 alt={selectedImage.title}
-                className="lightbox-image"
+                className="modal-image"
               />
             </div>
             
-            <div className="lightbox-info">
-              <div className="lightbox-header">
-                <span className="lightbox-category">
-                  {selectedImage.category.charAt(0).toUpperCase() + selectedImage.category.slice(1)}
-                </span>
-                <span className="lightbox-year">{selectedImage.year}</span>
-              </div>
+            <div className="modal-info">
+              <h3 className="modal-title">{selectedImage.title}</h3>
+              <p className="modal-meta">
+                <span className="modal-year">{selectedImage.year}</span> • 
+                <span className="modal-authors"> {selectedImage.authors}</span>
+              </p>
+              <p className="modal-description">{selectedImage.description}</p>
               
-              <h3 className="lightbox-title">{selectedImage.title}</h3>
-              <p className="lightbox-authors">{selectedImage.authors}</p>
-              <p className="lightbox-description">{selectedImage.description}</p>
-              
-              <div className="lightbox-actions">
+              <div className="modal-actions">
                 <a 
                   href={selectedImage.downloadLink} 
-                  className="lightbox-download-btn"
-                  download
+                  className="modal-download-btn"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    alert('Downloading publication: ' + selectedImage.title);
+                    e.preventDefault();
+                    alert('Downloading: ' + selectedImage.title);
                   }}
                 >
-                  Download Full PDF
+                  Download Full Document
                 </a>
-                <button className="lightbox-close-btn" onClick={closeLightbox}>
-                  Close
-                </button>
               </div>
             </div>
           </div>
