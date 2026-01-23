@@ -54,7 +54,7 @@ const HomePage = () => {
       <section className="mission-section" id="about">
         <div className="mission-container">
           <div className="mission-content">
-            <h2>Our Mission: Transformative Health Equity Solutions</h2>
+            <h2>Our Mission: Transformative AJHealth and Research Consultancy</h2>
             <p>
            Our mission is to advance health equity and system resilience in 
            Ghana by

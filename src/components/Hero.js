@@ -1,5 +1,7 @@
 import React from 'react';
 import './Hero.css';
+import heroImg from "../assets/images/hero.jpeg";
+
 
 const Hero = () => {
   const stats = [
@@ -23,7 +25,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home"       style={{
+        backgroundImage: `
+          linear-gradient(rgba(29, 80, 77, 0.7), rgba(42, 110, 106, 0.8)),
+          url(${heroImg})
+        `,
+      }}>
       <div className="hero-content">
         <h2>Transforming Ideas into Lasting Impact</h2>
         <p>

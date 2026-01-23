@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
+import logoImage from "../assets/images/AJ LOGO Transaparent.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,10 +42,15 @@ const Header = () => {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo">
-          <h1>AJHealth.<span>Research</span></h1>
-          <p>Advancing Health Equity Ghana</p>
-        </div>
+
+<div className="logo">
+  <img 
+    src={logoImage} 
+    style={{width: 89, height: 89}}  
+    alt="AJHealth Logo" 
+    className="logo-image"
+  />
+</div>
         
         {/* Hamburger Menu Button - ALWAYS VISIBLE */}
         <button 

@@ -14,6 +14,109 @@
   transition: all 0.3s ease-in-out;
 }
 
+/* Logo Container */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Logo Image */
+.logo-image {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Remove default link styles from h1 */
+.logo h1 {
+  margin: 0;
+  line-height: 1;
+}
+
+/* Link inside h1 */
+.logo h1 a {
+  text-decoration: none;
+  color: #2a6e6a;
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  letter-spacing: -0.5px;
+}
+
+.logo h1 a:hover {
+  color: #1d504d;
+}
+
+/* Tagline */
+.logo p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  line-height: 1.2;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+/* When header is scrolled */
+.header.scrolled .logo-image {
+  width: 30px;
+  height: 30px;
+}
+
+.header.scrolled .logo h1 a {
+  font-size: 1.5rem;
+}
+
+.header.scrolled .logo p {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    gap: 10px;
+  }
+  
+  .logo-image {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .logo h1 a {
+    font-size: 1.5rem;
+  }
+  
+  .logo p {
+    font-size: 0.8rem;
+    white-space: normal;
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 a {
+    font-size: 1.3rem;
+  }
+  
+  .logo p {
+    display: none; /* Hide tagline on very small screens */
+  }
+}
+
+/* Animation for logo on hover */
+.logo:hover .logo-image {
+  transform: scale(1.05);
+  filter: brightness(1.2) contrast(1.2);
+}
+
 .header.scrolled {
   padding: 0.5rem 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);

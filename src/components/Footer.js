@@ -8,7 +8,9 @@ const Footer = () => {
     { name: 'LinkedIn', icon: 'in', url: '#' },
     { name: 'Twitter', icon: '𝕏', url: '#' },
     { name: 'Facebook', icon: 'f', url: '#' },
-    { name: 'YouTube', icon: '▶', url: '#' }
+    { name: 'YouTube', icon: '▶', url: '#' },
+    { name: 'Instagram', icon: '📸', url: '#' },
+
   ];
 
   const handleSubmit = (e) => {

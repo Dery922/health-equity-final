@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Partners.css';
+import partnerImg from "../assets/images/ghanacollege.jpeg";
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,7 +13,7 @@ const Partners = () => {
     { id: 1, name: "World Health Organization", logo: "🌍", type: "International Agency" },
     { id: 2, name: "UNICEF", logo: "👶", type: "UN Agency" },
     { id: 3, name: "Gates Foundation", logo: "🏛️", type: "Foundation" },
-    { id: 4, name: "Harvard University", logo: "🎓", type: "Academic" },
+    { id: 4, name: "Ghana College of Pharmacy", logo: partnerImg, type: "Academic" },
     { id: 5, name: "USAID", logo: "🇺🇸", type: "Government" },
     { id: 6, name: "European Union", logo: "🇪🇺", type: "Regional" },
     { id: 7, name: "Global Fund", logo: "🌐", type: "NGO" },
@@ -111,7 +112,16 @@ const Partners = () => {
             <div className="carousel-track">
               {visiblePartners.map((partner, index) => (
                 <div key={partner.id} className="partner-card">
-                  <div className="partner-logo">{partner.logo}</div>
+                 <div className="partner-logo">
+                  {typeof partner.logo === "string" && partner.logo.startsWith("http") ? (
+                    <img src={partner.logo} alt={partner.name} />
+                  ) : typeof partner.logo === "string" && partner.logo.length <= 3 ? (
+                    <span>{partner.logo}</span>
+                  ) : (
+                    <img src={partner.logo} alt={partner.name} />
+                  )}
+                </div>
+
                   <div className="partner-info">
                     <h4>{partner.name}</h4>
                     <p>{partner.type}</p>

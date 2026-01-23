@@ -1,5 +1,6 @@
 import React from 'react';
 import './Team.css';
+import { Link } from 'react-router-dom';
 
 const Team = () => {
   const teamMembers = [
@@ -107,9 +108,9 @@ const Team = () => {
           <p className="team-join">
             Interested in joining our team? We're always looking for passionate professionals.
           </p>
-          <a href="#contact" className="team-cta-button">
+          <Link to="/careers" className="team-cta-button">
             View Career Opportunities
-          </a>
+          </Link>
         </div>
       </div>
     </section>
