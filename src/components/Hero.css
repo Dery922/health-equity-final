@@ -1,19 +1,41 @@
+/* Hero.css */
 .hero {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  position: relative;
   min-height: 90vh;
   margin-top: 80px;
   padding: 6rem 1rem 4rem;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   text-align: center;
-  position: relative;
   overflow: hidden;
+}
+
+/* Slides Container */
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
 }
 
 /* CONTENT */
@@ -21,19 +43,71 @@
   max-width: 900px;
   margin: 0 auto;
   color: #ffffff;
+  position: relative;
+  z-index: 2;
+  min-height: 300px; /* Add this to ensure space for content */
+}
+
+/* Slide Content Wrapper */
+.slide-content-wrapper {
+  position: relative;
+  min-height: 200px;
+    min-height: 250px; /* Increase this */
+  margin-bottom: 2rem; /* Add margin at bottom */
+}
+
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+  pointer-events: none;
+}
+
+.slide-content.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .hero-content h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-content p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   opacity: 0.95;
   margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* BUTTONS */
@@ -42,6 +116,13 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  animation: fadeIn 0.8s ease 0.6s both;
+    margin-top: 2rem; /* Add this to separate from text */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .primary-btn,
@@ -51,6 +132,9 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  min-width: 180px;
 }
 
 .primary-btn {
@@ -58,10 +142,21 @@
   color: #1d504d;
 }
 
+.primary-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
 .secondary-btn {
   background: transparent;
   color: #ffffff;
   border: 2px solid #ffffff;
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 /* STATS */
@@ -72,6 +167,9 @@
   max-width: 900px;
   margin: 3rem auto 0;
   color: #ffffff;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 0.8s ease 0.9s both;
 }
 
 .stat-item {
@@ -79,21 +177,267 @@
   backdrop-filter: blur(6px);
   padding: 1.5rem;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .stat-item h3 {
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
+  font-weight: 700;
 }
 
 .stat-item p {
   font-size: 0.9rem;
   opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Navigation Arrows */
+.slide-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.slide-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slide-nav.prev {
+  left: 20px;
+}
+
+.slide-nav.next {
+  right: 20px;
+}
+
+/* Slide Dots */
+.slide-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding: 4rem 1rem 2rem;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .slide-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .slide-nav.prev {
+    left: 10px;
+  }
+
+  .slide-nav.next {
+    right: 10px;
+  }
+
+  .slide-dots {
+    bottom: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Loading animation for slides */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-content.active {
+  animation: slideInRight 0.8s ease;
+}
+
+.slide-content.active.prev-slide {
+  animation: slideInLeft 0.8s ease;
+}
+
+/* Progress bar for slide timer */
+.slide-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 3;
+}
+
+.progress-bar {
+  height: 100%;
+  background: white;
+  width: 0%;
+  transition: width 5s linear;
+}
+
+.progress-bar.active {
+  width: 100%;
+}
+/* CONTENT - Add a min-height */
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  min-height: 300px; /* Add this to ensure space for content */
+}
+
+/* Slide Content Wrapper - Add height */
+.slide-content-wrapper {
+  position: relative;
+  min-height: 250px; /* Increase this */
+  margin-bottom: 2rem; /* Add margin at bottom */
+}
+
+/* BUTTONS - Add margin top */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeIn 0.8s ease 0.6s both;
+  margin-top: 2rem; /* Add this to separate from text */
+}
+
+/* For mobile, increase the min-height */
+@media (max-width: 768px) {
+  .slide-content-wrapper {
+    min-height: 300px; /* More on mobile for longer text */
+  }
+  
+  .hero-content {
+    min-height: 350px;
   }
 }

@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import './HomePage.css';
 import Partners from '../components/Partners';
 import Publications from '../components/Publications';
+import Mentorship from '../components/Mentorship';
 
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -76,6 +77,7 @@ const HomePage = () => {
       
       <ContactForm />
       <Publications />
+      <Mentorship />
       <Partners />
       <Footer />
       

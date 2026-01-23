@@ -1,0 +1,408 @@
+/* CareerPage.css */
+.career-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.career-header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.career-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.career-logo {
+  text-decoration: none;
+}
+
+.career-logo h1 {
+  color: #2a6e6a;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.career-logo span {
+  color: #4a9d9c;
+}
+
+.back-home-btn {
+  background: #2a6e6a;
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background: #1d504d;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+.career-main {
+  flex: 1;
+  padding: 4rem 1rem;
+}
+
+.career-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Icon */
+.career-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  color: #4a9d9c;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Title */
+.career-title {
+  color: #1d504d;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Message */
+.career-message {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e0f0ef;
+}
+
+.career-message h2 {
+  color: #2a6e6a;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.career-message p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Why Check Back */
+.check-back-section {
+  margin-bottom: 3rem;
+}
+
+.check-back-section h3 {
+  color: #1d504d;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.reason-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+}
+
+.reason-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2a6e6a;
+}
+
+.reason-card h4 {
+  color: #1d504d;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.reason-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* What We Look For */
+.looking-for-section {
+  background: linear-gradient(135deg, #f0f9f9, #e6f7f6);
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.looking-for-section h3 {
+  color: #1d504d;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.qualities-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.qualities-list li {
+  color: #555;
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(42, 110, 106, 0.1);
+  text-align: left;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.qualities-list li:last-child {
+  border-bottom: none;
+}
+
+.qualities-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2a6e6a;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Call to Action */
+.career-cta {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.career-cta h3 {
+  color: #1d504d;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.career-cta p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.subscribe-btn, .explore-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.subscribe-btn {
+  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
+  color: white;
+  border: none;
+}
+
+.subscribe-btn:hover {
+  background: linear-gradient(135deg, #1d504d, #2a6e6a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(42, 110, 106, 0.3);
+}
+
+.explore-btn {
+  background: transparent;
+  color: #2a6e6a;
+  border: 2px solid #2a6e6a;
+}
+
+.explore-btn:hover {
+  background: #2a6e6a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Next Check */
+.next-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #e6f7f6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.calendar-icon {
+  font-size: 2.5rem;
+  color: #2a6e6a;
+}
+
+.next-check p {
+  color: #555;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.next-check strong {
+  color: #2a6e6a;
+}
+
+/* Footer */
+.career-footer {
+  background: linear-gradient(135deg, #1d3736 0%, #152726 100%);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.career-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.career-footer p {
+  color: #b0d4d3;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #b0d4d3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #4a9d9c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .career-header-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .career-title {
+    font-size: 2rem;
+  }
+  
+  .career-message,
+  .looking-for-section,
+  .career-cta {
+    padding: 2rem 1.5rem;
+  }
+  
+  .career-message h2 {
+    font-size: 1.6rem;
+  }
+  
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subscribe-btn, .explore-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .next-check {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-main {
+    padding: 2rem 1rem;
+  }
+  
+  .career-icon {
+    font-size: 4rem;
+  }
+  
+  .career-title {
+    font-size: 1.8rem;
+  }
+  
+  .check-back-section h3,
+  .looking-for-section h3,
+  .career-cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  .qualities-list li {
+    font-size: 1rem;
+    padding-left: 2rem;
+  }
+}

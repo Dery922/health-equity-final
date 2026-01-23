@@ -12,7 +12,7 @@ const CareerPage = () => {
   return (
     <div className="career-page">
       {/* Header/Navigation */}
-      <Header />
+
       <header className="career-header">
         <div className="career-header-container">
           <Link to="/" className="career-logo">

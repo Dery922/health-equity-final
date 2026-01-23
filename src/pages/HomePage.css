@@ -30,7 +30,7 @@
 }
 
 .scroll-top:hover {
-  background-color: #1d504d;
+  background-color: #02b94b;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

@@ -10,18 +10,13 @@ const Partners = () => {
 
   // Partners data
   const partners = [
-    { id: 1, name: "World Health Organization", logo: "🌍", type: "International Agency" },
-    { id: 2, name: "UNICEF", logo: "👶", type: "UN Agency" },
-    { id: 3, name: "Gates Foundation", logo: "🏛️", type: "Foundation" },
-    { id: 4, name: "Ghana College of Pharmacy", logo: partnerImg, type: "Academic" },
-    { id: 5, name: "USAID", logo: "🇺🇸", type: "Government" },
-    { id: 6, name: "European Union", logo: "🇪🇺", type: "Regional" },
-    { id: 7, name: "Global Fund", logo: "🌐", type: "NGO" },
-    { id: 8, name: "Johns Hopkins", logo: "🎓", type: "Academic" },
-    { id: 9, name: "African Union", logo: "🌍", type: "Regional" },
-    { id: 10, name: "Rockefeller Foundation", logo: "🏛️", type: "Foundation" },
-    { id: 11, name: "Pfizer Foundation", logo: "💊", type: "Corporate" },
-    { id: 12, name: "Doctors Without Borders", logo: "⚕️", type: "NGO" }
+    { id: 1, name: "Ghana Health Service/ ERHA", logo: "🌍", type: "International Agency" },
+    { id: 2, name: "Health Access Network", logo: "👶", type: "UN Agency" },
+    { id: 3, name: "Ghana College of Pharmacists", logo: "🏛️", type: "Foundation" },
+    { id: 4, name: "National AIDS/ STI Control Program", logo: partnerImg, type: "Academic" },
+    { id: 5, name: "Health Keepers Network", logo: "🇺🇸", type: "Government" },
+    { id: 6, name: "Buni Banda", logo: "🇪🇺", type: "Regional" },
+
   ];
 
   // Auto-rotate carousel

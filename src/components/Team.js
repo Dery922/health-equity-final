@@ -6,9 +6,8 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Dr. Sarah Johnson",
-      position: "Chief Health Equity Officer",
-      qualification: "MD, MPH, PhD",
+      name: "Josephine Tweneboa Osae (Pharmacist)",
+      position: "Supply Chain and Quality Improvement Lead",
       expertise: "Public Health Policy & Health Disparities Research",
       image: "👩‍⚕️", // Placeholder emoji - replace with actual image URL
       linkedin: "#",
@@ -16,8 +15,8 @@ const Team = () => {
     },
     {
       id: 2,
-      name: "Michael Chen",
-      position: "Director of Data Analytics",
+      name: "Archibold Nii Boye (Pharmacist)",
+      position: "Project Management and Health Economics Lead",
       qualification: "MSc, Data Science",
       expertise: "Healthcare Data Analysis & Machine Learning",
       image: "👨‍💻", // Placeholder emoji
@@ -26,8 +25,8 @@ const Team = () => {
     },
     {
       id: 3,
-      name: "Dr. Amina Diallo",
-      position: "Senior Research Fellow",
+      name: "Lesley N.O Vanderpuije",
+      position: "Public Health Policy Lead (Pharmacist)",
       qualification: "PhD, Epidemiology",
       expertise: "Global Health & Infectious Disease Research",
       image: "👩‍🔬", // Placeholder emoji
@@ -36,8 +35,8 @@ const Team = () => {
     },
     {
       id: 4,
-      name: "Robert Williams",
-      position: "Health Economics Lead",
+      name: "Gloria Agyekum",
+      position: "Monitoring, Evaluation and Communications Lead",
       qualification: "MSc, Health Economics",
       expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
       image: "👨‍💼", // Placeholder emoji
@@ -46,24 +45,14 @@ const Team = () => {
     },
     {
       id: 5,
-      name: "Maria Gonzalez",
-      position: "Program Director",
+      name: "Richard Abeiku Bonney",
+      position: "Health System Strenghtening Lead",
       qualification: "MPH, Project Management",
       expertise: "Healthcare Program Implementation & Evaluation",
       image: "👩‍💼", // Placeholder emoji
       linkedin: "#",
       twitter: "#"
     },
-    {
-      id: 6,
-      name: "David Okoro",
-      position: "Logistics & Supply Chain Manager",
-      qualification: "MBA, Supply Chain Management",
-      expertise: "Healthcare Supply Chain Optimization",
-      image: "👨‍🏭", // Placeholder emoji
-      linkedin: "#",
-      twitter: "#"
-    }
   ];
 
   return (
