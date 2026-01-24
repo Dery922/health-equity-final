@@ -4,10 +4,10 @@ import './Hero.css';
 // Import your hero images
 import heroImg1 from "../assets/images/1.jpg";
 import heroImg2 from "../assets/images/our.jpeg";
-import heroImg3 from "../assets/images/3.jpg";
-import heroImg4 from "../assets/images/hero.jpeg";
+import heroImg3 from "../assets/images/pic1.jpeg";
+import heroImg4 from "../assets/images/pic2.jpeg";
 
-const Hero = () => {
+ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -15,8 +15,8 @@ const Hero = () => {
   const heroImages = [
     {
       image: heroImg1,
-      title: "Transforming Ideas into Lasting Impact",
-      description: "At AJHealth.Research we empower change-makers to create sustainable solutions that improve lives across sub-Saharan Africa."
+      title: "Bridging Evidence into Action for Healthier Ghana",
+      description: "We are an independent health and research consultancy dedicated ."
     },
     {
       image: heroImg2,
@@ -25,7 +25,7 @@ const Hero = () => {
     },
     {
       image: heroImg3,
-      title: "Capacity Building & Mentorship",
+      title: "Work force Enhancement",
       description: "Empowering healthcare professionals through hands-on training and mentorship programs across Africa."
     },
     {

@@ -71,7 +71,7 @@ const ContactForm = () => {
     <section id="contact" className="contact-form-section">
       <div className="form-container">
         <div className="form-intro">
-          <h2>Start Your Health Equity Journey</h2>
+          <h2>Start Your Health Journey</h2>
           <p>
             Contact us for a free 30-minute consultation to discuss your 
             organization's needs and challenges.
@@ -175,8 +175,8 @@ const ContactForm = () => {
           <div className="info-item">
             <div className="info-icon">📞</div>
             <h4>Call Us</h4>
-            <p>+233 244 297 950 / +233 244 288 266</p>
-            <p></p>
+            <p> +233 244 288 266 /+233 244 297 950</p>
+            <p>Location : No.23 Asafoastse Baakonko Street, Camara, Dansoma</p>
           </div>
           <div className="info-item">
             <div className="info-icon">⏰</div>

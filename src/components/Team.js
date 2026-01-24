@@ -1,35 +1,29 @@
 import React from 'react';
 import './Team.css';
 import { Link } from 'react-router-dom';
+import teamImg1 from "../assets/images/jose2.jpeg";
+import teamImg2 from "../assets/images/healthpolicy.jpeg";
+import teamImg3 from "../assets/images/bonne.jpeg";
+import teamImg4 from "../assets/images/joss.jpeg";
+import teamImg5 from "../assets/images/bonne.jpeg"
 
 const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Josephine Tweneboa Osae (Pharmacist)",
+      name: "Josephine Tweneboa Osei (Pharmacist)",
       position: "Supply Chain and Quality Improvement Lead",
       expertise: "Public Health Policy & Health Disparities Research",
-      image: "👩‍⚕️", // Placeholder emoji - replace with actual image URL
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      id: 2,
-      name: "Archibold Nii Boye (Pharmacist)",
-      position: "Project Management and Health Economics Lead",
-      qualification: "MSc, Data Science",
-      expertise: "Healthcare Data Analysis & Machine Learning",
-      image: "👨‍💻", // Placeholder emoji
+      image: teamImg1,
       linkedin: "#",
       twitter: "#"
     },
     {
       id: 3,
-      name: "Lesley N.O Vanderpuije",
+      name: "Leslie N.O Vanderpuije",
       position: "Public Health Policy Lead (Pharmacist)",
-      qualification: "PhD, Epidemiology",
       expertise: "Global Health & Infectious Disease Research",
-      image: "👩‍🔬", // Placeholder emoji
+      image: teamImg2,
       linkedin: "#",
       twitter: "#"
     },
@@ -37,9 +31,17 @@ const Team = () => {
       id: 4,
       name: "Gloria Agyekum",
       position: "Monitoring, Evaluation and Communications Lead",
-      qualification: "MSc, Health Economics",
       expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
       image: "👨‍💼", // Placeholder emoji
+      linkedin: "#",
+      twitter: "#"
+    },
+        {
+      id: 4,
+      name: "Emmanuel Nii Obodai Mensah (Pharmacist)",
+      position: "Monitoring, Evaluation and Communications Lead",
+      expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
+      image: teamImg4,
       linkedin: "#",
       twitter: "#"
     },
@@ -47,9 +49,8 @@ const Team = () => {
       id: 5,
       name: "Richard Abeiku Bonney",
       position: "Health System Strenghtening Lead",
-      qualification: "MPH, Project Management",
       expertise: "Healthcare Program Implementation & Evaluation",
-      image: "👩‍💼", // Placeholder emoji
+      image: teamImg5,
       linkedin: "#",
       twitter: "#"
     },
@@ -61,7 +62,7 @@ const Team = () => {
         <div className="team-header">
           <h2 className="team-title">Our Core Team</h2>
           <p className="team-subtitle">
-            A multidisciplinary team of experts dedicated to advancing health equity 
+            A multidisciplinary team of experts dedicated to advancing health  
             through research, data analysis, and strategic consultancy.
           </p>
         </div>
@@ -71,7 +72,10 @@ const Team = () => {
             <div key={member.id} className="team-card">
               <div className="team-image">
                 <div className="image-placeholder">
-                  {member.image}
+                     <img 
+                      style={{width:355,height:255}}
+                      src={member.image} 
+                      alt={member.name} />
                 </div>
                 <div className="team-social">
                   <a href={member.linkedin} className="social-icon" aria-label={`${member.name} LinkedIn`}>

@@ -12,7 +12,7 @@ const Services = () => {
     {
       id: 2,
       title: "Data Analytics",
-      description: "Advanced data analysis to identify patterns and measure health equity interventions.",
+      description: "Advanced data analysis to identify gaps and measure real world impact.",
       icon: "📈"
     },
     {
@@ -29,8 +29,8 @@ const Services = () => {
     },
     {
       id: 5,
-      title: "Logistics & Supply Chain",
-      description: "Optimizing healthcare supply chains for equitable resource distribution.",
+      title: "Health Logistics & Supply Chain",
+      description: "Optimizing healthcare supply chains for equitable resource allocation.",
       icon: "🚚"
     },
     {

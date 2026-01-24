@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import logoImage from "../assets/images/AJ LOGO Transaparent.png";
+import logoImage from "../assets/images/newLogo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +46,7 @@ const Header = () => {
 <div className="logo">
   <img 
     src={logoImage} 
-    style={{width: 89, height: 89}}  
+    style={{width:  130, height: 130}}  
     alt="AJHealth Logo" 
     className="logo-image"
   />

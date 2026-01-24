@@ -1,7 +1,7 @@
 /* Hero.css */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 80vh;
   margin-top: 80px;
   padding: 6rem 1rem 4rem;
   display: flex;
@@ -45,7 +45,7 @@
   color: #ffffff;
   position: relative;
   z-index: 2;
-  min-height: 300px; /* Add this to ensure space for content */
+  min-height: 200px; /* Add this to ensure space for content */
 }
 
 /* Slide Content Wrapper */

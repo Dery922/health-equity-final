@@ -16,7 +16,7 @@ const CareerPage = () => {
       <header className="career-header">
         <div className="career-header-container">
           <Link to="/" className="career-logo">
-            <h1>HealthEquity<span>Consult</span></h1>
+            <h1>AJHealth<span> and Research Consultancy</span></h1>
           </Link>
           <Link to="/" className="back-home-btn">
             ← Back to Home

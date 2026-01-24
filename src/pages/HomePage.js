@@ -9,7 +9,7 @@ import './HomePage.css';
 import Partners from '../components/Partners';
 import Publications from '../components/Publications';
 import Mentorship from '../components/Mentorship';
-
+import image1 from "../assets/images/mission.jpeg"
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -69,7 +69,7 @@ const HomePage = () => {
             </p>
           </div>
           <div className="mission-image">
-            <span>⚕️</span>
+            <span><img style={{width:700,height:400}} src={image1} /></span>
           </div>
         </div>
       </section>
