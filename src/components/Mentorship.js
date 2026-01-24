@@ -5,6 +5,9 @@ import heroImg1 from "../assets/images/m1.jpeg";
 import heroImg2 from "../assets/images/m2.jpeg";
 import heroImg3 from "../assets/images/m3.jpeg";
 
+import conf from "../assets/images/conf.jpeg";
+import conf2 from "../assets/images/conf2.jpeg";
+
 import menteeImg1 from "../assets/images/mentee1.jpeg";
 import menteeImg2 from "../assets/images/mentee2.jpeg";
 import menteeImg3 from "../assets/images/mentee3.jpeg";
@@ -19,7 +22,7 @@ const Mentorship = () => {
   // Mentorship categories
   const categories = [
     { id: 'all', name: 'All Activities' },
-    { id: 'Conferences', name: 'Conferences', icon: '👨‍🏫' },
+    { id: 'conferences', name: 'Conferences', icon: '👨‍🏫' },
     { id: 'mentorship', name: 'Mentorship', icon: '🎤' },
  
   ];
@@ -39,28 +42,6 @@ const Mentorship = () => {
     },
     {
       id: 2,
-      title: 'Data Analytics Training',
-      category: 'mentorship',
-      date: 'February 2024',
-      location: 'Kumasi, Ghana',
-      description: 'Hands-on training in healthcare data analysis using modern tools.',
-      imageUrl: heroImg2,
-      attendees: '35 Health Professionals',
-      featured: true
-    },
-        {
-      id: 3,
-      title: 'Data Analytics Training',
-      category: 'mentorship',
-      date: 'February 2024',
-      location: 'Kumasi, Ghana',
-      description: 'Hands-on training in healthcare data analysis using modern tools.',
-      imageUrl: heroImg2,
-      attendees: '35 Health Professionals',
-      featured: true
-    },
-        {
-      id: 4,
       title: 'Data Analytics Training',
       category: 'mentorship',
       date: 'February 2024',
@@ -103,7 +84,7 @@ const Mentorship = () => {
       attendees: '200+ Online Participants',
       featured: false
     },
-            {
+    {
       id: 8,
       title: 'Global Health Seminar Series',
       category: 'mentorship',
@@ -111,6 +92,28 @@ const Mentorship = () => {
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
       imageUrl: menteeImg4,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+        {
+      id: 9,
+      title: 'Global Health Seminar Series',
+      category: 'conferences',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: conf,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+        {
+      id: 10,
+      title: 'Global Health Seminar Series',
+      category: 'conferences',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: conf2,
       attendees: '200+ Online Participants',
       featured: false
     },
@@ -326,13 +329,13 @@ const Mentorship = () => {
                 </span>
               </div>
               
-              <h3 className="lightbox-title">{filteredActivities[lightboxIndex].title}</h3>
+              {/* <h3 className="lightbox-title">{filteredActivities[lightboxIndex].title}</h3>
               <p className="lightbox-location">{filteredActivities[lightboxIndex].location}</p>
               <p className="lightbox-date">{filteredActivities[lightboxIndex].date}</p>
               <p className="lightbox-description">{filteredActivities[lightboxIndex].description}</p>
               <p className="lightbox-attendees">
                 <strong>Participants:</strong> {filteredActivities[lightboxIndex].attendees}
-              </p>
+              </p> */}
               
               {filteredActivities[lightboxIndex].featured && (
                 <span className="lightbox-featured">⭐ Featured Activity</span>

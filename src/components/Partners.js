@@ -154,10 +154,7 @@ const Partners = () => {
             <div className="stat-number">15</div>
             <div className="stat-label">Countries</div>
           </div>
-          <div className="stat-item">
-            <div className="stat-number">$10M+</div>
-            <div className="stat-label">Funding Mobilized</div>
-          </div>
+    
           <div className="stat-item">
             <div className="stat-number">100+</div>
             <div className="stat-label">Joint Projects</div>
