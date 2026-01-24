@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3>AJHealth Research Consultancy</h3>
           <p>
-            Advancing health equity through evidence-based consultancy, 
+            Advancing health through evidence-based consultancy, 
             research, and strategic partnerships worldwide.
           </p>
           <div className="social-links">

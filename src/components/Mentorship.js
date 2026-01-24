@@ -5,18 +5,23 @@ import heroImg1 from "../assets/images/m1.jpeg";
 import heroImg2 from "../assets/images/m2.jpeg";
 import heroImg3 from "../assets/images/m3.jpeg";
 
+import menteeImg1 from "../assets/images/mentee1.jpeg";
+import menteeImg2 from "../assets/images/mentee2.jpeg";
+import menteeImg3 from "../assets/images/mentee3.jpeg";
+import menteeImg4 from "../assets/images/mentee4.jpeg";
 
 const Mentorship = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Mentorship categories
   const categories = [
     { id: 'all', name: 'All Activities' },
-    { id: 'workshops', name: 'Workshops', icon: '👨‍🏫' },
-    { id: 'seminars', name: 'Seminars', icon: '🎤' },
-    { id: 'training', name: 'Training Sessions', icon: '👥' },
-    { id: 'field', name: 'Field Work', icon: '🌍' }
+    { id: 'Conferences', name: 'Conferences', icon: '👨‍🏫' },
+    { id: 'mentorship', name: 'Mentorship', icon: '🎤' },
+ 
   ];
 
   // Mentorship activities with images
@@ -35,7 +40,29 @@ const Mentorship = () => {
     {
       id: 2,
       title: 'Data Analytics Training',
-      category: 'training',
+      category: 'mentorship',
+      date: 'February 2024',
+      location: 'Kumasi, Ghana',
+      description: 'Hands-on training in healthcare data analysis using modern tools.',
+      imageUrl: heroImg2,
+      attendees: '35 Health Professionals',
+      featured: true
+    },
+        {
+      id: 3,
+      title: 'Data Analytics Training',
+      category: 'mentorship',
+      date: 'February 2024',
+      location: 'Kumasi, Ghana',
+      description: 'Hands-on training in healthcare data analysis using modern tools.',
+      imageUrl: heroImg2,
+      attendees: '35 Health Professionals',
+      featured: true
+    },
+        {
+      id: 4,
+      title: 'Data Analytics Training',
+      category: 'mentorship',
       date: 'February 2024',
       location: 'Kumasi, Ghana',
       description: 'Hands-on training in healthcare data analysis using modern tools.',
@@ -44,19 +71,50 @@ const Mentorship = () => {
       featured: true
     },
     {
-      id: 3,
+      id: 5,
       title: 'Global Health Seminar Series',
-      category: 'seminars',
+      category: 'mentorship',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
-      imageUrl: heroImg3,
+      imageUrl: menteeImg1,
       attendees: '200+ Online Participants',
       featured: false
     },
-
-
-
+        {
+      id: 6,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg2,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+        {
+      id: 7,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg3,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+            {
+      id: 8,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg4,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+    // Add more images here as needed
   ];
 
   // Filter activities based on active tab
@@ -64,77 +122,65 @@ const Mentorship = () => {
     ? mentorshipActivities 
     : mentorshipActivities.filter(activity => activity.category === activeTab);
 
-  // Open image modal
-  const openImageModal = (activity) => {
-    setSelectedImage(activity);
+  // Open lightbox
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setIsLightboxOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
-  // Close image modal
-  const closeImageModal = () => {
-    setSelectedImage(null);
+  // Close lightbox
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
     document.body.style.overflow = 'auto';
   };
 
-  // Handle keyboard navigation
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape' && selectedImage) {
-      closeImageModal();
-    }
+  // Navigate to next image
+  const nextImage = () => {
+    setLightboxIndex((prevIndex) => 
+      (prevIndex + 1) % filteredActivities.length
+    );
   };
 
+  // Navigate to previous image
+  const prevImage = () => {
+    setLightboxIndex((prevIndex) => 
+      prevIndex === 0 ? filteredActivities.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Handle keyboard navigation
   React.useEffect(() => {
-    if (selectedImage) {
-      document.addEventListener('keydown', handleKeyDown);
-    }
+    const handleKeyDown = (e) => {
+      if (isLightboxOpen) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+          nextImage();
+        } else if (e.key === 'ArrowLeft') {
+          prevImage();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [selectedImage]);
+  }, [isLightboxOpen]);
 
   return (
     <section id="mentorship" className="mentorship-section">
       <div className="mentorship-container">
         {/* Header */}
         <div className="mentorship-header">
-          <h2>Mentorship & Capacity Building</h2>
+          <h2>Mentorship Gallery</h2>
           <p className="mentorship-subtitle">
-            Empowering healthcare professionals through hands-on training, workshops, 
-            and field experiences to advance health equity expertise.
+            Browse through our mentorship activities, workshops, and training sessions. 
+            Click on any image to view it in full size.
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="mentorship-stats">
-          <div className="stat-card">
-            <div className="stat-icon">👨‍🎓</div>
-            <div className="stat-content">
-              <h3>500+</h3>
-              <p>Professionals Trained</p>
-            </div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-icon">🏛️</div>
-            <div className="stat-content">
-              <h3>50+</h3>
-              <p>Workshops Conducted</p>
-            </div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-icon">🌍</div>
-            <div className="stat-content">
-              <h3>15</h3>
-              <p>Countries Reached</p>
-            </div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-icon">🤝</div>
-            <div className="stat-content">
-              <h3>100+</h3>
-              <p>Partner Institutions</p>
-            </div>
-          </div>
-        </div>
 
         {/* Filter Tabs */}
         <div className="mentorship-tabs">
@@ -150,27 +196,32 @@ const Mentorship = () => {
           ))}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="mentorship-gallery">
-          {filteredActivities.map(activity => (
+        {/* Gallery Grid - Updated */}
+        <div className="gallery-grid">
+          {filteredActivities.map((activity, index) => (
             <div 
               key={activity.id} 
               className={`gallery-item ${activity.featured ? 'featured' : ''}`}
-              onClick={() => openImageModal(activity)}
+              onClick={() => openLightbox(index)}
             >
-              {/* Image */}
-              <div 
-                className="activity-image"
-                style={{ backgroundImage: `url(${activity.imageUrl})` }}
-              >
-                <div className="image-overlay">
-                  <span className="view-text">View Details</span>
+              <div className="gallery-image-container">
+                <img 
+                  src={activity.imageUrl} 
+                  alt={activity.title}
+                  className="gallery-image"
+                  loading="lazy"
+                />
+                <div className="gallery-overlay">
+                  <div className="overlay-content">
+                    <span className="view-icon">🔍</span>
+                    <span className="view-text">Click to View</span>
+                  </div>
                 </div>
                 
                 {/* Category Badge */}
                 <div className="category-badge">
                   {categories.find(c => c.id === activity.category)?.icon}
-                  {activity.category.charAt(0).toUpperCase() + activity.category.slice(1)}
+                  <span>{activity.category.charAt(0).toUpperCase() + activity.category.slice(1)}</span>
                 </div>
                 
                 {/* Featured Badge */}
@@ -179,18 +230,13 @@ const Mentorship = () => {
                 )}
               </div>
 
-              {/* Activity Info */}
-              <div className="activity-info">
-                <div className="activity-meta">
-                  <span className="activity-date">{activity.date}</span>
-                  <span className="activity-location">{activity.location}</span>
+              {/* Gallery Item Info */}
+              <div className="gallery-item-info">
+                <div className="gallery-item-meta">
+                  {/* <span className="gallery-item-date">{activity.date}</span> */}
+                  {/* <span className="gallery-item-location">{activity.location}</span> */}
                 </div>
-                <h3 className="activity-title">{activity.title}</h3>
-                <p className="activity-description">{activity.description}</p>
-                <div className="activity-footer">
-                  <span className="attendees">{activity.attendees}</span>
-                  <button className="learn-more-btn">Learn More</button>
-                </div>
+                {/* <h3 className="gallery-item-title">{activity.title}</h3> */}
               </div>
             </div>
           ))}
@@ -227,51 +273,70 @@ const Mentorship = () => {
         </div>
       </div>
 
-      {/* Image Modal */}
-      {selectedImage && (
-        <div className="image-modal" onClick={closeImageModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeImageModal}>
-              &times;
-            </button>
-            
-            <div className="modal-image-container">
+      {/* Lightbox Modal */}
+      {isLightboxOpen && filteredActivities[lightboxIndex] && (
+        <div className="lightbox" onClick={closeLightbox}>
+          <button 
+            className="lightbox-close" 
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+          >
+            ✕
+          </button>
+          
+          <button 
+            className="lightbox-nav prev" 
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+          
+          <button 
+            className="lightbox-nav next" 
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-image-container">
               <img 
-                src={selectedImage.imageUrl} 
-                alt={selectedImage.title}
-                className="modal-image"
+                src={filteredActivities[lightboxIndex].imageUrl} 
+                alt={filteredActivities[lightboxIndex].title}
+                className="lightbox-image"
               />
             </div>
             
-            <div className="modal-info">
-              <div className="modal-header">
-                <span className="modal-category">
-                  {selectedImage.category.charAt(0).toUpperCase() + selectedImage.category.slice(1)}
+            <div className="lightbox-info">
+              <div className="lightbox-header">
+                <span className="lightbox-category">
+                  {filteredActivities[lightboxIndex].category.charAt(0).toUpperCase() + 
+                   filteredActivities[lightboxIndex].category.slice(1)}
                 </span>
-                <span className="modal-date">{selectedImage.date}</span>
+                <span className="lightbox-counter">
+                  {lightboxIndex + 1} / {filteredActivities.length}
+                </span>
               </div>
               
-              <h3 className="modal-title">{selectedImage.title}</h3>
-              <p className="modal-location">{selectedImage.location}</p>
-              <p className="modal-description">{selectedImage.description}</p>
-              <p className="modal-attendees">
-                <strong>Participants:</strong> {selectedImage.attendees}
+              <h3 className="lightbox-title">{filteredActivities[lightboxIndex].title}</h3>
+              <p className="lightbox-location">{filteredActivities[lightboxIndex].location}</p>
+              <p className="lightbox-date">{filteredActivities[lightboxIndex].date}</p>
+              <p className="lightbox-description">{filteredActivities[lightboxIndex].description}</p>
+              <p className="lightbox-attendees">
+                <strong>Participants:</strong> {filteredActivities[lightboxIndex].attendees}
               </p>
               
-              <div className="modal-actions">
-                <button 
-                  className="modal-button"
-                  onClick={() => {
-                    const contact = document.getElementById('contact');
-                    if (contact) {
-                      closeImageModal();
-                      contact.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  Join Similar Program
-                </button>
-              </div>
+              {filteredActivities[lightboxIndex].featured && (
+                <span className="lightbox-featured">⭐ Featured Activity</span>
+              )}
             </div>
           </div>
         </div>
