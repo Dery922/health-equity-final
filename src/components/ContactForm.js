@@ -176,7 +176,13 @@ const ContactForm = () => {
             <div className="info-icon">📞</div>
             <h4>Call Us</h4>
             <p> +233 244 288 266 /+233 244 297 950</p>
-            <p>Location : No.23 Asafoastse Baakonko Street, Camara, Dansoma</p>
+          
+          </div>
+             <div className="info-item">
+            <div className="info-icon">🗺️
+            </div>
+            <h4>Location</h4>
+            <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p>
           </div>
           <div className="info-item">
             <div className="info-icon">⏰</div>
