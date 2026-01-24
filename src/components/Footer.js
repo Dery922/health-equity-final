@@ -5,11 +5,9 @@ const Footer = () => {
   const [email, setEmail] = useState('');
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: 'in', url: '#' },
-    { name: 'Twitter', icon: '𝕏', url: '#' },
+    { name: 'LinkedIn', icon: 'in', url: 'https://www.linkedin.com/company/aj-health-consult/' },
     { name: 'Facebook', icon: 'f', url: '#' },
-    { name: 'YouTube', icon: '▶', url: '#' },
-    { name: 'Instagram', icon: '📸', url: '#' },
+    { name: 'Instagram', icon: '📸', url: 'https://www.instagram.com/ajhealth.research/' },
 
   ];
 
@@ -25,10 +23,11 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>AJHealth Research Consultancy</h3>
+          <h3>AJ Health And Research Consultancy</h3>
           <p>
-            Advancing health through evidence-based consultancy, 
-            research, and strategic partnerships worldwide.
+            Driving health impact through research,
+            innovation & Systens Strenghtening 
+            
           </p>
           <div className="social-links">
             {socialLinks.map(link => (

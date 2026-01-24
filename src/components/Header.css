@@ -242,7 +242,7 @@
 
 /* Desktop CTA Button */
 .desktop-cta-button {
-  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -256,7 +256,7 @@
 }
 
 .desktop-cta-button:hover {
-  background: linear-gradient(135deg, #1d504d, #2a6e6a);
+
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(42, 110, 106, 0.3);
 }

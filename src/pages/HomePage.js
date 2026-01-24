@@ -9,7 +9,7 @@ import './HomePage.css';
 import Partners from '../components/Partners';
 import Publications from '../components/Publications';
 import Mentorship from '../components/Mentorship';
-import image1 from "../assets/images/mission.jpeg"
+import image1 from "../assets/images/ourmis.jpeg"
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -54,19 +54,14 @@ const HomePage = () => {
       
       <section className="mission-section" id="about">
         <div className="mission-container">
-          <div className="mission-content">
-            <h2>Our Mission: Transformative AJHealth and Research Consultancy</h2>
-            <p>
-           Our mission is to advance health equity and system resilience in 
-           Ghana by
-            providing expert, integrated consultancy 
-           services that translate evidence into actionable strategies, .
-            </p>
-            <p>
-          strengthen local capacity, and optimize resource utilization across 
-          public health programs, supply chains, and clinical care—ensuring quality, 
-          safety, and sustainability in every intervention.
-            </p>
+          <div className="mission-content" style={{textAlign:"left"}}>
+            <h2>Our Mission</h2>
+            <p>At AJ Health and Research Consultancy, 
+              our mission is to advance health equity and strengthen 
+              system resilience across Ghana. We provide expert, 
+              integrated consultancy services that translate evidence into action, build local capacity, and optimize resources across public health programs, supply chains, and clinical carevensuring quality,
+               safety, and sustainability in every intervention.</p>
+ 
           </div>
           <div className="mission-image">
             <span><img style={{width:700,height:400}} src={image1} /></span>
@@ -76,7 +71,7 @@ const HomePage = () => {
       <Team />
       
       <ContactForm />
-      <Publications />
+ 
       <Mentorship />
       <Partners />
       <Footer />

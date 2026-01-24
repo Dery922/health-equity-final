@@ -1,24 +1,10 @@
-/* Partners.css - Horizontal Carousel */
+/* Partners.css - Linear Carousel */
 .partners-section {
   padding: 6rem 1rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #f0f9f9 100%);
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-}
-
-
-.partner-logo {
-  width: 20px;
-  height: 72px;
-  border-radius: 16px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #f8f9fb; /* soft neutral */
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
 .partners-container {
@@ -29,7 +15,7 @@
 /* Header */
 .partners-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .partners-header h2 {
@@ -47,122 +33,202 @@
   line-height: 1.6;
 }
 
-/* Carousel Container */
-.carousel-container {
+/* Carousel Wrapper */
+.carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 3rem;
-  padding: 0 50px;
-  max-width: 1200px;
+  margin-bottom: 3rem;
+  padding: 0 80px;
 }
 
 /* Navigation Buttons */
-.carousel-btn {
+.carousel-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: white;
   border: 2px solid #2a6e6a;
   border-radius: 50%;
   color: #2a6e6a;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   cursor: pointer;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-btn:hover {
+.carousel-nav:hover {
   background: #2a6e6a;
   color: white;
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 5px 15px rgba(42, 110, 106, 0.3);
+  box-shadow: 0 6px 20px rgba(42, 110, 106, 0.3);
 }
 
-.prev-btn {
+.carousel-nav.prev {
   left: 0;
 }
 
-.next-btn {
+.carousel-nav.next {
   right: 0;
 }
 
-/* Carousel */
-.carousel {
+/* Carousel Container */
+.carousel-container {
   width: 100%;
   overflow: hidden;
+  border-radius: 16px;
+  padding: 2rem 0;
 }
 
+/* Carousel Track */
 .carousel-track {
   display: flex;
-  justify-content: center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   gap: 2rem;
-  transition: transform 0.5s ease;
-  padding: 1rem 0;
+  width: 100%;
+}
+
+/* Partner Slide */
+.partner-slide {
+  flex: 0 0 calc(100% / 5);
+  min-width: 0;
+  padding: 0 0.5rem;
 }
 
 /* Partner Card */
 .partner-card {
-  flex: 0 0 calc((100% / 5) - 2rem);
-  min-width: 200px;
   background: white;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 1px solid #e0f0ef;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 1px solid #e6f7f6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
 .partner-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  border-color: #4a9d9c;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(42, 110, 106, 0.2);
+  border-color: #2a6e6a;
+}
+
+/* Logo Container */
+.partner-logo-container {
+  position: relative;
+  height: 120px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid #f0f9f9;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .partner-logo {
-  font-size: 3rem;
-  margin-bottom: 1.2rem;
-  color: #2a6e6a;
-  transition: transform 0.3s ease;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.4s ease;
+  filter: grayscale(20%);
+  opacity: 0.9;
 }
 
 .partner-card:hover .partner-logo {
   transform: scale(1.1);
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
-.partner-info h4 {
+/* Logo Overlay */
+.logo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(29, 80, 77, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.partner-card:hover .logo-overlay {
+  opacity: 1;
+}
+
+.view-text {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+/* Partner Info */
+.partner-info {
+  text-align: center;
+  flex-grow: 1;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.partner-name {
   font-size: 1.1rem;
   color: #1d504d;
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.3;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-.partner-info p {
-  font-size: 0.9rem;
+.partner-type {
+  font-size: 0.85rem;
   color: #666;
   margin: 0;
+  padding: 0.4rem 0.8rem;
+  background: #e6f7f6;
+  border-radius: 12px;
+  display: inline-block;
   font-weight: 500;
 }
 
-/* Dots Indicator */
+/* Carousel Dots */
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-bottom: 3rem;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
+.carousel-dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #c2e9eb;
   border: none;
@@ -171,12 +237,13 @@
   transition: all 0.3s ease;
 }
 
-.dot.active {
+.carousel-dot.active {
   background: #2a6e6a;
   transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(42, 110, 106, 0.2);
 }
 
-.dot:hover {
+.carousel-dot:hover {
   background: #4a9d9c;
   transform: scale(1.2);
 }
@@ -186,89 +253,151 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
-  max-width: 900px;
+  margin-bottom: 4rem;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .stat-item {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  border: 1px solid #e0f0ef;
 }
 
 .stat-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(42, 110, 106, 0.1);
 }
 
 .stat-number {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #2a6e6a;
   margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .stat-label {
   font-size: 1rem;
   color: #666;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* CTA */
 .partners-cta {
   text-align: center;
+  background: linear-gradient(135deg, #2a6e6a 0%, #1d504d 100%);
+  border-radius: 20px;
+  padding: 4rem;
+  color: white;
+  margin-top: 3rem;
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
-  color: white;
+  background: white;
+  color: #2a6e6a;
   border: none;
-  padding: 1rem 3rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 1.2rem 3.5rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(42, 110, 106, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, #1d504d, #2a6e6a);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(42, 110, 106, 0.3);
+  background: #f0f9f9;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .partner-card {
-    flex: 0 0 calc((100% / 4) - 2rem);
+.cta-subtext {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+  .carousel-wrapper {
+    padding: 0 100px;
+  }
+  
+  .carousel-nav {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .partner-slide {
+    flex: 0 0 calc(100% / 5.5);
   }
 }
 
+/* Desktop */
+@media (max-width: 1200px) {
+  .carousel-wrapper {
+    padding: 0 70px;
+  }
+  
+  .partner-slide {
+    flex: 0 0 calc(100% / 4);
+  }
+  
+  .partner-logo-container {
+    height: 110px;
+  }
+}
+
+/* Tablet */
 @media (max-width: 992px) {
   .partners-header h2 {
     font-size: 2.2rem;
   }
   
-  .partner-card {
-    flex: 0 0 calc((100% / 3) - 2rem);
-  }
-  
-  .carousel-container {
+  .carousel-wrapper {
     padding: 0 60px;
   }
   
-  .carousel-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
+  .carousel-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .partner-slide {
+    flex: 0 0 calc(100% / 3);
+  }
+  
+  .partner-logo-container {
+    height: 100px;
+  }
+  
+  .partner-name {
+    font-size: 1rem;
+  }
+  
+  .partners-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .partners-section {
     padding: 4rem 1rem;
@@ -282,52 +411,67 @@
     font-size: 1rem;
   }
   
-  .partner-card {
-    flex: 0 0 calc((100% / 2) - 2rem);
-    min-width: 180px;
-    padding: 1.5rem 1rem;
-  }
-  
-  .partner-logo {
-    font-size: 2.5rem;
-  }
-  
-  .partner-info h4 {
-    font-size: 1rem;
-  }
-  
-  .carousel-container {
+  .carousel-wrapper {
     padding: 0 50px;
   }
   
-  .partners-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  .carousel-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
   }
   
-  .stat-item {
-    padding: 1rem;
+  .partner-slide {
+    flex: 0 0 calc(100% / 2);
+  }
+  
+  .partner-logo-container {
+    height: 90px;
+  }
+  
+  .partner-card {
+    padding: 4rem;
+    margin:2rem;
+  }
+  
+  .partners-cta {
+    padding: 3rem 2rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 300px;
   }
   
   .stat-number {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 576px) {
-  .partner-card {
-    flex: 0 0 100%;
-    min-width: 250px;
-  }
-  
-  .carousel-container {
+  .carousel-wrapper {
     padding: 0 40px;
   }
   
-  .carousel-btn {
+  .carousel-nav {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
+  }
+  
+  .partner-slide {
+    flex: 0 0 100%;
+  }
+  
+  .partner-logo-container {
+    height: 100px;
+  }
+  
+  .partner-name {
+    height: auto;
   }
   
   .partners-stats {
@@ -335,30 +479,42 @@
     gap: 1rem;
   }
   
-  .cta-button {
-    width: 100%;
-    max-width: 300px;
+  .stat-item {
+    padding: 1.5rem;
   }
 }
 
-/* Animation */
-@keyframes fadeIn {
+/* Extra Small Mobile */
+@media (max-width: 380px) {
+  .carousel-wrapper {
+    padding: 0 30px;
+  }
+  
+  .carousel-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 .partner-card {
-  animation: fadeIn 0.5s ease-out;
+  animation: slideIn 0.5s ease-out;
 }
 
-/* Infinite scroll effect */
-@keyframes scroll {
+/* Infinite scroll animation (optional) */
+@keyframes infiniteScroll {
   0% {
     transform: translateX(0);
   }
@@ -367,11 +523,22 @@
   }
 }
 
-.carousel-track.scrolling {
-  animation: scroll 30s linear infinite;
+.carousel-track.auto-scroll {
+  animation: infiniteScroll 30s linear infinite;
 }
 
 /* Pause animation on hover */
-.carousel-container:hover .carousel-track.scrolling {
+.carousel-wrapper:hover .carousel-track.auto-scroll {
   animation-play-state: paused;
+}
+
+/* Smooth transition for dots */
+.carousel-dot {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure logos maintain quality */
+.partner-logo {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }

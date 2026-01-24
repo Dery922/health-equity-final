@@ -23,23 +23,13 @@ const Mentorship = () => {
   const categories = [
     { id: 'all', name: 'All Activities' },
     { id: 'conferences', name: 'Conferences', icon: '👨‍🏫' },
-    { id: 'mentorship', name: 'Mentorship', icon: '🎤' },
+    { id: 'mentorship', name: 'Menteers', icon: '🎤' },
  
   ];
 
   // Mentorship activities with images
   const mentorshipActivities = [
-    {
-      id: 1,
-      title: 'Health Research Methodology Workshop',
-      category: 'workshops',
-      date: 'March 2024',
-      location: 'Accra, Ghana',
-      description: 'Training early-career researchers in advanced health research methodologies.',
-      imageUrl: heroImg1,
-      attendees: '50+ Participants',
-      featured: true
-    },
+
     {
       id: 2,
       title: 'Data Analytics Training',
@@ -234,13 +224,7 @@ const Mentorship = () => {
               </div>
 
               {/* Gallery Item Info */}
-              <div className="gallery-item-info">
-                <div className="gallery-item-meta">
-                  {/* <span className="gallery-item-date">{activity.date}</span> */}
-                  {/* <span className="gallery-item-location">{activity.location}</span> */}
-                </div>
-                {/* <h3 className="gallery-item-title">{activity.title}</h3> */}
-              </div>
+      
             </div>
           ))}
         </div>

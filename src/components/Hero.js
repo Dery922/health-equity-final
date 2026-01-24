@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
 // Import your hero images
-import heroImg1 from "../assets/images/1.jpg";
+import heroImg1 from "../assets/images/conf.jpeg";
 import heroImg2 from "../assets/images/our.jpeg";
 import heroImg3 from "../assets/images/pic1.jpeg";
 import heroImg4 from "../assets/images/pic2.jpeg";
