@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
+import Linkedin from "../assets/images/linkedin.svg"
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -182,6 +183,19 @@ const ContactForm = () => {
             <div className="info-icon">🗺️
             </div>
             <h4>Location</h4>
+            <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p>
+          </div>
+            <div className="info-item">
+            <div className="info-icon">
+              <img style={{width:50, height: 50,}} src={Linkedin} alt={Linkedin} />
+            </div>
+            <h4>LinkedIn</h4>
+            {/* <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p> */}
+          </div>
+                  <div className="info-item">
+            <div className="info-icon">🗺️
+            </div>
+            <h4>Instagram</h4>
             <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p>
           </div>
           <div className="info-item">

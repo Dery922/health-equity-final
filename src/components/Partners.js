@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Partners.css';
 import partnerImg from "../assets/images/ghanacollege.jpeg";
+import partnerImg2 from "../assets/images/ghanahealth.jpeg";
+import partnerImg3 from "../assets/images/ghanahealth.jpeg"
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,9 +1,9 @@
 /* Hero.css */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 0vh; /* Changed from 80vh to 90vh */
   margin-top: 80px;
-  padding: 6rem 1rem 4rem;
+  padding: 8rem 1rem 6rem; /* Increased top and bottom padding */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,15 +45,15 @@
   color: #ffffff;
   position: relative;
   z-index: 2;
-  min-height: 200px; /* Add this to ensure space for content */
+  min-height: 350px; /* Increased from 300px */
 }
 
 /* Slide Content Wrapper */
 .slide-content-wrapper {
   position: relative;
   min-height: 200px;
-    min-height: 250px; /* Increase this */
-  margin-bottom: 2rem; /* Add margin at bottom */
+  min-height: 280px; /* Increased from 250px */
+  margin-bottom: 2.5rem; /* Increased margin */
 }
 
 .slide-content {
@@ -65,6 +65,7 @@
   transform: translateY(20px);
   transition: all 0.8s ease;
   pointer-events: none;
+    padding-bottom: 1rem; /* Add padding at bottom of content */
 }
 
 .slide-content.active {
@@ -93,12 +94,14 @@
 
 .hero-content p {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.7; /* Reduced from 1.8 for better spacing */
   opacity: 0.95;
-  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   animation: fadeInUp 0.8s ease 0.3s both;
+    margin-bottom: 3rem; /* Increased from 2.5rem to 3rem */
 }
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -117,7 +120,8 @@
   justify-content: center;
   flex-wrap: wrap;
   animation: fadeIn 0.8s ease 0.6s both;
-    margin-top: 2rem; /* Add this to separate from text */
+
+      margin-top: 8.5rem; /* Increased from 2rem */
 }
 
 @keyframes fadeIn {
@@ -170,6 +174,7 @@
   position: relative;
   z-index: 2;
   animation: fadeIn 0.8s ease 0.9s both;
+    margin-bottom: 2rem; /* Added bottom margin */
 }
 
 .stat-item {
@@ -287,16 +292,13 @@
     padding: 4rem 1rem 2rem;
   }
 
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
+
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
+      margin-top: 3rem; /* Increased from 2rem to 3rem */
   }
 
   .primary-btn,

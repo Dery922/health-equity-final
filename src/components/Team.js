@@ -6,6 +6,7 @@ import teamImg2 from "../assets/images/healthpolicy.jpeg";
 import teamImg3 from "../assets/images/bonne.jpeg";
 import teamImg4 from "../assets/images/joss.jpeg";
 import teamImg5 from "../assets/images/bonne.jpeg"
+import teamImg6 from "../assets/images/glory.jpeg"
 
 const Team = () => {
   const teamMembers = [
@@ -32,7 +33,7 @@ const Team = () => {
       name: "Gloria Agyekum",
       position: "Monitoring, Evaluation and Communications Lead",
       expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
-      image: "👨‍💼", // Placeholder emoji
+      image: teamImg6,
       linkedin: "#",
       twitter: "#"
     },

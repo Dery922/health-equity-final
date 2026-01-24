@@ -172,10 +172,11 @@ const Publications = () => {
       <div className="publications-container">
         {/* Header */}
         <div className="publications-header">
-          <h2>Publications & Projects</h2>
+          <h2>Conferences and Mentorship</h2>
           <p className="publications-subtitle">
-            Explore our research papers, conference proceedings, and project outcomes 
-            that demonstrate our impact in advancing health equity.
+          This section highlights the conferences participated in and the sessions 
+          undertaken, showcasing our contributions through presentations, 
+          panel discussions, workshops, and knowledge-sharing engagements
           </p>
         </div>
 

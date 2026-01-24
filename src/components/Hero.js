@@ -15,13 +15,13 @@ import heroImg4 from "../assets/images/pic2.jpeg";
   const heroImages = [
     {
       image: heroImg1,
-      title: "Bridging Evidence into Action for Healthier Ghana",
-      description: "We are an independent health and research consultancy dedicated ."
+      title: "Bridging Evidence   ",
+      description: "We are an independent health and research..."
     },
     {
       image: heroImg2,
       title: "Evidence-Based Solutions",
-      description: "Specializing in research, data analytics, and health economics to drive meaningful change in healthcare systems."
+      description: "Specializing in research, data analytics, and health economics to drive......"
     },
     {
       image: heroImg3,
@@ -145,8 +145,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
                   <>
                     {" "}As a not-for-profit firm, we specialize in supporting 
                     businesses and nonprofits in navigating challenges and 
-                    unlocking opportunities in the areas of research, data analytics, 
-                    health economics evaluation, and project management.
+                    unlocking opportunities....
                   </>
                 )}
               </p>
