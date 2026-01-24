@@ -66,8 +66,8 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Stay Updated</h4>
           <p>
-            Subscribe to our newsletter for the latest in health equity 
-            research and insights.
+            Subscribe to our newsletter for the latest in AJhealth 
+            research consultancy and insights.
           </p>
           <form className="newsletter-form" onSubmit={handleSubmit}>
             <input
