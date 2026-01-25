@@ -23,7 +23,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>AJ Health And Research Consultancy</h3>
+          <h3>AJ Health & Research Consultancy</h3>
           <p>
             Driving health impact through research,
             innovation & Systens Strenghtening 

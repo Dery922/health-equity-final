@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
 import './Publications.css';
+import Header from './Header';
+
+// Import document type icons
+import pdfIcon from "../assets/icons/pdf-icon.svg"
+import docIcon from '../assets/icons/doc-icon.svg';
+import pptIcon from '../assets/icons/ppt-icon.svg';
+import xlsIcon from '../assets/icons/ppt-icon.svg';
 
 const Publications = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(0);
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedDocument, setSelectedDocument] = useState(0);
+  const [uploading, setUploading] = useState(false);
+  const [showUploadForm, setShowUploadForm] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  // Publication categories
-  const publicationCategories = [
+  // Document categories
+  const documentCategories = [
+    {
+      id: 'all',
+      name: 'All Documents',
+      icon: '📚',
+      color: '#02b94b'
+    },
     {
       id: 'research',
       name: 'Research Papers',
@@ -15,368 +30,566 @@ const Publications = () => {
       color: '#2a6e6a'
     },
     {
-      id: 'conferences',
-      name: 'Conferences',
-      icon: '🎤',
-      color: '#4a9d9c'
-    },
-    {
       id: 'reports',
       name: 'Annual Reports',
       icon: '📊',
-      color: '#2a6e6a'
+      color: '#4a9d9c'
     },
     {
-      id: 'briefs',
-      name: 'Technical Briefs',
+      id: 'conferences',
+      name: 'Conference Materials',
+      icon: '🎤',
+      color: '#1d3b55'
+    },
+    {
+      id: 'guidelines',
+      name: 'Guidelines',
       icon: '📋',
-      color: '#4a9d9c'
+      color: '#02b94b'
+    },
+    {
+      id: 'presentations',
+      name: 'Presentations',
+      icon: '📽️',
+      color: '#2a6e6a'
     }
   ];
 
-  // Publication data with images
-  const publications = [
+  // Document types with icons
+  const fileTypes = {
+    pdf: { icon: pdfIcon, color: '#FF6B6B', label: 'PDF' },
+    doc: { icon: docIcon, color: '#4D96FF', label: 'DOC' },
+    docx: { icon: docIcon, color: '#4D96FF', label: 'DOCX' },
+    ppt: { icon: pptIcon, color: '#FFD166', label: 'PPT' },
+    pptx: { icon: pptIcon, color: '#FFD166', label: 'PPTX' },
+    xls: { icon: xlsIcon, color: '#06D6A0', label: 'XLS' },
+    xlsx: { icon: xlsIcon, color: '#06D6A0', label: 'XLSX' }
+  };
+
+  // Document data (this would come from your backend)
+  const [documents, setDocuments] = useState([
     {
       id: 1,
-      title: 'Health Equity in Rural Communities',
+      title: 'Health Equity in Rural Communities - Research Paper',
       category: 'research',
-      year: '2023',
-      authors: 'Dr. Sarah Johnson et al.',
+      fileType: 'pdf',
+      size: '2.5 MB',
+      date: '2023-11-15',
+      author: 'Dr. Sarah Johnson',
+      downloads: 245,
       description: 'Comprehensive study on healthcare access disparities in rural areas across Ghana. This research examines socioeconomic factors affecting healthcare delivery.',
-      imageUrl: '/assets/images/1.jpg',
-      downloadLink: '#',
-      featured: true,
-      stats: [
-        { label: 'Duration', value: '6 months' },
-        { label: 'Sites', value: '15 rural communities' },
-        { label: 'Participants', value: '500+' }
-      ],
-      details: [
-        'Examined healthcare access in 15 rural communities',
-        'Collected data from 500+ participants',
-        'Published in International Health Journal',
-        'Used mixed-methods research approach'
-      ]
+      tags: ['health equity', 'rural health', 'research', 'ghana'],
+      featured: true
     },
     {
       id: 2,
-      title: 'Global Health Conference 2023',
-      category: 'conferences',
-      year: '2023',
-      authors: 'Various Speakers',
-      description: 'Proceedings from the annual global health equity conference featuring international experts discussing innovative approaches to healthcare delivery.',
-      imageUrl: '/assets/images/2.jpg',
-      downloadLink: '#',
-      stats: [
-        { label: 'Speakers', value: '25+' },
-        { label: 'Countries', value: '15' },
-        { label: 'Sessions', value: '30+' }
-      ],
-      details: [
-        'Featured 25+ international speakers',
-        'Representation from 15 countries',
-        '30+ technical sessions',
-        'Networking with 500+ professionals'
-      ]
+      title: 'Annual Impact Report 2023',
+      category: 'reports',
+      fileType: 'pdf',
+      size: '4.2 MB',
+      date: '2023-12-01',
+      author: 'AJHealth Research Team',
+      downloads: 189,
+      description: 'Comprehensive overview of our impact and achievements in advancing health equity across Sub-Saharan Africa through evidence-based interventions.',
+      tags: ['annual report', 'impact', 'africa', 'statistics'],
+      featured: true
     },
     {
       id: 3,
-      title: 'Annual Impact Report 2022',
-      category: 'reports',
-      year: '2022',
-      authors: 'AJHealth Research Team',
-      description: 'Comprehensive overview of our impact and achievements in advancing health equity across Sub-Saharan Africa through evidence-based interventions.',
-      imageUrl: '/assets/images/1.jpg',
-      downloadLink: '#',
-      featured: true,
-      stats: [
-        { label: 'Projects', value: '50+' },
-        { label: 'Partners', value: '30+' },
-        { label: 'Countries', value: '10' }
-      ],
-      details: [
-        'Implemented 50+ health equity projects',
-        'Collaborated with 30+ partner organizations',
-        'Worked across 10 African countries',
-        'Trained 200+ healthcare professionals'
-      ]
+      title: 'Global Health Conference 2023 - Presentation',
+      category: 'conferences',
+      fileType: 'pptx',
+      size: '15.8 MB',
+      date: '2023-10-20',
+      author: 'Dr. Michael Chen',
+      downloads: 312,
+      description: 'Presentation from the annual global health equity conference discussing innovative approaches to healthcare delivery.',
+      tags: ['conference', 'presentation', 'global health'],
+      featured: false
     },
     {
       id: 4,
-      title: 'Data Analytics in Healthcare',
-      category: 'briefs',
-      year: '2023',
-      authors: 'Michael Chen',
-      description: 'Technical guide on using data analytics for health equity. Covers methodologies, tools, and best practices for healthcare data analysis.',
-      imageUrl: '/assets/images/3.jpg',
-      downloadLink: '#',
-      stats: [
-        { label: 'Pages', value: '85' },
-        { label: 'Case Studies', value: '12' },
-        { label: 'Tools Covered', value: '8' }
-      ],
-      details: [
-        'Comprehensive 85-page technical guide',
-        'Includes 12 real-world case studies',
-        'Covers 8 data analytics tools',
-        'Step-by-step implementation guide'
-      ]
+      title: 'Data Analytics Toolkit for Healthcare',
+      category: 'guidelines',
+      fileType: 'docx',
+      size: '1.8 MB',
+      date: '2023-09-30',
+      author: 'Analytics Team',
+      downloads: 156,
+      description: 'Step-by-step guide on using data analytics tools for health equity research and program evaluation.',
+      tags: ['data analytics', 'toolkit', 'guide', 'healthcare'],
+      featured: false
     },
     {
       id: 5,
-      title: 'Maternal Health Interventions',
+      title: 'Maternal Health Program Evaluation',
       category: 'research',
-      year: '2023',
-      authors: 'Dr. Maria Rodriguez',
-      description: 'Evaluation of maternal health programs in West Africa focusing on reducing maternal mortality through community-based interventions.',
-      imageUrl: '/assets/images/2.jpg',
-      downloadLink: '#',
-      stats: [
-        { label: 'Duration', value: '18 months' },
-        { label: 'Health Facilities', value: '25' },
-        { label: 'Women Reached', value: '10,000+' }
-      ],
-      details: [
-        '18-month comprehensive evaluation',
-        'Covered 25 health facilities',
-        'Reached 10,000+ women',
-        'Reduced maternal mortality by 30%'
-      ]
+      fileType: 'pdf',
+      size: '3.1 MB',
+      date: '2023-08-25',
+      author: 'Dr. Maria Rodriguez',
+      downloads: 178,
+      description: 'Evaluation of maternal health programs in West Africa focusing on reducing maternal mortality.',
+      tags: ['maternal health', 'evaluation', 'west africa'],
+      featured: false
+    },
+    {
+      id: 6,
+      title: 'Budget and Expenditure Report 2023',
+      category: 'reports',
+      fileType: 'xlsx',
+      size: '2.9 MB',
+      date: '2023-12-15',
+      author: 'Finance Department',
+      downloads: 134,
+      description: 'Detailed financial report covering organizational expenses and budget allocations.',
+      tags: ['finance', 'budget', 'expenditure'],
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'Workshop on Health Economics',
+      category: 'conferences',
+      fileType: 'pdf',
+      size: '5.3 MB',
+      date: '2023-07-10',
+      author: 'Dr. James Wilson',
+      downloads: 267,
+      description: 'Workshop materials covering health economics principles and applications in developing countries.',
+      tags: ['workshop', 'health economics', 'training'],
+      featured: true
+    },
+    {
+      id: 8,
+      title: 'Clinical Guidelines for Malaria Treatment',
+      category: 'guidelines',
+      fileType: 'pdf',
+      size: '1.2 MB',
+      date: '2023-06-18',
+      author: 'Medical Advisory Board',
+      downloads: 423,
+      description: 'Updated clinical guidelines for malaria treatment and prevention in endemic regions.',
+      tags: ['malaria', 'clinical guidelines', 'treatment'],
+      featured: false
     }
-  ];
+  ]);
 
-  // Filter publications based on active filter
-  const filteredPublications = activeFilter === 'all' 
-    ? publications 
-    : publications.filter(pub => pub.category === activeFilter);
+  // New document form state
+  const [newDocument, setNewDocument] = useState({
+    title: '',
+    category: 'research',
+    fileType: 'pdf',
+    author: '',
+    description: '',
+    tags: ''
+  });
 
-  // Open image modal
-  const openImageModal = (imageUrl, title) => {
-    setSelectedImage({ imageUrl, title });
-    document.body.style.overflow = 'hidden';
+  // Filter documents based on active category and search query
+  const filteredDocuments = documents.filter(doc => {
+    const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
+    const matchesSearch = searchQuery === '' || 
+      doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      doc.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      doc.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
+
+  // Handle document upload
+  const handleUploadDocument = (e) => {
+    e.preventDefault();
+    setUploading(true);
+    
+    // Simulate upload process
+    setTimeout(() => {
+      const newDoc = {
+        id: documents.length + 1,
+        ...newDocument,
+        fileType: newDocument.fileType,
+        size: '0 MB', // This would come from the actual file
+        date: new Date().toISOString().split('T')[0],
+        downloads: 0,
+        tags: newDocument.tags.split(',').map(tag => tag.trim()),
+        featured: false
+      };
+      
+      setDocuments([newDoc, ...documents]);
+      setNewDocument({
+        title: '',
+        category: 'research',
+        fileType: 'pdf',
+        author: '',
+        description: '',
+        tags: ''
+      });
+      setShowUploadForm(false);
+      setUploading(false);
+      alert('Document uploaded successfully!');
+    }, 1500);
   };
 
-  // Close image modal
-  const closeImageModal = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = 'auto';
+  // Handle file selection
+  const handleFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const fileType = file.name.split('.').pop().toLowerCase();
+      setNewDocument(prev => ({
+        ...prev,
+        fileType: fileTypes[fileType] ? fileType : 'pdf'
+      }));
+    }
   };
 
-  // Select project
-  const selectProject = (index) => {
-    setSelectedProject(index);
+  // Handle document download
+  const handleDownload = (document) => {
+    // In a real app, this would trigger the actual file download
+    // For now, we'll just update the download count
+    setDocuments(docs => 
+      docs.map(doc => 
+        doc.id === document.id 
+          ? { ...doc, downloads: doc.downloads + 1 }
+          : doc
+      )
+    );
+    
+    alert(`Downloading: ${document.title}`);
+  };
+
+  // Format date
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
   };
 
   return (
-    <section id="publications" className="publications-section">
-      <div className="publications-container">
-        {/* Header */}
-        <div className="publications-header">
-          <h2>Conferences and Mentorship</h2>
-          <p className="publications-subtitle">
-          This section highlights the conferences participated in and the sessions 
-          undertaken, showcasing our contributions through presentations, 
-          panel discussions, workshops, and knowledge-sharing engagements
-          </p>
-        </div>
-
-        {/* Filter Tabs */}
-        <div className="filter-tabs">
-          <button 
-            className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('all')}
-          >
-            All Projects
-          </button>
-          {publicationCategories.map(category => (
-            <button
-              key={category.id}
-              className={`filter-btn ${activeFilter === category.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(category.id)}
-              style={{ '--category-color': category.color }}
-            >
-              <span className="category-icon">{category.icon}</span>
-              {category.name}
-            </button>
-          ))}
-        </div>
-
-        {/* Two Column Layout */}
-        <div className="publications-two-column">
-          {/* LEFT COLUMN - Image Gallery */}
-          <div className="image-gallery-column">
-            <div className="gallery-header">
-              <h3>Project Gallery</h3>
-              <p>Click on any image to view details</p>
+    <>
+      <Header />
+      <section id="publications" className="publications-section">
+        <div className="publications-container">
+          {/* Header with Search and Upload */}
+          <div className="publications-header">
+            <div className="header-content">
+              <h2>Document Repository</h2>
+              <p className="publications-subtitle">
+                Access and download our research papers, reports, guidelines, and conference materials. 
+                You can also contribute by uploading relevant documents.
+              </p>
             </div>
             
-            <div className="image-gallery">
-              {filteredPublications.map((publication, index) => (
-                <div 
-                  key={publication.id}
-                  className={`gallery-item ${index === selectedProject ? 'active' : ''}`}
-                  onClick={() => selectProject(index)}
+            <div className="header-actions">
+              <div className="search-box">
+                <input
+                  type="text"
+                  placeholder="Search documents..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-input"
+                />
+                <span className="search-icon">🔍</span>
+              </div>
+              
+              <button 
+                className="upload-btn"
+                onClick={() => setShowUploadForm(true)}
+              >
+                <span className="btn-icon">📤</span>
+                Upload Document
+              </button>
+            </div>
+          </div>
+
+          {/* Category Filter */}
+          <div className="category-filter">
+            <div className="category-scroll">
+              {documentCategories.map(category => (
+                <button
+                  key={category.id}
+                  className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+                  onClick={() => setActiveCategory(category.id)}
+                  style={{ '--category-color': category.color }}
                 >
-                  <div className="gallery-image-container">
-                    <img 
-                      src={publication.imageUrl} 
-                      alt={publication.title}
-                      className="gallery-image"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openImageModal(publication.imageUrl, publication.title);
-                      }}
-                    />
-                    <div className="gallery-overlay">
-                      <span className="view-full">View Full</span>
-                    </div>
-                    
-                    {/* Category Badge */}
-                    <div className="category-badge">
-                      {publicationCategories.find(c => c.id === publication.category)?.icon}
-                    </div>
-                    
-                    {/* Featured Badge */}
-                    {publication.featured && (
-                      <div className="featured-badge">Featured</div>
-                    )}
-                  </div>
-                  
-                  <div className="gallery-caption">
-                    <h4>{publication.title}</h4>
-                    <p className="gallery-category">{publication.category}</p>
-                    <p className="gallery-year">{publication.year}</p>
-                  </div>
-                </div>
+                  <span className="category-icon">{category.icon}</span>
+                  <span className="category-name">{category.name}</span>
+                  <span className="category-count">
+                    {category.id === 'all' 
+                      ? documents.length 
+                      : documents.filter(doc => doc.category === category.id).length}
+                  </span>
+                </button>
               ))}
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Project Details */}
-          <div className="project-details-column">
-            <div className="project-details-container">
-              {filteredPublications.length > 0 ? (
-                <>
-                  <div className="project-header">
-                    <div className="project-meta">
-                      <span className="project-category">
-                        {filteredPublications[selectedProject].category.toUpperCase()}
-                      </span>
-                      <span className="project-year">
-                        {filteredPublications[selectedProject].year}
-                      </span>
-                    </div>
-                    
-                    <h3 className="project-title">
-                      {filteredPublications[selectedProject].title}
-                    </h3>
-                    
-                    <p className="project-authors">
-                      {filteredPublications[selectedProject].authors}
-                    </p>
-                    
-                    {filteredPublications[selectedProject].featured && (
-                      <div className="project-featured-badge">
-                        <span className="featured-star">★</span> Featured Project
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="project-description">
-                    <p>{filteredPublications[selectedProject].description}</p>
-                  </div>
-
-                  {/* Project Stats */}
-                  <div className="project-stats">
-                    <h4>Project Highlights</h4>
-                    <div className="stats-grid">
-                      {filteredPublications[selectedProject].stats.map((stat, index) => (
-                        <div key={index} className="stat-card">
-                          <div className="stat-value">{stat.value}</div>
-                          <div className="stat-label">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Project Details */}
-                  <div className="project-details-list">
-                    <h4>Key Achievements</h4>
-                    <ul className="details-list">
-                      {filteredPublications[selectedProject].details.map((detail, index) => (
-                        <li key={index}>
-                          <span className="check-icon">✓</span>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Actions */}
-                  <div className="project-actions">
-                    <button 
-                      className="view-image-btn"
-                      onClick={() => openImageModal(
-                        filteredPublications[selectedProject].imageUrl,
-                        filteredPublications[selectedProject].title
-                      )}
-                    >
-                      <span className="btn-icon">🖼️</span>
-                      View Full Image
-                    </button>
-                    
-                    <a 
-                      href={filteredPublications[selectedProject].downloadLink}
-                      className="download-report-btn"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        alert(`Downloading: ${filteredPublications[selectedProject].title}`);
-                      }}
-                    >
-                      <span className="btn-icon">📥</span>
-                      Download Full Report
-                    </a>
-                    
-                    <button className="learn-more-btn">
-                      <span className="btn-icon">📚</span>
-                      Learn More About This Project
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <div className="no-projects">
-                  <div className="no-projects-icon">📄</div>
-                  <h3>No Projects Found</h3>
-                  <p>Try selecting a different category or check back later.</p>
+          {/* Upload Form Modal */}
+          {showUploadForm && (
+            <div className="upload-modal-overlay">
+              <div className="upload-modal">
+                <div className="modal-header">
+                  <h3>Upload New Document</h3>
+                  <button 
+                    className="close-modal"
+                    onClick={() => setShowUploadForm(false)}
+                  >
+                    &times;
+                  </button>
                 </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Image Modal */}
-      {selectedImage && (
-        <div className="image-modal" onClick={closeImageModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeImageModal}>
-              &times;
-            </button>
-            
-            <div className="modal-image-container">
-              <img 
-                src={selectedImage.imageUrl} 
-                alt={selectedImage.title}
-                className="modal-image"
-              />
-              <div className="modal-caption">
-                <h3>{selectedImage.title}</h3>
+                
+                <form onSubmit={handleUploadDocument} className="upload-form">
+                  <div className="form-group">
+                    <label>Document Title *</label>
+                    <input
+                      type="text"
+                      value={newDocument.title}
+                      onChange={(e) => setNewDocument({...newDocument, title: e.target.value})}
+                      placeholder="Enter document title"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label>Category *</label>
+                      <select
+                        value={newDocument.category}
+                        onChange={(e) => setNewDocument({...newDocument, category: e.target.value})}
+                        required
+                      >
+                        {documentCategories.slice(1).map(category => (
+                          <option key={category.id} value={category.id}>
+                            {category.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    
+                    <div className="form-group">
+                      <label>Author *</label>
+                      <input
+                        type="text"
+                        value={newDocument.author}
+                        onChange={(e) => setNewDocument({...newDocument, author: e.target.value})}
+                        placeholder="Author name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="form-group">
+                    <label>File *</label>
+                    <div className="file-upload">
+                      <input
+                        type="file"
+                        id="document-file"
+                        onChange={handleFileSelect}
+                        accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx"
+                        required
+                      />
+                      <label htmlFor="document-file" className="file-upload-label">
+                        <span className="file-icon">📎</span>
+                        Choose File
+                      </label>
+                      {newDocument.fileType && (
+                        <span className="selected-file-type">
+                          {fileTypes[newDocument.fileType]?.label || 'PDF'}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="form-group">
+                    <label>Description</label>
+                    <textarea
+                      value={newDocument.description}
+                      onChange={(e) => setNewDocument({...newDocument, description: e.target.value})}
+                      placeholder="Brief description of the document..."
+                      rows="3"
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label>Tags (comma-separated)</label>
+                    <input
+                      type="text"
+                      value={newDocument.tags}
+                      onChange={(e) => setNewDocument({...newDocument, tags: e.target.value})}
+                      placeholder="health, research, ghana, etc."
+                    />
+                  </div>
+                  
+                  <div className="form-actions">
+                    <button 
+                      type="button" 
+                      className="cancel-btn"
+                      onClick={() => setShowUploadForm(false)}
+                    >
+                      Cancel
+                    </button>
+                    <button 
+                      type="submit" 
+                      className="submit-btn"
+                      disabled={uploading}
+                    >
+                      {uploading ? 'Uploading...' : 'Upload Document'}
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
+          )}
+
+          {/* Documents Grid */}
+          <div className="documents-grid">
+            {filteredDocuments.length > 0 ? (
+              filteredDocuments.map((doc, index) => (
+                <div 
+                  key={doc.id}
+                  className={`document-card ${doc.featured ? 'featured' : ''} ${index === selectedDocument ? 'selected' : ''}`}
+                  onClick={() => setSelectedDocument(index)}
+                >
+                  <div className="document-header">
+                    <div className="file-type-icon" style={{ backgroundColor: fileTypes[doc.fileType]?.color }}>
+                      {doc.fileType === 'pdf' ? 'PDF' : 
+                       doc.fileType === 'doc' || doc.fileType === 'docx' ? 'DOC' :
+                       doc.fileType === 'ppt' || doc.fileType === 'pptx' ? 'PPT' :
+                       'XLS'}
+                    </div>
+                    <div className="document-meta">
+                      <span className="document-category">
+                        {documentCategories.find(c => c.id === doc.category)?.name}
+                      </span>
+                      <span className="document-date">{formatDate(doc.date)}</span>
+                    </div>
+                    {doc.featured && (
+                      <div className="featured-badge">Featured</div>
+                    )}
+                  </div>
+                  
+                  <div className="document-body">
+                    <h3 className="document-title">{doc.title}</h3>
+                    <p className="document-description">{doc.description}</p>
+                    
+                    <div className="document-author">
+                      <span className="author-icon">👤</span>
+                      {doc.author}
+                    </div>
+                    
+                    <div className="document-tags">
+                      {doc.tags.map((tag, idx) => (
+                        <span key={idx} className="tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="document-footer">
+                    <div className="document-stats">
+                      <div className="stat">
+                        <span className="stat-icon">💾</span>
+                        <span className="stat-value">{doc.size}</span>
+                      </div>
+                      <div className="stat">
+                        <span className="stat-icon">📥</span>
+                        <span className="stat-value">{doc.downloads} downloads</span>
+                      </div>
+                    </div>
+                    
+                    <button 
+                      className="download-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDownload(doc);
+                      }}
+                    >
+                      <span className="download-icon">⬇️</span>
+                      Download
+                    </button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="no-documents">
+                <div className="no-documents-icon">📄</div>
+                <h3>No Documents Found</h3>
+                <p>Try a different search or category, or upload a new document.</p>
+              </div>
+            )}
           </div>
+
+          {/* Selected Document Preview */}
+          {filteredDocuments.length > 0 && (
+            <div className="document-preview">
+              <div className="preview-header">
+                <h3>Document Preview</h3>
+                <button 
+                  className="close-preview"
+                  onClick={() => setSelectedDocument(null)}
+                >
+                  &times;
+                </button>
+              </div>
+              
+              <div className="preview-content">
+                <div className="preview-info">
+                  <h4>{filteredDocuments[selectedDocument]?.title}</h4>
+                  <div className="preview-meta">
+                    <span className="meta-item">
+                      <span className="meta-label">Author:</span>
+                      {filteredDocuments[selectedDocument]?.author}
+                    </span>
+                    <span className="meta-item">
+                      <span className="meta-label">Date:</span>
+                      {formatDate(filteredDocuments[selectedDocument]?.date)}
+                    </span>
+                    <span className="meta-item">
+                      <span className="meta-label">Size:</span>
+                      {filteredDocuments[selectedDocument]?.size}
+                    </span>
+                    <span className="meta-item">
+                      <span className="meta-label">Downloads:</span>
+                      {filteredDocuments[selectedDocument]?.downloads}
+                    </span>
+                  </div>
+                  
+                  <p className="preview-description">
+                    {filteredDocuments[selectedDocument]?.description}
+                  </p>
+                  
+                  <div className="preview-actions">
+                    <button 
+                      className="preview-download-btn"
+                      onClick={() => handleDownload(filteredDocuments[selectedDocument])}
+                    >
+                      <span className="btn-icon">📥</span>
+                      Download Document ({filteredDocuments[selectedDocument]?.size})
+                    </button>
+                    <button className="preview-share-btn">
+                      <span className="btn-icon">🔗</span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="preview-thumbnail">
+                  <div 
+                    className="thumbnail-placeholder"
+                    style={{ backgroundColor: fileTypes[filteredDocuments[selectedDocument]?.fileType]?.color }}
+                  >
+                    <div className="thumbnail-icon">
+                      {filteredDocuments[selectedDocument]?.fileType === 'pdf' ? '📄' :
+                       filteredDocuments[selectedDocument]?.fileType === 'doc' || 
+                       filteredDocuments[selectedDocument]?.fileType === 'docx' ? '📝' :
+                       filteredDocuments[selectedDocument]?.fileType === 'ppt' || 
+                       filteredDocuments[selectedDocument]?.fileType === 'pptx' ? '📽️' : '📊'}
+                    </div>
+                    <div className="thumbnail-text">
+                      {fileTypes[filteredDocuments[selectedDocument]?.fileType]?.label} Document
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 };
 

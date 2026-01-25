@@ -33,7 +33,7 @@ const Mentorship = () => {
     {
       id: 2,
       title: 'Data Analytics Training',
-      category: 'mentorship',
+      category: 'conferences',
       date: 'February 2024',
       location: 'Kumasi, Ghana',
       description: 'Hands-on training in healthcare data analysis using modern tools.',
@@ -167,7 +167,7 @@ const Mentorship = () => {
       <div className="mentorship-container">
         {/* Header */}
         <div className="mentorship-header">
-          <h2>Mentorship Gallery</h2>
+          <h2>Gallery</h2>
           <p className="mentorship-subtitle">
             Browse through our mentorship activities, workshops, and training sessions. 
             Click on any image to view it in full size.

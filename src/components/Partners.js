@@ -235,7 +235,7 @@ const Partners = () => {
         </div>
 
         {/* Stats */}
-        <div className="partners-stats">
+        {/* <div className="partners-stats">
           <div className="stat-item">
             <div className="stat-number">50+</div>
             <div className="stat-label">Trusted Partners</div>
@@ -252,7 +252,7 @@ const Partners = () => {
             <div className="stat-number">10+</div>
             <div className="stat-label">Years of Partnership</div>
           </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
         <div className="partners-cta">

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import logoImage from "../assets/images/newLogo.png";
+import { useNavigate } from 'react-router-dom';
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +13,7 @@ const Header = () => {
 
   // Navigation items with dropdowns
   const navItems = [
-    { label: 'Home', path: '#home' },
+    { label: 'Home', path: '/home' },
     { 
       label: 'About Us', 
       path: '#about',
@@ -55,17 +57,42 @@ const Header = () => {
   }, []);
 
   // Handle navigation click
-  const handleNavClick = (path, e) => {
-    e.preventDefault();
-    const id = path.replace('#', '');
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  // const handleNavClick = (path, e) => {
+  //   e.preventDefault();
+  //   const id = path.replace('#', '');
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  //   setMenuOpen(false);
+  //   setMobileDropdownOpen(null);
+  //   setDesktopDropdownOpen(null);
+  // };
+
+  const navigate = useNavigate();
+
+const handleNavClick = (path, e) => {
+  // ROUTE navigation
+  if (path.startsWith('/')) {
+    navigate(path);
     setMenuOpen(false);
     setMobileDropdownOpen(null);
     setDesktopDropdownOpen(null);
-  };
+    return;
+  }
+
+  // SCROLL navigation
+  e.preventDefault();
+  const id = path.replace('#', '');
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  setMenuOpen(false);
+  setMobileDropdownOpen(null);
+  setDesktopDropdownOpen(null);
+};
 
   // Toggle mobile dropdown
   const toggleMobileDropdown = (index, e) => {
@@ -97,12 +124,13 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo">
-          <img 
-            src={logoImage} 
-            style={{width: 450, height: 120}}  
-            alt="AJHealth Logo" 
-            className="logo-image"
-          />
+     
+        <img 
+          src={logoImage} 
+          style={{width: 'auto', height: '100%', maxHeight: '70px'}}  
+          alt="AJHealth Logo" 
+          className="logo-image"
+        />
           {/* <div className="logo-text">
             <h1><Link to="/">AJHealth</Link></h1>
             <p>Evidence to Action, Healthier Ghana</p>

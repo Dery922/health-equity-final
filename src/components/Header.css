@@ -1,4 +1,7 @@
-/* Header.css - With Proper Logo Size */
+/* Header.css - Enhanced for Mobile Responsiveness */
+
+
+
 
 /* Base Header Styles */
 .header {
@@ -30,81 +33,27 @@
   position: relative;
 }
 
-/* ========== LOGO SECTION - UPDATED ========== */
+/* ========== LOGO SECTION - RESPONSIVE ========== */
 .logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
   z-index: 1001;
+  min-width: 120px; /* Prevent logo from shrinking too much */
 }
 
-/* Logo Image - Professional Size */
 .logo-image {
-  width: 90px; /* Professional size */
-  height: 90px; /* Professional size */
+  width: auto;
+  height: 70px;
   object-fit: contain;
   transition: all 0.3s ease;
   filter: brightness(1) contrast(1.1);
 }
 
-/* Logo Text Container */
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Company Name */
-.logo h1 {
-  margin: 0;
-  font-size: 1.8rem; /* Slightly larger */
-  color: #2a6e6a;
-  font-weight: 700;
-  line-height: 1.1;
-  transition: all 0.3s ease;
-  letter-spacing: -0.5px;
-}
-
-.logo h1 a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-.logo h1 a:hover {
-  color: #1d504d;
-  text-decoration: none;
-}
-
-/* Tagline */
-.logo p {
-  margin: 5px 0 0;
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: 500;
-  line-height: 1.2;
-  opacity: 0.9;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
-
-/* When header is scrolled - Reduce logo size slightly */
 .header.scrolled .logo-image {
-  width: 75px;
-  height: 75px;
-}
-
-.header.scrolled .logo h1 {
-  font-size: 1.6rem;
-}
-
-.header.scrolled .logo p {
-  opacity: 0;
-  height: 0;
-  margin: 0;
-  overflow: hidden;
+  height: 60px;
 }
 
 /* Logo hover effect */
@@ -112,9 +61,8 @@
   transform: scale(1.03);
   filter: brightness(1.05) contrast(1.15);
 }
-/* ========== END LOGO SECTION ========== */
 
-/* Hamburger Menu */
+/* ========== HAMBURGER MENU - ENHANCED ========== */
 .menu-toggle {
   display: none;
   background: none;
@@ -124,8 +72,8 @@
   z-index: 1002;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 22px;
+  width: 30px;
+  height: 24px;
   position: relative;
 }
 
@@ -139,7 +87,7 @@
 }
 
 .menu-toggle.open .hamburger-line:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(10.5px) rotate(45deg);
 }
 
 .menu-toggle.open .hamburger-line:nth-child(2) {
@@ -148,7 +96,7 @@
 }
 
 .menu-toggle.open .hamburger-line:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 
 /* DESKTOP NAVIGATION */
@@ -242,7 +190,7 @@
 
 /* Desktop CTA Button */
 .desktop-cta-button {
-  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);;
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -256,60 +204,63 @@
 }
 
 .desktop-cta-button:hover {
-
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(42, 110, 106, 0.3);
+  box-shadow: 0 5px 15px rgba(2, 185, 75, 0.3);
 }
+/* Header.css - Fixed Mobile Menu */
 
-/* MOBILE NAVIGATION */
+/* ... keep all your existing styles above, but REPLACE the mobile section below ... */
+
+/* ========== MOBILE NAVIGATION - FIXED ========== */
 .mobile-nav-overlay {
   display: none;
-}
-
-/* Mobile Navigation Menu */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 85%;
-  max-width: 320px;
-  height: 100vh;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 249, 249, 0.98));
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  padding: 100px 0 2rem; /* Increased top padding for larger logo */
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-y: auto;
-  z-index: 1001;
-}
-
-.mobile-nav.open {
-  right: 0;
-}
-
-/* Mobile Overlay */
-.mobile-nav-overlay.open {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  animation: fadeIn 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.mobile-nav-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+/* Mobile Navigation Menu - FIXED POSITION */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Start off-screen */
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 249, 249, 0.98));
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0 2rem;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.mobile-nav.open {
+  right: 0; /* Slide in from right */
 }
 
 /* Mobile Nav Items */
 .mobile-nav-item {
   width: 100%;
+}
+
+.slide-content-wrapper {
+  position: relative;
+  min-height: 280px;
+  margin-bottom: 1.5rem; /* Reduce margin */
 }
 
 .mobile-nav-link,
@@ -359,19 +310,19 @@
 }
 
 .mobile-dropdown .dropdown-item {
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 2.5rem;
   font-size: 0.95rem;
   border-left: 4px solid transparent;
 }
 
 .mobile-dropdown .dropdown-item:hover {
   border-left-color: #2a6e6a;
-  padding-left: 2.2rem;
+  padding-left: 2.7rem;
 }
 
 /* Mobile CTA Button */
 .mobile-cta-button {
-  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
   color: white;
   border: none;
   padding: 1.2rem 1.5rem;
@@ -384,158 +335,667 @@
 }
 
 .mobile-cta-button:hover {
-  background: linear-gradient(135deg, #1d504d, #2a6e6a);
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
   transform: translateY(-2px);
+  opacity: 0.9;
+}
+/* ========== HAMBURGER MENU - IMPROVED ========== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 26px;
+  position: relative;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #2a6e6a;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
 
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
-  /* Show hamburger menu */
+.menu-toggle.open .hamburger-line:nth-child(1) {
+  transform: translateY(11.5px) rotate(45deg);
+}
+
+.menu-toggle.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-toggle.open .hamburger-line:nth-child(3) {
+  transform: translateY(-11.5px) rotate(-45deg);
+}
+
+/* ========== MOBILE NAVIGATION - SIMPLIFIED FIX ========== */
+.mobile-nav-overlay {
+  display: none;
+}
+
+.mobile-nav-overlay.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Navigation Menu - SIMPLE FIX */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 0 2rem;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+/* Mobile Nav Items */
+.mobile-nav-item {
+  width: 100%;
+}
+
+.mobile-nav-link,
+.mobile-dropdown-toggle {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.mobile-dropdown-toggle.active {
+  color: #2a6e6a;
+  background-color: #f0f9f9;
+}
+
+.mobile-dropdown-toggle.active .dropdown-arrow {
+  transform: rotate(90deg);
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f9f9f9;
+}
+
+.mobile-dropdown.open {
+  max-height: 400px;
+}
+
+.mobile-dropdown .dropdown-item {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  border-left: 4px solid transparent;
+}
+
+.mobile-dropdown .dropdown-item:hover {
+  border-left-color: #2a6e6a;
+  background-color: #f0f9f9;
+}
+
+/* Mobile CTA Button */
+.mobile-cta-button {
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2rem 1.5rem 0;
+  border-radius: 8px;
+}
+
+.mobile-cta-button:hover {
+  opacity: 0.9;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablet and Below (992px and below) */
+@media (max-width: 992px) {
   .menu-toggle {
-    display: flex;
+    display: flex !important; /* Force show */
   }
   
-  /* Hide desktop navigation */
   .desktop-nav {
     display: none;
   }
   
-  /* Adjust header container */
+  /* Make sure header has proper height */
+  .header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  
   .header-container {
-    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
   }
   
-  /* Logo adjustments for tablet */
   .logo {
-    gap: 12px;
+    flex: 1;
   }
   
   .logo-image {
-    width: 80px; /* Slightly smaller on tablet */
-    height: 80px;
-  }
-  
-  .logo h1 {
-    font-size: 1.6rem;
-  }
-  
-  .logo p {
-    font-size: 0.8rem;
-  }
-  
-  .header.scrolled .logo-image {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .header.scrolled .logo h1 {
-    font-size: 1.4rem;
-  }
-}
-
-/* Mobile (480px and below) */
-@media (max-width: 480px) {
-  .logo {
-    gap: 10px;
-  }
-  
-  .logo-image {
-    width: 70px; /* Professional size even on mobile */
-    height: 70px;
-  }
-  
-  .logo h1 {
-    font-size: 1.4rem;
-  }
-  
-  .logo p {
-    font-size: 0.75rem;
-    white-space: normal;
-    max-width: 100px;
-  }
-  
-  .header.scrolled .logo-image {
-    width: 60px;
     height: 60px;
   }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .mobile-nav {
+    width: 300px;
+    padding: 80px 0 2rem;
+  }
   
-  .header.scrolled .logo h1 {
-    font-size: 1.2rem;
+  .menu-toggle {
+    width: 30px;
+    height: 24px;
   }
 }
 
-/* Small Laptop (1025px - 1200px) */
-@media (min-width: 1025px) and (max-width: 1200px) {
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .mobile-nav {
+    width: 280px;
+    padding: 70px 0 1.5rem;
+  }
+  
+  .mobile-nav-link,
+  .mobile-dropdown-toggle {
+    padding: 0.9rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .mobile-dropdown .dropdown-item {
+    padding: 0.9rem 2rem;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .mobile-nav {
+    width: 260px;/* ========== HAMBURGER MENU - IMPROVED ========== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 26px;
+  position: relative;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #2a6e6a;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle.open .hamburger-line:nth-child(1) {
+  transform: translateY(11.5px) rotate(45deg);
+}
+
+.menu-toggle.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-toggle.open .hamburger-line:nth-child(3) {
+  transform: translateY(-11.5px) rotate(-45deg);
+}
+
+/* ========== MOBILE NAVIGATION - SIMPLIFIED FIX ========== */
+.mobile-nav-overlay {
+  display: none;
+}
+
+.mobile-nav-overlay.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Navigation Menu - SIMPLE FIX */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 0 2rem;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+/* Mobile Nav Items */
+.mobile-nav-item {
+  width: 100%;
+}
+
+.mobile-nav-link,
+.mobile-dropdown-toggle {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.mobile-dropdown-toggle.active {
+  color: #2a6e6a;
+  background-color: #f0f9f9;
+}
+
+.mobile-dropdown-toggle.active .dropdown-arrow {
+  transform: rotate(90deg);
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f9f9f9;
+}
+
+.mobile-dropdown.open {
+  max-height: 400px;
+}
+
+.mobile-dropdown .dropdown-item {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  border-left: 4px solid transparent;
+}
+
+.mobile-dropdown .dropdown-item:hover {
+  border-left-color: #2a6e6a;
+  background-color: #f0f9f9;
+}
+
+/* Mobile CTA Button */
+.mobile-cta-button {
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2rem 1.5rem 0;
+  border-radius: 8px;
+}
+
+.mobile-cta-button:hover {
+  opacity: 0.9;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablet and Below (992px and below) */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex !important; /* Force show */
+  }
+  
   .desktop-nav {
+    display: none;
+  }
+  
+  /* Make sure header has proper height */
+  .header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .logo-image {
+    height: 60px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .mobile-nav {
+    width: 300px;
+    padding: 80px 0 2rem;
+  }
+  
+  .menu-toggle {
+    width: 30px;
+    height: 24px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .mobile-nav {
+    width: 280px;
+    padding: 70px 0 1.5rem;
+  }
+  
+  .mobile-nav-link,
+  .mobile-dropdown-toggle {
+    padding: 0.9rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .mobile-dropdown .dropdown-item {
+    padding: 0.9rem 2rem;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .mobile-nav {
+    width: 260px;
+  }
+  
+  .header-container {
+    padding: 0 10px;
+  }
+}
+  }
+  
+  .header-container {
+    padding: 0 10px;
+  }
+}
+/* ========== HAMBURGER WITH BETTER SPACING & LARGER BARS ========== */
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    width: 46px !important;           /* Wider container */
+    height: 40px !important;          /* Taller container */
+    padding: 15px 12px !important;    /* More padding for spacing */
+    justify-content: space-around !important; /* Better spacing between bars */
+  }
+  
+  .hamburger-line {
+    height: 6px !important;           /* Much thicker bars */
+    border-radius: 4px !important;    /* More rounded */
+    margin: 2px 0 !important;         /* Add space between bars */
+  }
+  
+  /* Adjust X animation for new size */
+  .menu-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(16px) rotate(45deg) !important;
+    margin: 0 !important; /* Remove margin when in X shape */
+  }
+  
+  .menu-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-40px) !important;
+  }
+  
+  .menu-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg) !important;
+    margin: 0 !important; /* Remove margin when in X shape */
+  }
+}
+
+/* For smaller mobile screens */
+@media (max-width: 480px) {
+  .menu-toggle {
+    width: 42px !important;
+    height: 36px !important;
+    padding: 13px 10px !important;
+  }
+  
+  .hamburger-line {
+    height: 5.5px !important;
+    margin: 1.5px 0 !important;
+  }
+  
+  .menu-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(14px) rotate(45deg) !important;
+  }
+  
+  .menu-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg) !important;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .menu-toggle {
+    width: 40px !important;
+    height: 34px !important;
+    padding: 12px 9px !important;
+  }
+  
+  .hamburger-line {
+    height: 5px !important;
+    margin: 1px 0 !important;
+  }
+  
+  .menu-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(13px) rotate(45deg) !important;
+  }
+  
+  .menu-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg) !important;
+  }
+}
+
+
+/* Tablets (481px - 768px) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh; /* Reduce height */
+    padding: 3rem 1rem 2rem; /* Reduce padding */
+    justify-content: flex-start; /* Align content to top */
+  }
+  
+  .hero-content {
+    min-height: auto; /* Remove fixed height */
+    padding-top: 0;
+  }
+  
+  .slide-content-wrapper {
+    min-height: 220px; /* Reduce height */
+    margin-bottom: 1rem; /* Reduce margin */
+  }
+  
+  .hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem; /* Reduce margin */
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem; /* Reduce margin */
+  }
+  
+  .hero-buttons {
+    margin-top: 1rem; /* SIGNIFICANTLY reduce space */
+    gap: 0.8rem;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 65vh; /* Even shorter on mobile */
+    padding: 2.5rem 0.8rem 1.5rem;
+  }
+  
+  .slide-content-wrapper {
+    min-height: 180px; /* Much shorter */
+    margin-bottom: 0.5rem; /* Minimal margin */
+  }
+  
+  .hero-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    padding: 0 0.3rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem; /* Very little space */
+    padding: 0;
+  }
+  
+  .hero-buttons {
+    margin-top: 0.8rem; /* Minimal space above buttons */
     gap: 0.6rem;
   }
   
-  .nav-link {
-    font-size: 0.92rem;
-    padding: 0.7rem 0.8rem;
-  }
-  
-  /* Logo stays at 90px on laptops */
-}
-
-/* Large Desktop (1201px and above) */
-@media (min-width: 1201px) {
-  .header-container {
-    max-width: 1300px;
-    padding: 0 2rem;
-  }
-  
-  .desktop-nav {
-    gap: 1rem;
-  }
-  
-  .nav-link {
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-  }
-  
-  /* Logo can be even larger on big screens if needed */
-  .logo-image {
-    width: 100px; /* Optional: larger on big screens */
-    height: 100px;
-  }
-  
-  .logo h1 {
-    font-size: 2rem;
-  }
-  
-  .logo p {
-    font-size: 0.9rem;
-  }
-  
-  .header.scrolled .logo-image {
-    width: 85px;
-    height: 85px;
-  }
-  
-  .header.scrolled .logo h1 {
-    font-size: 1.8rem;
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    min-width: 0;
   }
 }
 
-/* Very small screens (360px and below) */
+/* Very Small Mobile (360px and below) */
 @media (max-width: 360px) {
-  .logo-image {
-    width: 65px;
-    height: 65px;
+  .hero {
+    min-height: 60vh;
+    padding: 2rem 0.5rem 1rem;
   }
   
-  .logo h1 {
-    font-size: 1.3rem;
+  .slide-content-wrapper {
+    min-height: 160px;
   }
   
-  .logo p {
-    display: none; /* Hide tagline on very small screens */
+  .hero-content h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
   }
   
-  .header-container {
-    padding: 0 0.8rem;
+  .hero-content p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+  }
+  
+  .hero-buttons {
+    margin-top: 0.6rem;
+    gap: 0.5rem;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* For tablets and mobile: Reduce the overall height */
+@media (max-width: 768px) {
+  .hero-slide {
+    background-position: center 30%; /* Adjust background position */
   }
 }
