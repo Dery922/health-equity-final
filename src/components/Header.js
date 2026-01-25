@@ -126,8 +126,7 @@ const handleNavClick = (path, e) => {
         <div className="logo">
      
         <img 
-          src={logoImage} 
-          style={{width: 'auto', height: '100%', maxHeight: '70px'}}  
+          src={logoImage}   
           alt="AJHealth Logo" 
           className="logo-image"
         />

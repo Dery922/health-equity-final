@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  min-height: 70vh; /* Better for most screens */
+  min-height: 40vh; /* Better for most screens */
   margin-top: 80px;
   padding: 6rem 1rem 4rem;
   display: flex;

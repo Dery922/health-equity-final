@@ -5,10 +5,12 @@
 
 /* Base Header Styles */
 .header {
+  height: 80px;
   background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   position: fixed;
+  display: flex;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,33 +36,39 @@
 }
 
 /* ========== LOGO SECTION - RESPONSIVE ========== */
+/* ========== LOGO SECTION (CLEAN & FIXED) ========== */
+
+/* ========== LOGO SECTION (CLEAN & FIXED) ========== */
+
+
 .logo {
+  height: 56px;
   display: flex;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
   z-index: 1001;
-  min-width: 120px; /* Prevent logo from shrinking too much */
 }
 
+/* Logo image NEVER controls header height */
 .logo-image {
+  max-height: 156px;          /* Desktop default */
   width: auto;
-  height: 70px;
   object-fit: contain;
-  transition: all 0.3s ease;
-  filter: brightness(1) contrast(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Slightly smaller logo when header is scrolled */
 .header.scrolled .logo-image {
-  height: 60px;
+  max-height: 148px;
 }
 
-/* Logo hover effect */
+/* Subtle hover polish */
 .logo:hover .logo-image {
   transform: scale(1.03);
-  filter: brightness(1.05) contrast(1.15);
+  filter: brightness(1.05) contrast(1.1);
 }
+
 
 /* ========== HAMBURGER MENU - ENHANCED ========== */
 .menu-toggle {
@@ -526,7 +534,7 @@
   }
   
   .logo-image {
-    height: 60px;
+    max-height: 190px;
   }
 }
 
