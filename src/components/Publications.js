@@ -589,8 +589,9 @@ const Publications = () => {
             </div>
           )}
         </div>
-        <Footer />
+
       </section>
+              <Footer />
     </>
   );
 };
