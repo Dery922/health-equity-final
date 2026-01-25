@@ -167,8 +167,8 @@
 
 .team-cta-button {
   display: inline-block;
-  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
-  color: white;
+  background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
+   color: white;
   text-decoration: none;
   padding: 1rem 2.5rem;
   border-radius: 8px;

@@ -7,6 +7,7 @@ import pdfIcon from "../assets/icons/pdf-icon.svg"
 import docIcon from '../assets/icons/doc-icon.svg';
 import pptIcon from '../assets/icons/ppt-icon.svg';
 import xlsIcon from '../assets/icons/ppt-icon.svg';
+import Footer from './Footer';
 
 const Publications = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -588,6 +589,7 @@ const Publications = () => {
             </div>
           )}
         </div>
+        <Footer />
       </section>
     </>
   );
