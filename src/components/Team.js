@@ -82,9 +82,7 @@ const Team = () => {
                   <a href={member.linkedin} className="social-icon" aria-label={`${member.name} LinkedIn`}>
                     in
                   </a>
-                  <a href={member.twitter} className="social-icon" aria-label={`${member.name} Twitter`}>
-                    𝕏
-                  </a>
+             
                 </div>
               </div>
               

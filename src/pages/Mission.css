@@ -1,0 +1,330 @@
+/* MissionPage.css */
+
+/* Mission Hero Section */
+.mission-hero {
+  background: linear-gradient(rgba(29, 59, 85, 0.9), rgba(29, 59, 85, 0.8)), 
+              url('../assets/images/pic2.jpeg') center/cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.mission-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.mission-hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Core Mission Section */
+.core-mission {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mission-statement h2 {
+  color: #1d3b55;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mission-image-section {
+  margin-top: 40px;
+}
+
+.mission-main-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Vision Section */
+.vision-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.vision-content h2 {
+  color: #1d3b55;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.vision-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Values Section */
+.values-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.section-title {
+  color: #1d3b55;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.value-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #f0f0f0;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: #02b94b;
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.value-title {
+  color: #1d3b55;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.value-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Pillars Section */
+.pillars-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.pillar-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #02b94b;
+}
+
+.pillar-title {
+  color: #1d3b55;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.pillar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pillar-item {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pillar-item:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #02b94b;
+  font-weight: bold;
+}
+
+/* Impact Section */
+.impact-section {
+  padding: 80px 20px;
+  background-color: #1d3b55;
+  color: white;
+}
+
+.impact-section .section-title {
+  color: white;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.impact-card {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.impact-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #02b94b;
+  margin-bottom: 10px;
+}
+
+.impact-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Commitment Section */
+.commitment-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.commitment-content h2 {
+  color: #1d3b55;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.commitment-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.commitment-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.commitment-point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.commitment-point:hover {
+  background: #e9ecef;
+}
+
+.point-icon {
+  color: #02b94b;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mission-hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .mission-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .mission-text, .vision-text, .commitment-text {
+    font-size: 1.1rem;
+  }
+  
+  .section-title, .mission-statement h2, .vision-content h2, .commitment-content h2 {
+    font-size: 2rem;
+  }
+  
+  .values-grid, .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-hero {
+    padding: 60px 20px;
+  }
+  
+  .mission-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .commitment-points {
+    grid-template-columns: 1fr;
+  }
+}

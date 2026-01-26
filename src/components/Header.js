@@ -18,9 +18,9 @@ const Header = () => {
       label: 'About Us', 
       path: '#about',
       dropdown: [
-        { label: 'Our Story', path: '#story' },
+        { label: 'Our Story', path: '/our-story' },
         { label: 'Our Team', path: '#team' },
-        { label: 'Our Mission', path: '#mission' },
+        { label: 'Our Mission', path: '/our-mission' },
         
       ]
     },
@@ -39,7 +39,6 @@ const Header = () => {
       path: '#work',
       dropdown: [
         { label: 'Publications', path: '/publications' },
-        { label: 'Case Studies', path: '#cases' },
         { label: 'Success Stories', path: '#success' },
       ]
     },

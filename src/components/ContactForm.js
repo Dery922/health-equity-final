@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
 import Linkedin from "../assets/images/linkedin.svg"
+import { Link } from 'react-router-dom';
 
 import LinkedIns from "../assets/images/linkedin-svgrepo-com (1).svg"
 import insta from "../assets/images/instagram-svgrepo-com.svg"
@@ -171,30 +172,40 @@ const ContactForm = () => {
         )}
         
         <div className="contact-info">
-          <div className="info-item">
+        <div className="info-item">
             <div className="info-icon">📧</div>
             <h4>Email Us</h4>
             <p>AJHealth.Research@gmail.com</p>
           </div>
-          <div className="info-item">
+  
+         
+                     <div className="info-item">
             <div className="info-icon">📞</div>
             <h4>Call Us</h4>
             <p> +233 244 288 266 /+233 244 297 950</p>
           
           </div>
-             <div className="info-item">
+           
+
+          
+                        <div className="info-item">
             <div className="info-icon">🗺️
             </div>
             <h4>Location</h4>
             <p>No. 23 Asafoatse Baakunkor Street, Camara, Dansoman </p>
           </div>
-            <div className="info-item">
+      
+          <Link to="#" className="info-link">
+                       <div className="info-item">
             <div className="info-icon">
               <img style={{width:50, height: 50,}} src={LinkedIns } alt={LinkedIns } />
             </div>
             <h4>LinkedIn</h4>
             {/* <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p> */}
           </div>
+           </Link>
+          <Link to="#" className="info-link">
+
                   <div className="info-item">
             <div className="info-icon">
                <img style={{width:50, height: 50,}} src={insta } alt={insta } />
@@ -202,11 +213,16 @@ const ContactForm = () => {
             <h4>Instagram</h4>
             
           </div>
-          <div className="info-item">
+           </Link>
+ 
+ 
+         
+                      <div className="info-item">
             <div className="info-icon">⏰</div>
             <h4>Business Hours</h4>
             <p>Mon-Fri 8am-5pm GMT</p>
           </div>
+          
         </div>
       </div>
     </section>

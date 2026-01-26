@@ -387,3 +387,9 @@
     padding-right: 0.5rem !important;
   }
 }
+
+.info-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
