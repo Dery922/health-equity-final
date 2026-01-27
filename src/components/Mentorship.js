@@ -13,6 +13,12 @@ import menteeImg2 from "../assets/images/mentee2.jpeg";
 import menteeImg3 from "../assets/images/mentee3.jpeg";
 import menteeImg4 from "../assets/images/mentee4.jpeg";
 
+
+import menteeImg5 from "../assets/images/menteer15.jpeg";
+import menteeImg6 from "../assets/images/menteer16.jpeg";
+import menteeImg7 from "../assets/images/mentee10.jpeg";
+import menteeImg8 from "../assets/images/mentee11.jpeg";
+
 const Mentorship = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -104,6 +110,50 @@ const Mentorship = () => {
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
       imageUrl: conf2,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+            {
+      id: 11,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg5,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                {
+      id: 12,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg6,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                {
+      id: 13,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg7,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                {
+      id: 14,
+      title: 'Global Health Seminar Series',
+      category: 'mentorship',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg8,
       attendees: '200+ Online Participants',
       featured: false
     },

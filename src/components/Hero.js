@@ -15,8 +15,8 @@ import heroImg4 from "../assets/images/pic2.jpeg";
   const heroImages = [
     {
       image: heroImg1,
-      title: "Bridging Evidence   ",
-      description: "We are an independent health and research..."
+      title: "Bridging Evidence into Action for Healthier Ghana  ",
+      description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector..."
     },
     {
       image: heroImg2,
@@ -25,8 +25,8 @@ import heroImg4 from "../assets/images/pic2.jpeg";
     },
     {
       image: heroImg3,
-      title: "Work force Enhancement",
-      description: "Empowering healthcare professionals through hands-on training and mentorship programs across Africa."
+      title: "Capacity Building and Work force Enhancement",
+      description: "Mentorship and development programs for healthcare professionals."
     },
     {
       image: heroImg4,
@@ -138,7 +138,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
               key={index}
               className={`slide-content ${index === currentSlide ? 'active' : ''}`}
             >
-              <h2>{slide.title}</h2>
+              <h3>{slide.title}</h3>
               <p>
                 {slide.description}
                 {index === 0 && (

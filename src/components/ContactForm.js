@@ -195,7 +195,7 @@ const ContactForm = () => {
             <p>No. 23 Asafoatse Baakunkor Street, Camara, Dansoman </p>
           </div>
       
-          <Link to="#" className="info-link">
+          <Link to="https://www.linkedin.com/company/aj-health-consult/" className="info-link">
                        <div className="info-item">
             <div className="info-icon">
               <img style={{width:50, height: 50,}} src={LinkedIns } alt={LinkedIns } />
@@ -204,7 +204,7 @@ const ContactForm = () => {
             {/* <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p> */}
           </div>
            </Link>
-          <Link to="#" className="info-link">
+          <Link to="https://www.instagram.com/ajhealth.research/" className="info-link">
 
                   <div className="info-item">
             <div className="info-icon">

@@ -5,8 +5,8 @@ import teamImg1 from "../assets/images/jose2.jpeg";
 import teamImg2 from "../assets/images/healthpolicy.jpeg";
 import teamImg3 from "../assets/images/bonne.jpeg";
 import teamImg4 from "../assets/images/joss.jpeg";
-import teamImg5 from "../assets/images/bonne.jpeg"
-import teamImg6 from "../assets/images/lifc.jpeg"
+import teamImg5 from "../assets/images/bonne.jpeg";
+import teamImg6 from "../assets/images/lifc.jpeg";
 
 const Team = () => {
   const teamMembers = [
@@ -22,7 +22,7 @@ const Team = () => {
     {
       id: 3,
       name: "Leslie N.O Vanderpuije",
-      position: "Public Health Policy Lead (Pharmacist)",
+      position: "Public Health Policy Lead",
       expertise: "Global Health & Infectious Disease Research",
       image: teamImg2,
       linkedin: "#",
@@ -39,7 +39,7 @@ const Team = () => {
     },
         {
       id: 4,
-      name: "Emmanuel Nii Obodai Mensah (Pharmacist)",
+      name: "Emmanuel Nii Obodai Mensah",
       position: "Monitoring, Evaluation and Communications Lead",
       expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
       image: teamImg4,

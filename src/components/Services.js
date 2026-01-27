@@ -45,7 +45,7 @@ const Services = () => {
     <section id="services" className="services">
       <h2>Our Services</h2>
       <p className="services-subtitle">
-        Comprehensive solutions to advance health equity in healthcare systems
+        Comprehensive solutions to advance health in healthcare systems
       </p>
       
       <div className="services-grid">
