@@ -138,7 +138,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
               key={index}
               className={`slide-content ${index === currentSlide ? 'active' : ''}`}
             >
-              <h3>{slide.title}</h3>
+              <h2>{slide.title}</h2>
               <p>
                 {slide.description}
                 {index === 0 && (

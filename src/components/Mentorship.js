@@ -29,7 +29,7 @@ const Mentorship = () => {
   const categories = [
     { id: 'all', name: 'All Activities' },
     { id: 'conferences', name: 'Conferences', icon: '👨‍🏫' },
-    { id: 'mentorship', name: 'Menteers', icon: '🎤' },
+    { id: 'mentorship', name: 'Mentees', icon: '🎤' },
  
   ];
 
@@ -50,7 +50,7 @@ const Mentorship = () => {
     {
       id: 5,
       title: 'Global Health Seminar Series',
-      category: 'mentorship',
+      category: 'mentees',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
@@ -58,10 +58,22 @@ const Mentorship = () => {
       attendees: '200+ Online Participants',
       featured: false
     },
+                    {
+      id: 12,
+      title: 'Global Health Seminar Series',
+      category: 'mentees',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg6,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+       
         {
       id: 6,
       title: 'Global Health Seminar Series',
-      category: 'mentorship',
+      category: 'mentees',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
@@ -72,7 +84,7 @@ const Mentorship = () => {
         {
       id: 7,
       title: 'Global Health Seminar Series',
-      category: 'mentorship',
+      category: 'mentees',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
@@ -83,11 +95,22 @@ const Mentorship = () => {
     {
       id: 8,
       title: 'Global Health Seminar Series',
-      category: 'mentorship',
+      category: 'mentees',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
       imageUrl: menteeImg4,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                    {
+      id: 14,
+      title: 'Global Health Seminar Series',
+      category: 'mentees',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: menteeImg8,
       attendees: '200+ Online Participants',
       featured: false
     },
@@ -116,7 +139,7 @@ const Mentorship = () => {
             {
       id: 11,
       title: 'Global Health Seminar Series',
-      category: 'mentorship',
+      category: 'mentees',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
@@ -124,21 +147,10 @@ const Mentorship = () => {
       attendees: '200+ Online Participants',
       featured: false
     },
-                {
-      id: 12,
-      title: 'Global Health Seminar Series',
-      category: 'mentorship',
-      date: 'January 2024',
-      location: 'Virtual',
-      description: 'Monthly seminars featuring global health experts and practitioners.',
-      imageUrl: menteeImg6,
-      attendees: '200+ Online Participants',
-      featured: false
-    },
-                {
+         {
       id: 13,
       title: 'Global Health Seminar Series',
-      category: 'mentorship',
+      category: 'mentees',
       date: 'January 2024',
       location: 'Virtual',
       description: 'Monthly seminars featuring global health experts and practitioners.',
@@ -146,17 +158,7 @@ const Mentorship = () => {
       attendees: '200+ Online Participants',
       featured: false
     },
-                {
-      id: 14,
-      title: 'Global Health Seminar Series',
-      category: 'mentorship',
-      date: 'January 2024',
-      location: 'Virtual',
-      description: 'Monthly seminars featuring global health experts and practitioners.',
-      imageUrl: menteeImg8,
-      attendees: '200+ Online Participants',
-      featured: false
-    },
+
     // Add more images here as needed
   ];
 
@@ -363,13 +365,7 @@ const Mentorship = () => {
                 </span>
               </div>
               
-              {/* <h3 className="lightbox-title">{filteredActivities[lightboxIndex].title}</h3>
-              <p className="lightbox-location">{filteredActivities[lightboxIndex].location}</p>
-              <p className="lightbox-date">{filteredActivities[lightboxIndex].date}</p>
-              <p className="lightbox-description">{filteredActivities[lightboxIndex].description}</p>
-              <p className="lightbox-attendees">
-                <strong>Participants:</strong> {filteredActivities[lightboxIndex].attendees}
-              </p> */}
+
               
               {filteredActivities[lightboxIndex].featured && (
                 <span className="lightbox-featured">⭐ Featured Activity</span>

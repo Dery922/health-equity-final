@@ -76,7 +76,7 @@ const ContactForm = () => {
     <section id="contact" className="contact-form-section">
       <div className="form-container">
         <div className="form-intro">
-          <h2>Start Your Health Journey</h2>
+          <h2>Tell Us About Your Health Research</h2>
           <p>
             Contact us for a free 30-minute consultation to discuss your 
             organization's needs and challenges.
@@ -156,7 +156,7 @@ const ContactForm = () => {
               <textarea
                 id="message"
                 name="message"
-                placeholder="Tell us about your health equity challenges, goals, and timeline..."
+                placeholder="Tell us about your health  challenges, goals, and timeline..."
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}

@@ -71,7 +71,7 @@ const Publications = () => {
   const [documents, setDocuments] = useState([
     {
       id: 1,
-      title: 'Health Equity in Rural Communities - Research Paper',
+      title: 'Health  in Rural Communities - Research Paper',
       category: 'research',
       fileType: 'pdf',
       size: '2.5 MB',
@@ -79,7 +79,7 @@ const Publications = () => {
       author: 'Dr. Sarah Johnson',
       downloads: 245,
       description: 'Comprehensive study on healthcare access disparities in rural areas across Ghana. This research examines socioeconomic factors affecting healthcare delivery.',
-      tags: ['health equity', 'rural health', 'research', 'ghana'],
+      tags: ['health', 'rural health', 'research', 'ghana'],
       featured: true
     },
     {
@@ -91,7 +91,7 @@ const Publications = () => {
       date: '2023-12-01',
       author: 'AJHealth Research Team',
       downloads: 189,
-      description: 'Comprehensive overview of our impact and achievements in advancing health equity across Sub-Saharan Africa through evidence-based interventions.',
+      description: 'Comprehensive overview of our impact and achievements in advancing health across Sub-Saharan Africa through evidence-based interventions.',
       tags: ['annual report', 'impact', 'africa', 'statistics'],
       featured: true
     },
@@ -104,7 +104,7 @@ const Publications = () => {
       date: '2023-10-20',
       author: 'Dr. Michael Chen',
       downloads: 312,
-      description: 'Presentation from the annual global health equity conference discussing innovative approaches to healthcare delivery.',
+      description: 'Presentation from the annual global health conference discussing innovative approaches to healthcare delivery.',
       tags: ['conference', 'presentation', 'global health'],
       featured: false
     },
@@ -117,7 +117,7 @@ const Publications = () => {
       date: '2023-09-30',
       author: 'Analytics Team',
       downloads: 156,
-      description: 'Step-by-step guide on using data analytics tools for health equity research and program evaluation.',
+      description: 'Step-by-step guide on using data analytics tools for health research and program evaluation.',
       tags: ['data analytics', 'toolkit', 'guide', 'healthcare'],
       featured: false
     },

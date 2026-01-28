@@ -14,46 +14,44 @@ const Team = () => {
       id: 1,
       name: "Josephine Tweneboa Osei (Pharmacist)",
       position: "Supply Chain and Quality Improvement Lead",
-      expertise: "Public Health Policy & Health Disparities Research",
+
       image: teamImg1,
       linkedin: "#",
-      twitter: "#"
+
     },
     {
       id: 3,
       name: "Leslie N.O Vanderpuije",
       position: "Public Health Policy Lead",
-      expertise: "Global Health & Infectious Disease Research",
+
       image: teamImg2,
       linkedin: "#",
-      twitter: "#"
+
     },
     {
       id: 4,
       name: "Gloria Agyekum",
       position: "Monitoring, Evaluation and Communications Lead",
-      expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
+
       image: teamImg6,
       linkedin: "#",
-      twitter: "#"
+
     },
         {
       id: 4,
       name: "Emmanuel Nii Obodai Mensah",
-      position: "Monitoring, Evaluation and Communications Lead",
-      expertise: "Cost-Effectiveness Analysis & Policy Evaluation",
+      position: "GHS/ER Research Coodinator",
       image: teamImg4,
       linkedin: "#",
-      twitter: "#"
+
     },
     {
       id: 5,
       name: "Richard Abeiku Bonney",
       position: "Health System Strenghtening Lead",
-      expertise: "Healthcare Program Implementation & Evaluation",
       image: teamImg5,
       linkedin: "#",
-      twitter: "#"
+
     },
   ];
 
@@ -89,8 +87,6 @@ const Team = () => {
               <div className="team-content">
                 <h3 className="team-name">{member.name}</h3>
                 <p className="team-position">{member.position}</p>
-                <p className="team-qualification">{member.qualification}</p>
-                <p className="team-expertise">{member.expertise}</p>
               </div>
             </div>
           ))}

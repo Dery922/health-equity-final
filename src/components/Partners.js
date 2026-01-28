@@ -159,7 +159,7 @@ const Partners = () => {
         <div className="partners-header">
           <h2>Our Trusted Partners</h2>
           <p className="partners-subtitle">
-            Collaborating with leading organizations to advance health equity across Africa
+            Collaborating with leading organizations to advance health across Africa
           </p>
         </div>
 

@@ -283,12 +283,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.team-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
+
 
 .team-initials {
   width: 60px;

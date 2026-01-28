@@ -85,7 +85,7 @@ const Footer = () => {
       
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} AJHealth.Research Consultancy 
+          &copy; {new Date().getFullYear()} AJHealth and Research Consultancy 
           All rights reserved.
         </p>
         <div className="footer-links">

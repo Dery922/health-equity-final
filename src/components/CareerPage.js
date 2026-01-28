@@ -39,7 +39,7 @@ const CareerPage = () => {
           <div className="career-message">
             <h2>No Open Positions Available</h2>
             <p>
-              We appreciate your interest in joining our team at Health Equity Consultancy Services. 
+              We appreciate your interest in joining our team at Health Consultancy Services. 
               Currently, we do not have any open positions available.
             </p>
           </div>
@@ -61,7 +61,7 @@ const CareerPage = () => {
               <div className="reason-card">
                 <div className="reason-icon">🌍</div>
                 <h4>Global Impact</h4>
-                <p>Join us in making a difference in health equity worldwide.</p>
+                <p>Join us in making a difference in health worldwide.</p>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const CareerPage = () => {
           <div className="looking-for-section">
             <h3>What We Look For in Team Members</h3>
             <ul className="qualities-list">
-              <li>Passion for health equity and social justice</li>
+              <li>Passion for health and social justice</li>
               <li>Expertise in healthcare, research, or data analytics</li>
               <li>Collaborative mindset and strong communication skills</li>
               <li>Commitment to evidence-based practice</li>

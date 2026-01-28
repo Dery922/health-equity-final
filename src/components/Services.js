@@ -6,7 +6,7 @@ const Services = () => {
     {
       id: 1,
       title: "Research",
-      description: "Comprehensive health equity research and evidence-based solutions for healthcare disparities.",
+      description: "Comprehensive health research and evidence-based solutions for healthcare disparities.",
       icon: "📊"
     },
     {
@@ -18,7 +18,7 @@ const Services = () => {
     {
       id: 3,
       title: "Project Management",
-      description: "End-to-end management of health equity projects from planning to implementation.",
+      description: "End-to-end management of health  projects from planning to implementation.",
       icon: "👥"
     },
     {
