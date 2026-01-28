@@ -36,17 +36,8 @@ const Mentorship = () => {
   // Mentorship activities with images
   const mentorshipActivities = [
 
-    {
-      id: 2,
-      title: 'Data Analytics Training',
-      category: 'conferences',
-      date: 'February 2024',
-      location: 'Kumasi, Ghana',
-      description: 'Hands-on training in healthcare data analysis using modern tools.',
-      imageUrl: heroImg2,
-      attendees: '35 Health Professionals',
-      featured: true
-    },
+    
+ 
     {
       id: 5,
       title: 'Global Health Seminar Series',
