@@ -23,8 +23,6 @@ const Team = () => {
       id: 20,
       name: "Archibold Nii Boye (Pharmacist)",
       position: "Project Management and Health Economics Lead ",
-
-      image: teamImg1,
       linkedin: "#",
 
     },
