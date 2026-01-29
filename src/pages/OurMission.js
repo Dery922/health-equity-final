@@ -20,7 +20,7 @@ const MissionPage = () => {
     },
     {
       icon: "⚖️",
-      title: "Health Equity",
+      title: "Health ",
       description: "Every solution we design prioritizes accessibility and fairness, reaching the most vulnerable populations across Ghana."
     },
     {
@@ -87,7 +87,7 @@ const MissionPage = () => {
           <div className="mission-statement">
             <h2>Our Mission</h2>
             <p className="mission-text">
-              At AJ Health and Research Consultancy, our mission is to advance health equity and strengthen 
+              At AJ Health and Research Consultancy, our mission is to advance health and strengthen 
               system resilience across Ghana. We provide expert, integrated consultancy services that translate 
               evidence into action, build local capacity, and optimize resources across public health programs, 
               supply chains, and clinical care—ensuring quality, safety, and sustainability in every intervention.

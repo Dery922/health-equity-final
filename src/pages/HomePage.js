@@ -57,7 +57,7 @@ const HomePage = () => {
           <div className="mission-content" style={{textAlign:"left"}}>
             <h2>Our Mission</h2>
             <p>At AJ Health and Research Consultancy, 
-              our mission is to advance health equity and strengthen 
+              our mission is to advance health and strengthen 
               system resilience across Ghana. We provide expert, 
               integrated consultancy services that translate evidence into action, build local capacity, and optimize resources across public health programs, supply chains, and clinical carevensuring quality,
                safety, and sustainability in every intervention.</p>
