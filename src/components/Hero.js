@@ -31,7 +31,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
     {
       image: heroImg4,
       title: "Global Health Partnerships",
-      description: "Collaborating with international organizations to advance health equity and sustainable development."
+      description: "Collaborating with international organizations to advance health and sustainable development."
     }
   ];
 
@@ -61,7 +61,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
 
   const stats = [
     { value: "50+", label: "Organizations Served" },
-    { value: "100+", label: "Health Equity Projects" },
+    { value: "100+", label: "Health Projects" },
     { value: "15+", label: "Countries Reached" }
   ];
 

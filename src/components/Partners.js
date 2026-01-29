@@ -3,11 +3,11 @@ import './Partners.css';
 
 // Import your partner logo images
 import partnerImg1 from "../assets/images/ghanacollege.jpeg";
-import partnerImg2 from "../assets/images/ghanahealth.jpeg";
-import partnerImg3 from "../assets/images/ghanahealth.jpeg";
-import partnerPlaceholder1 from "../assets/images/m1.jpeg";
-import partnerPlaceholder2 from "../assets/images/m2.jpeg";
-import partnerPlaceholder3 from "../assets/images/m3.jpeg";
+import partnerImg2 from "../assets/images/Health Keepers Network.jpg.jpeg";
+import partnerImg3 from "../assets/images/National Aids Control Program.jpg.jpeg";
+import partnerPlaceholder1 from "../assets/images/ghanahealth.jpeg";
+import partnerPlaceholder2 from "../assets/images/Buni Banda.jpg.jpeg";
+// import partnerPlaceholder3 from "../assets/images/m3.jpeg";
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,52 +20,40 @@ const Partners = () => {
   const partners = [
     { 
       id: 1, 
-      name: "Ghana Health Service", 
+      name: "Health keepers network", 
       logo: partnerImg2, 
       type: "Government Agency" 
     },
-    { 
-      id: 2, 
-      name: "Health Access Network", 
-      logo: partnerPlaceholder1,
-      type: "Health NGO" 
+        { 
+      id: 1, 
+      name: "Ghana Health Service", 
+      logo: partnerPlaceholder1, 
+      type: "Government Agency" 
     },
+
     { 
       id: 3, 
       name: "Ghana College of Pharmacists", 
       logo: partnerImg1, 
       type: "Professional Body" 
     },
-    { 
-      id: 4, 
-      name: "National AIDS/STI Control Program", 
-      logo: partnerPlaceholder2,
-      type: "Government Program" 
-    },
-    { 
-      id: 5, 
-      name: "Health Keepers Network", 
-      logo: partnerPlaceholder3,
-      type: "Community Organization" 
-    },
+
+
     { 
       id: 6, 
-      name: "Buni Banda Initiative", 
+      name: "National aids control program", 
       logo: partnerImg3, 
       type: "Regional Partner" 
     },
-    { 
-      id: 7, 
-      name: "Global Health Initiative", 
-      logo: partnerPlaceholder1, 
-      type: "International Agency" 
+
+        { 
+      id: 9, 
+      name: "Buni banda", 
+      logo: partnerPlaceholder2 , 
+      type: "Regional Partner" 
     },
-    { 
-      id: 8, 
-      name: "Africa CDC", 
-      logo: partnerPlaceholder2, 
-      type: "Regional Health Body" 
-    },
+
+
   ];
 
   // Auto-rotate carousel
