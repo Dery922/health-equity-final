@@ -12,7 +12,7 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Josephine Tweneboa Osei (Pharmacist)",
+      name: "Josephine Tweneboa Osei ",
       position: "Supply Chain and Quality Improvement Lead",
 
       image: teamImg1,
@@ -21,7 +21,7 @@ const Team = () => {
     },
         {
       id: 20,
-      name: "Archibold Nii Boye (Pharmacist)",
+      name: "Archibold Nii Boye ",
       position: "Project Management and Health Economics Lead ",
       linkedin: "#",
 
@@ -30,7 +30,6 @@ const Team = () => {
       id: 3,
       name: "Leslie N.O Vanderpuije",
       position: "Public Health Policy Lead",
-
       image: teamImg2,
       linkedin: "#",
 
@@ -39,7 +38,6 @@ const Team = () => {
       id: 4,
       name: "Gloria Agyekum",
       position: "Monitoring, Evaluation and Communications Lead",
-
       image: teamImg6,
       linkedin: "#",
 

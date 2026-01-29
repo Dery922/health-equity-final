@@ -76,7 +76,7 @@ const MissionPage = () => {
         <div className="mission-hero-content">
           <h1 className="mission-hero-title">Our Mission & Vision</h1>
           <p className="mission-hero-subtitle">
-            Advancing Health Equity and Strengthening Systems Across Ghana
+            Advancing Health and Strengthening Systems Across Ghana
           </p>
         </div>
       </section>
