@@ -84,7 +84,125 @@ const Publications = () => {
     tags: ['health', 'research', 'ghana'],
     featured: true
   },
-  ]);
+        {
+    id: 2,
+    title: '3RD NATIONAL PATIENT SAFETY CONFERENCE',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/3RD NATIONAL PATIENT SAFETY CONFERENCE.pptx',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'COST OF MEDICATION ERRORS IN PUBLIC HEALTH FACILITIES OF EASTERN REGION, GHANA Van der Puije et. al, 2019'
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+          {
+    id: 3,
+    title: 'AJ Health and Research Consultancy_Mentorship  Summary',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/AJ Health and Research Consultancy_Mentorship  Summary.pdf',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'Our mentorship program is a strategic initiative aimed at empowering early-career researchers and graduate professionals who are passionate about making a tangible, systems-level public health impact in Ghana.'
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+            {
+    id: 4,
+    title: 'AJ_HEALTH PUBLICATIONS CITATIONS',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/AJ_HEALTH PUBLICATIONS CITATIONS.docx',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'OKOTAH, A.N., Vanderpuije, L., Osarfo, J., Obiri-Yeboa, I., Ofosu, W., MENSAH, N.O. and Buabin, D., 2025. HSD117 '
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+              {
+    id: 5,
+    title: 'ERHK_ME_PRESENTATION',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/ERHK_ME_PRESENTATION.pptx',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'Healthcare Providers Strategies and Challenges in Managing Medication Errors in Eastern Region, Ghana A Qualitative Study on Interventions, Communication, and Safety Improvements'
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+
+    {
+    id: 6,
+    title: '',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/FIP POSTER_20.08.2025 (4).pdf',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'Medication Error Interventions in Health Facilities: A qualitative Study of healthcare providers’ Experiences, Strategies and Challenges in Eastern region of Ghana'
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+
+      {
+    id: 7,
+    title: 'ISPOR EUROPE 2025 POSTER_02.11.2025_FINAL Versions_03.11.2025',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/ISPOR EUROPE 2025 POSTER_02.11.2025_FINAL Versions_03.11.2025.pdf',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'Trends and Economic Impact of Medication Errors in Public Hospitals of Eastern Region, Ghana: A Retrospective Analysis from 2018 to 2024'
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+        {
+    id: 8,
+    title: '  Project Report -Medicaion Error Qualitative Research , ER',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/  Project Report -Medicaion Error Qualitative Research , ER.docx',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'Trends and Economic Impact of Medication Errors in Public Hospitals of Eastern Region, Ghana: A Retrospective Analysis from 2018 to 2024'
+,
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
+  
+  
+  ]); 
+
+
 
   // New document form state
   const [newDocument, setNewDocument] = useState({

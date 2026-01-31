@@ -35,7 +35,7 @@ const Services = () => {
     },
     {
       id: 6,
-      title: "Work force Enhancement",
+      title: "Workforce Enhancement",
       description: "Training and development programs for healthcare professionals.",
       icon: "🏋️"
     }

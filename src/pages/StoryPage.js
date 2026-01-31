@@ -106,7 +106,7 @@ const StoryPage = () => {
       </section>
 
       {/* Founder's Message */}
-      <section className="founder-section">
+      {/* <section className="founder-section">
         <div className="container">
           <div className="founder-content">
             <div className="founder-text">
@@ -127,10 +127,10 @@ const StoryPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Timeline Section */}
-      <section className="timeline-section">
+      {/* <section className="timeline-section">
         <div className="container">
           <h2 className="section-title">Our Journey</h2>
           <div className="timeline">
@@ -149,7 +149,7 @@ const StoryPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Philosophy */}
       <section className="philosophy-section">
@@ -168,7 +168,7 @@ const StoryPage = () => {
       </section>
 
       {/* Team Highlights */}
-      <section className="team-highlights">
+      {/* <section className="team-highlights">
         <div className="container">
           <h2 className="section-title">The Leadership Behind Our Impact</h2>
           <div className="team-grid">
@@ -189,7 +189,7 @@ const StoryPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Impact & Growth */}
       {/* <section className="growth-section">
@@ -253,7 +253,7 @@ const StoryPage = () => {
       </section> */}
 
       {/* Call to Action */}
-      <section className="story-cta">
+      {/* <section className="story-cta">
         <div className="container">
           <div className="cta-content">
             <h2>Be Part of Our Story</h2>
@@ -267,7 +267,7 @@ const StoryPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>
