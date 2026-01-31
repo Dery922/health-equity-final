@@ -112,9 +112,8 @@ const StoryPage = () => {
             <div className="founder-text">
               <h2>Our Founding Vision</h2>
               <blockquote className="founder-quote">
-                "I started this journey with a simple belief: that quality healthcare is not a privilege, 
-                but a fundamental right for every Ghanaian. What began as a small consultancy has grown 
-                into a movement for health equity."
+                "AJ Health and Research Consult was founded to bridge evidence and impact in strengthening health systems across Africa. Drawing on multidisciplinary expertise, we deliver practical, cost-efficient solutions in public health research, workforce enhancement, supply chain systems, and economic evaluation. Our work spans pharmaceutical care, reproductive and family health, non-communicable and infectious diseases, with a strong focus on HIV, TB, malaria, and antimicrobial resistance. Through rigorous field research and hands-on supply chain expertise, we translate data into actionable insights that protect 
+                product quality, strengthen systems, and improve health outcomes.."
               </blockquote>
               <div className="founder-attribution">
                 <div className="founder-name">Dr. Ama Johnson</div>
@@ -193,7 +192,7 @@ const StoryPage = () => {
       </section>
 
       {/* Impact & Growth */}
-      <section className="growth-section">
+      {/* <section className="growth-section">
         <div className="container">
           <div className="growth-content">
             <h2>Our Growth & Impact</h2>
@@ -223,10 +222,10 @@ const StoryPage = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Looking Forward */}
-      <section className="future-section">
+      {/* <section className="future-section">
         <div className="container">
           <div className="future-content">
             <h2>Looking Forward</h2>
@@ -251,7 +250,7 @@ const StoryPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="story-cta">

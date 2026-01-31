@@ -54,6 +54,14 @@ const Partners = () => {
     },
 
 
+        { 
+      id: 10, 
+      name: "Buni banda", 
+      logo: partnerPlaceholder2 , 
+      type: "Regional Partner" 
+    },
+
+
   ];
 
   // Auto-rotate carousel

@@ -145,6 +145,7 @@ const ContactForm = () => {
                 <option value="general">General Inquiry</option>
                 <option value="research">Research</option>
                 <option value="analytics">Data Analytics</option>
+                <option value="partner">Become a Partner</option>
                 <option value="project">Project Management</option>
                 <option value="economics">Health Economics Evaluation</option>
                 <option value="logistics">Logistics & Supply Chain</option>
@@ -182,7 +183,7 @@ const ContactForm = () => {
                      <div className="info-item">
             <div className="info-icon">📞</div>
             <h4>Call Us</h4>
-            <p> +233 244 288 266 /+233 244 297 950</p>
+            <p> 0244988266</p>
           
           </div>
            
@@ -191,8 +192,8 @@ const ContactForm = () => {
                         <div className="info-item">
             <div className="info-icon">🗺️
             </div>
-            <h4>Location</h4>
-            <p>No. 23 Asafoatse Baakunkor Street, Camara, Dansoman </p>
+            <h4>Address</h4>
+            <p>No. 3 Asafoastse Baakunkor Street, Camara, Dansoman </p>
           </div>
       
           <Link to="https://www.linkedin.com/company/aj-health-consult/" className="info-link">

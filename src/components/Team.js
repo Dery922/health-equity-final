@@ -31,7 +31,7 @@ const Team = () => {
       name: "Leslie N.O Vanderpuije",
       position: "Public Health Policy Lead",
       image: teamImg2,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/leslie-van-der-puije-2b2b5b5b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
 
     },
     {
@@ -39,7 +39,7 @@ const Team = () => {
       name: "Gloria Agyekum",
       position: "Monitoring, Evaluation and Communications Lead",
       image: teamImg6,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/gloria-agyekum-2b803a74/",
 
     },
         {
@@ -47,7 +47,7 @@ const Team = () => {
       name: "Emmanuel Nii Obodai Mensah",
       position: "GHS/ER Research Coodinator",
       image: teamImg4,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/nii-obodai-mensah-9862a095",
 
     },
     {
@@ -55,7 +55,7 @@ const Team = () => {
       name: "Richard Abeiku Bonney",
       position: "Health System Strenghtening Lead",
       image: teamImg5,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/richard-abeiku-bonney?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
 
     },
   ];
@@ -77,7 +77,7 @@ const Team = () => {
               <div className="team-image">
                 <div className="image-placeholder">
                      <img 
-                      style={{width:355,height:255}}
+                      style={{width:230,height:255}}
                       src={member.image} 
                       alt={member.name} />
                 </div>

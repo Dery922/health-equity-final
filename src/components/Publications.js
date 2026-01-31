@@ -69,110 +69,21 @@ const Publications = () => {
 
   // Document data (this would come from your backend)
   const [documents, setDocuments] = useState([
-    {
-      id: 1,
-      title: 'Health  in Rural Communities - Research Paper',
-      category: 'research',
-      fileType: 'pdf',
-      size: '2.5 MB',
-      date: '2023-11-15',
-      author: 'Dr. Sarah Johnson',
-      downloads: 245,
-      description: 'Comprehensive study on healthcare access disparities in rural areas across Ghana. This research examines socioeconomic factors affecting healthcare delivery.',
-      tags: ['health', 'rural health', 'research', 'ghana'],
-      featured: true
-    },
-    {
-      id: 2,
-      title: 'Annual Impact Report 2023',
-      category: 'reports',
-      fileType: 'pdf',
-      size: '4.2 MB',
-      date: '2023-12-01',
-      author: 'AJHealth Research Team',
-      downloads: 189,
-      description: 'Comprehensive overview of our impact and achievements in advancing health across Sub-Saharan Africa through evidence-based interventions.',
-      tags: ['annual report', 'impact', 'africa', 'statistics'],
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'Global Health Conference 2023 - Presentation',
-      category: 'conferences',
-      fileType: 'pptx',
-      size: '15.8 MB',
-      date: '2023-10-20',
-      author: 'Dr. Michael Chen',
-      downloads: 312,
-      description: 'Presentation from the annual global health conference discussing innovative approaches to healthcare delivery.',
-      tags: ['conference', 'presentation', 'global health'],
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'Data Analytics Toolkit for Healthcare',
-      category: 'guidelines',
-      fileType: 'docx',
-      size: '1.8 MB',
-      date: '2023-09-30',
-      author: 'Analytics Team',
-      downloads: 156,
-      description: 'Step-by-step guide on using data analytics tools for health research and program evaluation.',
-      tags: ['data analytics', 'toolkit', 'guide', 'healthcare'],
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'Maternal Health Program Evaluation',
-      category: 'research',
-      fileType: 'pdf',
-      size: '3.1 MB',
-      date: '2023-08-25',
-      author: 'Dr. Maria Rodriguez',
-      downloads: 178,
-      description: 'Evaluation of maternal health programs in West Africa focusing on reducing maternal mortality.',
-      tags: ['maternal health', 'evaluation', 'west africa'],
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Budget and Expenditure Report 2023',
-      category: 'reports',
-      fileType: 'xlsx',
-      size: '2.9 MB',
-      date: '2023-12-15',
-      author: 'Finance Department',
-      downloads: 134,
-      description: 'Detailed financial report covering organizational expenses and budget allocations.',
-      tags: ['finance', 'budget', 'expenditure'],
-      featured: false
-    },
-    {
-      id: 7,
-      title: 'Workshop on Health Economics',
-      category: 'conferences',
-      fileType: 'pdf',
-      size: '5.3 MB',
-      date: '2023-07-10',
-      author: 'Dr. James Wilson',
-      downloads: 267,
-      description: 'Workshop materials covering health economics principles and applications in developing countries.',
-      tags: ['workshop', 'health economics', 'training'],
-      featured: true
-    },
-    {
-      id: 8,
-      title: 'Clinical Guidelines for Malaria Treatment',
-      category: 'guidelines',
-      fileType: 'pdf',
-      size: '1.2 MB',
-      date: '2023-06-18',
-      author: 'Medical Advisory Board',
-      downloads: 423,
-      description: 'Updated clinical guidelines for malaria treatment and prevention in endemic regions.',
-      tags: ['malaria', 'clinical guidelines', 'treatment'],
-      featured: false
-    }
+      {
+    id: 1,
+    title: 'Membership Summary',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/membership.docx',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'We don’t just consult; we cultivate. Our greatest legacy is the leaders we mentor. This program is designed to give you the tools, confidence, and connections to not only enter the field of public health but to shape its future..',
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+  },
   ]);
 
   // New document form state
@@ -241,19 +152,24 @@ const Publications = () => {
   };
 
   // Handle document download
-  const handleDownload = (document) => {
-    // In a real app, this would trigger the actual file download
-    // For now, we'll just update the download count
-    setDocuments(docs => 
-      docs.map(doc => 
-        doc.id === document.id 
-          ? { ...doc, downloads: doc.downloads + 1 }
-          : doc
-      )
-    );
-    
-    alert(`Downloading: ${document.title}`);
-  };
+const handleDownload = (doc) => {
+  // Update download count
+  setDocuments(prev =>
+    prev.map(d =>
+      d.id === doc.id
+        ? { ...d, downloads: d.downloads + 1 }
+        : d
+    )
+  );
+
+  // Trigger real browser download
+  const link = document.createElement('a');
+  link.href = doc.fileUrl;
+  link.download = doc.fileUrl.split('/').pop();
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   // Format date
   const formatDate = (dateString) => {
@@ -273,11 +189,11 @@ const Publications = () => {
               <p className="publications-subtitle">
                 Access and download our research papers, reports, guidelines, and conference materials. 
                 You can also contribute by uploading relevant documents.
-              </p>
+             </p>
             </div>
             
             <div className="header-actions">
-              <div className="search-box">
+              {/* <div className="search-box">
                 <input
                   type="text"
                   placeholder="Search documents..."
@@ -294,7 +210,7 @@ const Publications = () => {
               >
                 <span className="btn-icon">📤</span>
                 Upload Document
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -488,7 +404,7 @@ const Publications = () => {
                       </div>
                       <div className="stat">
                         <span className="stat-icon">📥</span>
-                        <span className="stat-value">{doc.downloads} downloads</span>
+                     
                       </div>
                     </div>
                     
@@ -515,79 +431,7 @@ const Publications = () => {
           </div>
 
           {/* Selected Document Preview */}
-          {filteredDocuments.length > 0 && (
-            <div className="document-preview">
-              <div className="preview-header">
-                <h3>Document Preview</h3>
-                <button 
-                  className="close-preview"
-                  onClick={() => setSelectedDocument(null)}
-                >
-                  &times;
-                </button>
-              </div>
-              
-              <div className="preview-content">
-                <div className="preview-info">
-                  <h4>{filteredDocuments[selectedDocument]?.title}</h4>
-                  <div className="preview-meta">
-                    <span className="meta-item">
-                      <span className="meta-label">Author:</span>
-                      {filteredDocuments[selectedDocument]?.author}
-                    </span>
-                    <span className="meta-item">
-                      <span className="meta-label">Date:</span>
-                      {formatDate(filteredDocuments[selectedDocument]?.date)}
-                    </span>
-                    <span className="meta-item">
-                      <span className="meta-label">Size:</span>
-                      {filteredDocuments[selectedDocument]?.size}
-                    </span>
-                    <span className="meta-item">
-                      <span className="meta-label">Downloads:</span>
-                      {filteredDocuments[selectedDocument]?.downloads}
-                    </span>
-                  </div>
-                  
-                  <p className="preview-description">
-                    {filteredDocuments[selectedDocument]?.description}
-                  </p>
-                  
-                  <div className="preview-actions">
-                    <button 
-                      className="preview-download-btn"
-                      onClick={() => handleDownload(filteredDocuments[selectedDocument])}
-                    >
-                      <span className="btn-icon">📥</span>
-                      Download Document ({filteredDocuments[selectedDocument]?.size})
-                    </button>
-                    <button className="preview-share-btn">
-                      <span className="btn-icon">🔗</span>
-                      Share
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="preview-thumbnail">
-                  <div 
-                    className="thumbnail-placeholder"
-                    style={{ backgroundColor: fileTypes[filteredDocuments[selectedDocument]?.fileType]?.color }}
-                  >
-                    <div className="thumbnail-icon">
-                      {filteredDocuments[selectedDocument]?.fileType === 'pdf' ? '📄' :
-                       filteredDocuments[selectedDocument]?.fileType === 'doc' || 
-                       filteredDocuments[selectedDocument]?.fileType === 'docx' ? '📝' :
-                       filteredDocuments[selectedDocument]?.fileType === 'ppt' || 
-                       filteredDocuments[selectedDocument]?.fileType === 'pptx' ? '📽️' : '📊'}
-                    </div>
-                    <div className="thumbnail-text">
-                      {fileTypes[filteredDocuments[selectedDocument]?.fileType]?.label} Document
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+      
         </div>
 
       </section>

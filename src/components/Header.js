@@ -38,7 +38,6 @@ const Header = () => {
       path: '#work',
       dropdown: [
         { label: 'Publications', path: '/publications' },
-        { label: 'Success Stories', path: '#success' },
       ]
     },
     { label: 'Partners', path: '#partners' },
@@ -123,11 +122,15 @@ const handleNavClick = (path, e) => {
       <div className="header-container">
         <div className="logo">
      
-        <img 
+
+      <Link to="/">
+           <img 
           src={logoImage}   
           alt="AJHealth Logo" 
           className="logo-image"
-        />
+        /> 
+      </Link>
+   
           {/* <div className="logo-text">
             <h1><Link to="/">AJHealth</Link></h1>
             <p>Evidence to Action, Healthier Ghana</p>

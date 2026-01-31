@@ -15,9 +15,13 @@
 .publications-header {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 3rem;
 }
+
+
 
 .header-content h2 {
   font-size: 2.5rem;
