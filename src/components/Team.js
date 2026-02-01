@@ -16,7 +16,7 @@ const Team = () => {
       position: "Supply Chain and Quality Improvement Lead",
 
       image: teamImg1,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/josephine-osarfo-20114863?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
 
     },
         {
@@ -43,7 +43,7 @@ const Team = () => {
 
     },
         {
-      id: 4,
+      id: 9,
       name: "Emmanuel Nii Obodai Mensah",
       position: "GHS/ER Research Coodinator",
       image: teamImg4,
