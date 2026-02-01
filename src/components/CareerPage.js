@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './CareerPage.css';
 import Header from './Header';
+import logoImage from "../assets/images/newLogo.png";
 
 const CareerPage = () => {
   // Scroll to top when component mounts
@@ -16,7 +17,12 @@ const CareerPage = () => {
       <header className="career-header">
         <div className="career-header-container">
           <Link to="/" className="career-logo">
-            <h1>AJHealth<span> and Research Consultancy</span></h1>
+          <img 
+          src={logoImage}   
+          alt="AJHealth Logo" 
+          className="logo-image"
+        /> 
+            {/* <h1>AJHealth<span> and Research Consultancy</span></h1> */}
           </Link>
           <Link to="/" className="back-home-btn">
             ← Back to Home

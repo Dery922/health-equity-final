@@ -9,10 +9,10 @@
 
 /* Header */
 .career-header {
+  height: 80px;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .career-logo {
@@ -31,17 +32,34 @@
 }
 
 .career-logo h1 {
-  color: #2a6e6a;
+  color: #02b94b;
   font-size: 1.8rem;
   margin: 0;
 }
 
 .career-logo span {
-  color: #4a9d9c;
+  color: #1d3b55;
+}
+
+.logo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+/* Logo image NEVER controls header height */
+.logo-image {
+  max-height: 116px;         
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .back-home-btn {
-  background: #2a6e6a;
+  background: #02b94b;
   color: white;
   text-decoration: none;
   padding: 0.7rem 1.5rem;
@@ -51,7 +69,7 @@
 }
 
 .back-home-btn:hover {
-  background: #1d504d;
+  background: #02b94b;
   transform: translateY(-2px);
 }
 
@@ -71,7 +89,7 @@
 .career-icon {
   font-size: 5rem;
   margin-bottom: 2rem;
-  color: #4a9d9c;
+  color: #02b94b;
   animation: bounce 2s infinite;
 }
 
@@ -86,7 +104,7 @@
 
 /* Title */
 .career-title {
-  color: #1d504d;
+  color: #1d3b55 ;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -103,7 +121,7 @@
 }
 
 .career-message h2 {
-  color: #2a6e6a;
+  color: #1d3b55;
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
@@ -123,7 +141,7 @@
 }
 
 .check-back-section h3 {
-  color: #1d504d;
+  color: #1d3b55;
   font-size: 1.8rem;
   margin-bottom: 2rem;
   font-weight: 600;
@@ -151,11 +169,11 @@
 .reason-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #2a6e6a;
+  color: #1d3b55;
 }
 
 .reason-card h4 {
-  color: #1d504d;
+  color: #1d3b55;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -176,7 +194,7 @@
 }
 
 .looking-for-section h3 {
-  color: #1d504d;
+  color: #1d3b55;
   font-size: 1.8rem;
   margin-bottom: 2rem;
   font-weight: 600;
@@ -207,7 +225,7 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: #2a6e6a;
+  color: #1d3b55;
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -222,7 +240,7 @@
 }
 
 .career-cta h3 {
-  color: #1d504d;
+  color: #1d3b55;
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -260,7 +278,7 @@
 }
 
 .subscribe-btn:hover {
-  background: linear-gradient(135deg, #1d504d, #2a6e6a);
+  background: linear-gradient(135deg, #1d3b55, #2a6e6a);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(42, 110, 106, 0.3);
 }

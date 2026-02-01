@@ -26,12 +26,12 @@ const Header = () => {
     { 
       label: 'Services', 
       path: '#services',
-      dropdown: [
-        { label: 'Research & Analytics', path: '#research' },
-        { label: 'Health Economics', path: '#economics' },
-        { label: 'Project Management', path: '#projects' },
-        { label: 'Training & Capacity Building', path: '#training' },
-      ]
+      // dropdown: [
+      //   { label: 'Research & Analytics', path: '#research' },
+      //   { label: 'Health Economics', path: '#economics' },
+      //   { label: 'Project Management', path: '#projects' },
+      //   { label: 'Training & Capacity Building', path: '#training' },
+      // ]
     },
     { 
       label: 'Our Work', 

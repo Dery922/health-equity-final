@@ -88,7 +88,7 @@ const Publications = () => {
     id: 2,
     title: '3RD NATIONAL PATIENT SAFETY CONFERENCE',
     category: 'Membership',
-    fileType: 'docx',
+    fileType: 'pptx',
     fileUrl: '/documents/3RD NATIONAL PATIENT SAFETY CONFERENCE.pptx',
     size: '2.5 MB',
     date: 'N/A',
@@ -100,22 +100,22 @@ const Publications = () => {
     tags: ['health', 'research', 'ghana'],
     featured: true
   },
-          {
-    id: 3,
-    title: 'AJ Health and Research Consultancy_Mentorship  Summary',
-    category: 'Membership',
-    fileType: 'docx',
-    fileUrl: '/documents/AJ Health and Research Consultancy_Mentorship  Summary.pdf',
-    size: '2.5 MB',
-    date: 'N/A',
-    author: '',
-    downloads: 245,
-    description:
-      'Our mentorship program is a strategic initiative aimed at empowering early-career researchers and graduate professionals who are passionate about making a tangible, systems-level public health impact in Ghana.'
-,
-    tags: ['health', 'research', 'ghana'],
-    featured: true
-  },
+//           {
+//     id: 3,
+//     title: 'AJ Health and Research Consultancy_Mentorship  Summary',
+//     category: 'Membership',
+//     fileType: 'pdf',
+//     fileUrl: '/documents/AJ Health and Research Consultancy_Mentorship  Summary.pdf',
+//     size: '2.5 MB',
+//     date: 'N/A',
+//     author: '',
+//     downloads: 245,
+//     description:
+//       'Our mentorship program is a strategic initiative aimed at empowering early-career researchers and graduate professionals who are passionate about making a tangible, systems-level public health impact in Ghana.'
+// ,
+//     tags: ['health', 'research', 'ghana'],
+//     featured: true
+//   },
             {
     id: 4,
     title: 'AJ_HEALTH PUBLICATIONS CITATIONS',
@@ -197,9 +197,7 @@ const Publications = () => {
 ,
     tags: ['health', 'research', 'ghana'],
     featured: true
-  },
-  
-  
+    },
   ]); 
 
 

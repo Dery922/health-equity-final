@@ -72,7 +72,12 @@ const MissionPage = () => {
       <Header />
       
       {/* Mission Hero Section */}
-      <section className="mission-hero">
+      <section style={{
+              background: `
+                linear-gradient(135deg, #02b94b 0%, #1d3b55 100%),
+                
+              `
+            }} className="mission-hero">
         <div className="mission-hero-content">
           <h1 className="mission-hero-title">Our Mission & Vision</h1>
           <p className="mission-hero-subtitle">
