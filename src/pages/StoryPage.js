@@ -106,7 +106,7 @@ const StoryPage = () => {
       </section>
 
       {/* Founder's Message */}
-      {/* <section className="founder-section">
+      <section className="founder-section">
         <div className="container">
           <div className="founder-content">
             <div className="founder-text">
@@ -116,8 +116,8 @@ const StoryPage = () => {
                 product quality, strengthen systems, and improve health outcomes.."
               </blockquote>
               <div className="founder-attribution">
-                <div className="founder-name">Dr. Ama Johnson</div>
-                <div className="founder-position">Founder & CEO</div>
+                {/* <div className="founder-name">Dr. Ama Johnson</div>
+                <div className="founder-position">Founder & CEO</div> */}
               </div>
               <p className="founder-mission">
                 This conviction—that every community deserves access to quality healthcare—fuels our work 
@@ -127,7 +127,7 @@ const StoryPage = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Timeline Section */}
       {/* <section className="timeline-section">

@@ -115,8 +115,8 @@ const CareerPage = () => {
       {/* Footer */}
       <footer className="career-footer">
         <div className="career-footer-container">
-          <p>© {new Date().getFullYear()} Health Equity Consultancy Services</p>
-          <p>Advancing health equity through evidence-based consultancy</p>
+          <p>© {new Date().getFullYear()} Health Consultancy Services</p>
+          <p>Advancing health  through evidence-based consultancy</p>
           <div className="footer-links">
             <Link to="/">Home</Link>
             <a href="/#contact">Contact</a>

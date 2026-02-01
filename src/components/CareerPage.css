@@ -254,7 +254,7 @@
 }
 
 .subscribe-btn {
-  background: linear-gradient(135deg, #2a6e6a, #4a9d9c);
+    background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
   color: white;
   border: none;
 }
@@ -306,7 +306,7 @@
 
 /* Footer */
 .career-footer {
-  background: linear-gradient(135deg, #1d3736 0%, #152726 100%);
+   background: linear-gradient(135deg, #02b94b 0%, #1d3b55 100%);
   color: white;
   padding: 2rem 1rem;
   text-align: center;

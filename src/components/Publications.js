@@ -69,21 +69,21 @@ const Publications = () => {
 
   // Document data (this would come from your backend)
   const [documents, setDocuments] = useState([
-      {
-    id: 1,
-    title: 'Membership Summary',
-    category: 'Membership',
-    fileType: 'docx',
-    fileUrl: '/documents/membership.docx',
-    size: '2.5 MB',
-    date: 'N/A',
-    author: '',
-    downloads: 245,
-    description:
-      'We don’t just consult; we cultivate. Our greatest legacy is the leaders we mentor. This program is designed to give you the tools, confidence, and connections to not only enter the field of public health but to shape its future..',
-    tags: ['health', 'research', 'ghana'],
-    featured: true
-  },
+  //     {
+  //   id: 1,
+  //   title: 'Membership Summary',
+  //   category: 'Membership',
+  //   fileType: 'docx',
+  //   fileUrl: '/documents/membership.docx',
+  //   size: '2.5 MB',
+  //   date: 'N/A',
+  //   author: '',
+  //   downloads: 245,
+  //   description:
+  //     'We don’t just consult; we cultivate. Our greatest legacy is the leaders we mentor. This program is designed to give you the tools, confidence, and connections to not only enter the field of public health but to shape its future..',
+  //   tags: ['health', 'research', 'ghana'],
+  //   featured: true
+  // },
         {
     id: 2,
     title: '3RD NATIONAL PATIENT SAFETY CONFERENCE',
@@ -136,7 +136,7 @@ const Publications = () => {
     id: 5,
     title: 'ERHK_ME_PRESENTATION',
     category: 'Membership',
-    fileType: 'docx',
+    fileType: 'pptx',
     fileUrl: '/documents/ERHK_ME_PRESENTATION.pptx',
     size: '2.5 MB',
     date: 'N/A',
@@ -151,9 +151,9 @@ const Publications = () => {
 
     {
     id: 6,
-    title: '',
+    title: 'Medication Error Interventions in Health Facilities',
     category: 'Membership',
-    fileType: 'docx',
+    fileType: 'pdf',
     fileUrl: '/documents/FIP POSTER_20.08.2025 (4).pdf',
     size: '2.5 MB',
     date: 'N/A',
@@ -170,7 +170,7 @@ const Publications = () => {
     id: 7,
     title: 'ISPOR EUROPE 2025 POSTER_02.11.2025_FINAL Versions_03.11.2025',
     category: 'Membership',
-    fileType: 'docx',
+    fileType: 'pdf',
     fileUrl: '/documents/ISPOR EUROPE 2025 POSTER_02.11.2025_FINAL Versions_03.11.2025.pdf',
     size: '2.5 MB',
     date: 'N/A',
@@ -543,7 +543,7 @@ const handleDownload = (doc) => {
               <div className="no-documents">
                 <div className="no-documents-icon">📄</div>
                 <h3>No Documents Found</h3>
-                <p>Try a different search or category, or upload a new document.</p>
+                {/* <p>Try a different search or category, or upload a new document.</p> */}
               </div>
             )}
           </div>

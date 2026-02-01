@@ -19,11 +19,40 @@ import menteeImg6 from "../assets/images/menteer16.jpeg";
 import menteeImg7 from "../assets/images/mentee10.jpeg";
 import menteeImg8 from "../assets/images/mentee11.jpeg";
 
+import docIcon from '../assets/icons/doc-icon.svg';
+
+  const fileTypes = {
+  //   pdf: { icon: pdfIcon, color: '#FF6B6B', label: 'PDF' },
+    doc: { icon: docIcon, color: '#4D96FF', label: 'DOC' },
+  //   docx: { icon: docIcon, color: '#4D96FF', label: 'DOCX' },
+  //   ppt: { icon: pptIcon, color: '#FFD166', label: 'PPT' },
+  //   pptx: { icon: pptIcon, color: '#FFD166', label: 'PPTX' },
+  //   xls: { icon: xlsIcon, color: '#06D6A0', label: 'XLS' },
+  //   xlsx: { icon: xlsIcon, color: '#06D6A0', label: 'XLSX' }
+  };
+
+
 const Mentorship = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [documents, setDocuments] = useState({
+    id: 1,
+    title: 'Membership Summary',
+    category: 'Membership',
+    fileType: 'docx',
+    fileUrl: '/documents/membership.docx',
+    size: '2.5 MB',
+    date: 'N/A',
+    author: '',
+    downloads: 245,
+    description:
+      'We don’t just consult; we cultivate. Our greatest legacy is the leaders we mentor. This program is designed to give you the tools, confidence, and connections to not only enter the field of public health but to shape its future..',
+    tags: ['health', 'research', 'ghana'],
+    featured: true
+    },)
+    
 
   // Mentorship categories
   const categories = [
@@ -32,6 +61,26 @@ const Mentorship = () => {
     { id: 'mentorship', name: 'Mentees', icon: '🎤' },
  
   ];
+
+//   const handleDownload = (documents) => {
+//   // Update download count
+//   setDocuments(prev =>
+//     prev.map(d =>
+//       d.id === doc.id
+//         ? { ...d, downloads: d.downloads + 1 }
+//         : d
+//     )
+//   );
+
+//   // Trigger real browser download
+//   const link = document.createElement('a');
+//   link.href = documents.fileUrl;
+//   link.download = doc.fileUrl.split('/').pop();
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+// };
+
 
   // Mentorship activities with images
   const mentorshipActivities = [
@@ -288,16 +337,16 @@ const Mentorship = () => {
                   if (contact) {
                     contact.scrollIntoView({ behavior: 'smooth' });
                   }
-                }}
+                }} 
               >
                 Apply Now
               </button>
-              <button 
+              <a style={{textDecoration:'none'}} href="/documents/membership.docx" download="membership.docx"
                 className="secondary-cta"
-                onClick={() => alert('Program brochure will be downloaded')}
+                  
               >
                 Download Brochure
-              </button>
+              </a>
             </div>
           </div>
         </div>
