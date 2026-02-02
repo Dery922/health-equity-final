@@ -341,7 +341,7 @@ const Mentorship = () => {
               >
                 Apply Now
               </button>
-              <a style={{textDecoration:'none'}} href="/documents/membership.docx" download="membership.docx"
+              <a style={{textDecoration:'none'}} href="/documents/AJ Health and Research Consultancy_Mentorship  Summary.pdf" download="membership.docx"
                 className="secondary-cta"
                   
               >

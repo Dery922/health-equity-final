@@ -75,7 +75,7 @@ const Publications = () => {
   //   category: 'Membership',
   //   fileType: 'docx',
   //   fileUrl: '/documents/membership.docx',
-  //   size: '2.5 MB',
+  //   
   //   date: 'N/A',
   //   author: '',
   //   downloads: 245,
@@ -90,7 +90,7 @@ const Publications = () => {
     category: 'Membership',
     fileType: 'pptx',
     fileUrl: '/documents/3RD NATIONAL PATIENT SAFETY CONFERENCE.pptx',
-    size: '2.5 MB',
+
     date: 'N/A',
     author: '',
     downloads: 245,
@@ -122,7 +122,6 @@ const Publications = () => {
     category: 'Membership',
     fileType: 'docx',
     fileUrl: '/documents/AJ_HEALTH PUBLICATIONS CITATIONS.docx',
-    size: '2.5 MB',
     date: 'N/A',
     author: '',
     downloads: 245,
@@ -138,7 +137,7 @@ const Publications = () => {
     category: 'Membership',
     fileType: 'pptx',
     fileUrl: '/documents/ERHK_ME_PRESENTATION.pptx',
-    size: '2.5 MB',
+    
     date: 'N/A',
     author: '',
     downloads: 245,
@@ -155,7 +154,7 @@ const Publications = () => {
     category: 'Membership',
     fileType: 'pdf',
     fileUrl: '/documents/FIP POSTER_20.08.2025 (4).pdf',
-    size: '2.5 MB',
+    
     date: 'N/A',
     author: '',
     downloads: 245,
@@ -172,7 +171,7 @@ const Publications = () => {
     category: 'Membership',
     fileType: 'pdf',
     fileUrl: '/documents/ISPOR EUROPE 2025 POSTER_02.11.2025_FINAL Versions_03.11.2025.pdf',
-    size: '2.5 MB',
+    
     date: 'N/A',
     author: '',
     downloads: 245,
@@ -188,7 +187,7 @@ const Publications = () => {
     category: 'Membership',
     fileType: 'docx',
     fileUrl: '/documents/  Project Report -Medicaion Error Qualitative Research , ER.docx',
-    size: '2.5 MB',
+    
     date: 'N/A',
     author: '',
     downloads: 245,

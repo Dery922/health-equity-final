@@ -25,7 +25,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
     },
     {
       image: heroImg3,
-      title: " Work force Enhancement",
+      title: " Workforce Enhancement",
       description: "Mentorship and development programs for healthcare professionals."
     },
     {

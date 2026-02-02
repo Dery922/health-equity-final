@@ -43,7 +43,7 @@
 
 .logo {
   height: 56px;
-  display: flex;
+  display: flex; 
   align-items: center;
   flex-shrink: 0;
   text-decoration: none;

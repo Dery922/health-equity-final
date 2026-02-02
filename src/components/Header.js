@@ -23,16 +23,16 @@ const Header = () => {
         
       ]
     },
-    { 
-      label: 'Services', 
-      path: '#services',
-      // dropdown: [
-      //   { label: 'Research & Analytics', path: '#research' },
-      //   { label: 'Health Economics', path: '#economics' },
-      //   { label: 'Project Management', path: '#projects' },
-      //   { label: 'Training & Capacity Building', path: '#training' },
-      // ]
-    },
+    // { 
+    //   label: 'Services', 
+    //   path: '#services',
+    //   dropdown: [
+    //     { label: 'Research & Analytics', path: '#research' },
+    //     { label: 'Health Economics', path: '#economics' },
+    //     { label: 'Project Management', path: '#projects' },
+    //     { label: 'Training & Capacity Building', path: '#training' },
+    //   ]
+    // },
     { 
       label: 'Our Work', 
       path: '#work',
@@ -40,7 +40,7 @@ const Header = () => {
         { label: 'Publications', path: '/publications' },
       ]
     },
-    { label: 'Partners', path: '#partners' },
+    // { label: 'Partners', path: '#partners' },
   ];
 
   // Handle scroll effect

@@ -110,19 +110,23 @@ const StoryPage = () => {
         <div className="container">
           <div className="founder-content">
             <div className="founder-text">
-              <h2>Our Founding Vision</h2>
+              <h2>Founding Vision</h2>
               <blockquote className="founder-quote">
-                "AJ Health and Research Consult was founded to bridge evidence and impact in strengthening health systems across Africa. Drawing on multidisciplinary expertise, we deliver practical, cost-efficient solutions in public health research, workforce enhancement, supply chain systems, and economic evaluation. Our work spans pharmaceutical care, reproductive and family health, non-communicable and infectious diseases, with a strong focus on HIV, TB, malaria, and antimicrobial resistance. Through rigorous field research and hands-on supply chain expertise, we translate data into actionable insights that protect 
-                product quality, strengthen systems, and improve health outcomes.."
+                Our founding vision is to build a trusted, Ghana-based public health research and consultancy firm that transforms evidence into action and strengthens health systems in ways that are practical, equitable, and sustainable. We envision a health sector where policies are informed by high-quality local evidence, where supply chains reliably deliver safe and effective health commodities, and where health services consistently produce better outcomes for patients and communities.
               </blockquote>
               <div className="founder-attribution">
                 {/* <div className="founder-name">Dr. Ama Johnson</div>
                 <div className="founder-position">Founder & CEO</div> */}
               </div>
               <p className="founder-mission">
-                This conviction—that every community deserves access to quality healthcare—fuels our work 
-                every day. We combine global expertise with deep local understanding to create sustainable 
-                health solutions.
+           Rooted in multidisciplinary expertise and real-world implementation experience, our firm was established to bridge persistent gaps between research, policy, and frontline practice. We recognized that while data and policies are abundant, health systems often struggle with translating these into operational improvements. Our vision is therefore centered on context-specific solutions—solutions that reflect Ghana’s health realities, institutional structures, and resource constraints, while meeting international standards of rigor and accountability 
+
+We aspire to be a leading partner to government agencies, development partners, private sector actors, and academic institutions by delivering integrated services across health systems assessment, commodity supply chain strengthening, quality improvement, health economics, and climate-smart health programming. By combining analytical excellence with hands-on field engagement, we aim to support resilient systems capable of responding to both long-standing health priorities and emerging challenges such as non-communicable diseases, climate risks, and evolving patient safety needs 
+
+
+At the heart of our vision is capacity building—not as a one-off activity, but as a sustained process of mentorship, professional development, and institutional strengthening. We believe lasting impact comes from empowering local professionals and institutions with the skills, tools, and confidence to lead change independently. Through collaborative partnerships, we seek to co-create knowledge, foster innovation, and nurture a new generation of public health leaders.
+
+Ultimately, our vision is to contribute meaningfully to a more effective, efficient, and people-centered health system in Ghana—one where research informs decisions, resources are used wisely, and every intervention advances health equity and patient well-being.
               </p>
             </div>
           </div>

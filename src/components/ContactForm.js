@@ -183,7 +183,7 @@ const ContactForm = () => {
                      <div className="info-item">
             <div className="info-icon">📞</div>
             <h4>Call Us</h4>
-            <p> 0244988266 / 02444288266 /0244297950</p>
+            <p> 0244988266 / 0244297950</p>
           
           </div>
            
