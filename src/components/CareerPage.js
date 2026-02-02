@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './CareerPage.css';
 import Header from './Header';
 import logoImage from "../assets/images/newLogo.png";
+import Footer from './Footer';
 
 const CareerPage = () => {
   // Scroll to top when component mounts
@@ -119,7 +120,7 @@ const CareerPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="career-footer">
+      {/* <footer className="career-footer">
         <div className="career-footer-container">
           <p>© {new Date().getFullYear()} Health Consultancy Services</p>
           <p>Advancing health  through evidence-based consultancy</p>
@@ -129,7 +130,9 @@ const CareerPage = () => {
             <a href="/#services">Services</a>
           </div>
         </div>
-      </footer>
+      </footer> */}
+
+      <Footer />
     </div>
   );
 };
