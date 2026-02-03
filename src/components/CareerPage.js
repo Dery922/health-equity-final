@@ -46,7 +46,7 @@ const CareerPage = () => {
           <div className="career-message">
             <h2>No Open Positions Available</h2>
             <p>
-              We appreciate your interest in joining our team at Health Consultancy Services. 
+              We appreciate your interest in joining our team at AJ Health and Research Consultancy. 
               Currently, we do not have any open positions available.
             </p>
           </div>
@@ -105,7 +105,7 @@ const CareerPage = () => {
               >
                 Subscribe for Updates
               </button>
-              <Link to="/" className="explore-btn">
+              <Link to="/publications" className="explore-btn">
                 Explore Our Work
               </Link>
             </div>
