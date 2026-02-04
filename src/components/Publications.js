@@ -437,15 +437,7 @@ const handleDownload = (doc) => {
                     />
                   </div>
                   
-                  <div className="form-group">
-                    <label>Tags (comma-separated)</label>
-                    <input
-                      type="text"
-                      value={newDocument.tags}
-                      onChange={(e) => setNewDocument({...newDocument, tags: e.target.value})}
-                      placeholder="health, research, ghana, etc."
-                    />
-                  </div>
+       
                   
                   <div className="form-actions">
                     <button 
@@ -488,7 +480,7 @@ const handleDownload = (doc) => {
                       <span className="document-category">
                         {documentCategories.find(c => c.id === doc.category)?.name}
                       </span>
-                      <span className="document-date">{formatDate(doc.date)}</span>
+                    
                     </div>
                     {doc.featured && (
                       <div className="featured-badge">Featured</div>
@@ -500,28 +492,17 @@ const handleDownload = (doc) => {
                     <p className="document-description">{doc.description}</p>
                     
                     <div className="document-author">
-                      <span className="author-icon">👤</span>
+                   
                       {doc.author}
                     </div>
                     
                     <div className="document-tags">
-                      {doc.tags.map((tag, idx) => (
-                        <span key={idx} className="tag">{tag}</span>
-                      ))}
+            
                     </div>
                   </div>
                   
                   <div className="document-footer">
-                    <div className="document-stats">
-                      <div className="stat">
-                        <span className="stat-icon">💾</span>
-                        <span className="stat-value">{doc.size}</span>
-                      </div>
-                      <div className="stat">
-                        <span className="stat-icon">📥</span>
-                     
-                      </div>
-                    </div>
+           
                     
                     <button 
                       className="download-btn"

@@ -5,7 +5,7 @@
 
 /* Base Header Styles */
 .header {
-  height: 80px;
+  height: 120px;
   background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
@@ -52,7 +52,7 @@
 
 /* Logo image NEVER controls header height */
 .logo-image {
-  max-height: 156px;          /* Desktop default */
+  max-height: 326px;          /* Desktop default */
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -60,7 +60,7 @@
 
 /* Slightly smaller logo when header is scrolled */
 .header.scrolled .logo-image {
-  max-height: 148px;
+  max-height: 328px;
 }
 
 /* Subtle hover polish */

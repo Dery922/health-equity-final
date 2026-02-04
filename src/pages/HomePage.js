@@ -59,7 +59,7 @@ const HomePage = () => {
             <p>At AJ Health and Research Consultancy, 
               our mission is to advance health and strengthen 
               system resilience across Ghana. We provide expert, 
-              integrated consultancy services that translate evidence into action, build local capacity, and optimize resources across public health programs, supply chains, and clinical carevensuring quality,
+              integrated consultancy services that translate evidence into action, build local capacity, and optimize resources across public health programs, supply chains, and clinical care ensuring quality,
                safety, and sustainability in every intervention.</p>
  
           </div>

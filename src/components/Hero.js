@@ -143,9 +143,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
                 {slide.description}
                 {index === 0 && (
                   <>
-                    {" "}As a not-for-profit firm, we specialize in supporting 
-                    businesses and nonprofits in navigating challenges and 
-                    unlocking opportunities....
+                    {" "}
                   </>
                 )}
               </p>
