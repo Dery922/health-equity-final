@@ -118,6 +118,10 @@ const StoryPage = () => {
                 {/* <div className="founder-name">Dr. Ama Johnson</div>
                 <div className="founder-position">Founder & CEO</div> */}
               </div>
+              <h2>Our Story</h2>
+              <p className='founder-mission'>
+                AJ Health and Research Consult was founded to bridge evidence and impact in strengthening health systems across Africa. Drawing on multidisciplinary expertise, we deliver practical, cost-efficient solutions in public health research, workforce enhancement, supply chain systems, and economic evaluation. Our work spans pharmaceutical care, reproductive and family health, non-communicable and infectious diseases, with a strong focus on HIV, TB, malaria, and antimicrobial resistance. Through rigorous field research and hands-on supply chain expertise, we translate data into actionable insights that protect product quality, strengthen systems, and improve health outcomes.
+              </p>
               <p className="founder-mission">
            Rooted in multidisciplinary expertise and real-world implementation experience, our firm was established to bridge persistent gaps between research, policy, and frontline practice. We recognized that while data and policies are abundant, health systems often struggle with translating these into operational improvements. Our vision is therefore centered on context-specific solutions—solutions that reflect Ghana’s health realities, institutional structures, and resource constraints, while meeting international standards of rigor and accountability 
               </p>
@@ -254,10 +258,10 @@ Ultimately, our vision is to contribute meaningfully to a more effective, effici
       </section> */}
 
       {/* Call to Action */}
-      {/* <section className="story-cta">
+        {/* <section className="story-cta">
         <div className="container">
           <div className="cta-content">
-            <h2>Be Part of Our Story</h2>
+            <h2>This is Our Story</h2>
             <p>
               Whether you're a healthcare professional, researcher, partner, or supporter, 
               there's a place for you in our journey toward health equity.
@@ -268,7 +272,7 @@ Ultimately, our vision is to contribute meaningfully to a more effective, effici
             </div>
           </div>
         </div>
-      </section> */}
+      </section>  */}
 
       <Footer />
     </div>
