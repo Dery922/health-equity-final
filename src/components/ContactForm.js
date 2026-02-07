@@ -5,6 +5,20 @@ import { Link } from 'react-router-dom';
 
 import LinkedIns from "../assets/images/linkedin-svgrepo-com (1).svg"
 import insta from "../assets/images/instagram-svgrepo-com.svg"
+import { 
+ FaHospital,
+ FaAccessibleIcon,
+ FaHandsHelping,
+ FaResearchgate,
+ FaInstagram,
+ FaAddressBook,
+ FaPhone,
+ FaVoicemail,
+ FaBusinessTime,
+ 
+} from 'react-icons/fa'; // Feather icons (clean, professional)
+import { FaLinkedin } from 'react-icons/fa6';
+// Alternatively use: egChartBar, FaRegChartPie, etc from 'react-icons/fa
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -174,14 +188,14 @@ const ContactForm = () => {
         
         <div className="contact-info">
         <div className="info-item">
-            <div className="info-icon">📧</div>
+            <div className="info-icon"><FaVoicemail /></div>
             <h4>Email Us</h4>
             <p>AJHealth.Research@gmail.com</p>
           </div>
   
          
                      <div className="info-item">
-            <div className="info-icon">📞</div>
+            <div className="info-icon"><FaPhone /></div>
             <h4>Call Us</h4>
             <p> 0244988266 / 0244297950</p>
           
@@ -190,7 +204,8 @@ const ContactForm = () => {
 
           
                         <div className="info-item">
-            <div className="info-icon">🗺️
+            <div className="info-icon">
+              <FaAddressBook />
             </div>
             <h4>Address</h4>
             <p>No. 3 Asafoastse Baakunkor Street, Camara, Dansoman </p>
@@ -199,7 +214,7 @@ const ContactForm = () => {
           <Link to="https://www.linkedin.com/company/aj-health-consult/" className="info-link">
                        <div className="info-item">
             <div className="info-icon">
-              <img style={{width:50, height: 50,}} src={LinkedIns } alt={LinkedIns } />
+              <FaLinkedin />
             </div>
             <h4>LinkedIn</h4>
             {/* <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p> */}
@@ -209,7 +224,7 @@ const ContactForm = () => {
 
                   <div className="info-item">
             <div className="info-icon">
-               <img style={{width:50, height: 50,}} src={insta } alt={insta } />
+                <FaInstagram />
             </div>
             <h4>Instagram</h4>
             
@@ -218,8 +233,8 @@ const ContactForm = () => {
  
  
          
-                      <div className="info-item">
-            <div className="info-icon">⏰</div>
+            <div className="info-item">
+            <div className="info-icon"><FaBusinessTime /></div>
             <h4>Business Hours</h4>
             <p>Mon-Fri 8am-5pm GMT</p>
           </div>

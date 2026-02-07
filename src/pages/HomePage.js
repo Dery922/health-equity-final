@@ -12,6 +12,9 @@ import Mentorship from '../components/Mentorship';
 import image1 from "../assets/images/ourmis.jpeg"
 import { 
  FaHospital,
+ FaAccessibleIcon,
+ FaHandsHelping,
+ FaResearchgate,
  
 } from 'react-icons/fa'; // Feather icons (clean, professional)
 // Alternatively use: egChartBar, FaRegChartPie, etc from 'react-icons/fa
@@ -20,9 +23,9 @@ const HomePage = () => {
 
   const trustIndicators = [
     { icon: FaHospital, text: "Hospitals & Health Systems" },
-    { icon: "🏛️", text: "Government Agencies" },
-    { icon: "🌍", text: "NGOs & Global Health" },
-    { icon: "🔬", text: "Research Institutions" }
+    { icon: FaAccessibleIcon, text: "Government Agencies" },
+    { icon: FaHandsHelping, text: "NGOs & Global Health" },
+    { icon: FaResearchgate, text: "Research Institutions" }
   ];
 
   useEffect(() => {
@@ -46,12 +49,16 @@ const HomePage = () => {
       <section className="trust-indicators">
         <h2 className="trust-title">Trusted by Leading Healthcare Organizations</h2>
         <div className="trust-logos">
-          {trustIndicators.map((item, index) => (
+          {trustIndicators.map((item, index) => {
+            const Icon = item.icon
+             return(
+                      
             <div key={index} className="trust-item">
-              <div className="trust-icon">{item.icon}</div>
+              <div className="trust-icon"><Icon size={50}/></div>
               <div className="trust-text">{item.text}</div>
             </div>
-          ))}
+             )
+           })}
         </div>
       </section>
       
