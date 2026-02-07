@@ -188,14 +188,14 @@ const ContactForm = () => {
         
         <div className="contact-info">
         <div className="info-item">
-            <div className="info-icon"><FaVoicemail /></div>
+            <div className="info-icon"><FaVoicemail size={40}/></div>
             <h4>Email Us</h4>
             <p>AJHealth.Research@gmail.com</p>
           </div>
   
          
                      <div className="info-item">
-            <div className="info-icon"><FaPhone /></div>
+            <div className="info-icon"><FaPhone size={40}/></div>
             <h4>Call Us</h4>
             <p> 0244988266 / 0244297950</p>
           
@@ -205,7 +205,7 @@ const ContactForm = () => {
           
                         <div className="info-item">
             <div className="info-icon">
-              <FaAddressBook />
+              <FaAddressBook size={40} />
             </div>
             <h4>Address</h4>
             <p>No. 3 Asafoastse Baakunkor Street, Camara, Dansoman </p>
@@ -214,7 +214,7 @@ const ContactForm = () => {
           <Link to="https://www.linkedin.com/company/aj-health-consult/" className="info-link">
                        <div className="info-item">
             <div className="info-icon">
-              <FaLinkedin />
+              <FaLinkedin size={40}/>
             </div>
             <h4>LinkedIn</h4>
             {/* <p>No.23 Asafoastse Baakonko Street, Camara, Dansoma</p> */}
@@ -224,7 +224,7 @@ const ContactForm = () => {
 
                   <div className="info-item">
             <div className="info-icon">
-                <FaInstagram />
+                <FaInstagram size={40}/>
             </div>
             <h4>Instagram</h4>
             
@@ -234,7 +234,7 @@ const ContactForm = () => {
  
          
             <div className="info-item">
-            <div className="info-icon"><FaBusinessTime /></div>
+            <div className="info-icon"><FaBusinessTime size={60}/></div>
             <h4>Business Hours</h4>
             <p>Mon-Fri 8am-5pm GMT</p>
           </div>

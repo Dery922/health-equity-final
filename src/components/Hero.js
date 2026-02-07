@@ -15,7 +15,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
   const heroImages = [
     {
       image: heroImg1,
-      title: "Bridging Evidence into Action for Healthier Ghana  ",
+      title: "Bridging Evidence into Action for A Healthier Ghana  ",
       description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector..."
     },
     {
