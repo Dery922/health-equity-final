@@ -77,7 +77,7 @@ const Team = () => {
               <div className="team-image">
                 <div className="image-placeholder">
                      <img 
-                      style={{width:319,height:269}}
+                      style={{width:350,height:300}}
                       src={member.image} 
                       alt={member.name} />
                 </div>
