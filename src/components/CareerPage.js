@@ -21,7 +21,7 @@ const CareerPage = () => {
           <img 
           src={logoImage}   
           alt="AJHealth Logo" 
-          className="logo-image"
+          className="logo-images"
         /> 
             {/* <h1>AJHealth<span> and Research Consultancy</span></h1> */}
           </Link>

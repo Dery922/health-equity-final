@@ -10,11 +10,16 @@ import Partners from '../components/Partners';
 import Publications from '../components/Publications';
 import Mentorship from '../components/Mentorship';
 import image1 from "../assets/images/ourmis.jpeg"
+import { 
+ FaHospital,
+ 
+} from 'react-icons/fa'; // Feather icons (clean, professional)
+// Alternatively use: egChartBar, FaRegChartPie, etc from 'react-icons/fa
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const trustIndicators = [
-    { icon: "🏥", text: "Hospitals & Health Systems" },
+    { icon: FaHospital, text: "Hospitals & Health Systems" },
     { icon: "🏛️", text: "Government Agencies" },
     { icon: "🌍", text: "NGOs & Global Health" },
     { icon: "🔬", text: "Research Institutions" }

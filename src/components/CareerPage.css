@@ -51,8 +51,8 @@
 }
 
 /* Logo image NEVER controls header height */
-.logo-image {
-  max-height: 326px;         
+.logo-images {
+  max-height: 206px;         
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
