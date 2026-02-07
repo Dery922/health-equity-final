@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './Mentorship.css';
 
-import heroImg1 from "../assets/images/m1.jpeg";
-import heroImg2 from "../assets/images/m2.jpeg";
-import heroImg3 from "../assets/images/m3.jpeg";
+import heroImg1 from "../assets/images/4.jpg";
+import heroImg2 from "../assets/images/2.jpg";
+import heroImg3 from "../assets/images/3.jpg";
+import heroImg4 from "../assets/images/5.jpeg";
 
 import conf from "../assets/images/conf.jpeg";
 import conf2 from "../assets/images/conf2.jpeg";
@@ -176,7 +177,7 @@ const Mentorship = () => {
       attendees: '200+ Online Participants',
       featured: false
     },
-            {
+      {
       id: 11,
       title: 'Global Health Seminar Series',
       category: 'mentees',
@@ -198,6 +199,53 @@ const Mentorship = () => {
       attendees: '200+ Online Participants',
       featured: false
     },
+
+             {
+      id: 14,
+      title: 'Global Health Seminar Series',
+      category: 'conferences',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: heroImg1,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                 {
+      id: 16,
+      title: 'Global Health Seminar Series',
+      category: 'conferences',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: heroImg2,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                 {
+      id: 15,
+      title: 'Global Health Seminar Series',
+      category: 'conferences',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: heroImg3,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+                     {
+      id: 17,
+      title: 'Global Health Seminar Series',
+      category: 'conferences',
+      date: 'January 2024',
+      location: 'Virtual',
+      description: 'Monthly seminars featuring global health experts and practitioners.',
+      imageUrl: heroImg4,
+      attendees: '200+ Online Participants',
+      featured: false
+    },
+
+
 
     // Add more images here as needed
   ];
