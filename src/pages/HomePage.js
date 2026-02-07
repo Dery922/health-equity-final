@@ -18,14 +18,17 @@ import {
  
 } from 'react-icons/fa'; // Feather icons (clean, professional)
 // Alternatively use: egChartBar, FaRegChartPie, etc from 'react-icons/fa
+  import Rea from "../assets/images/reseach.svg"
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+
 
   const trustIndicators = [
     { icon: FaHospital, text: "Hospitals & Health Systems" },
     { icon: FaAccessibleIcon, text: "Government Agencies" },
     { icon: FaHandsHelping, text: "NGOs & Global Health" },
-    { icon: FaResearchgate, text: "Research Institutions" }
+   { icon: Rea, text: "Research Institutions", isImage: true }
   ];
 
   useEffect(() => {
@@ -46,21 +49,31 @@ const HomePage = () => {
       <Header />
       <Hero />
       
-      <section className="trust-indicators">
-        <h2 className="trust-title">Trusted by Leading Healthcare Organizations</h2>
-        <div className="trust-logos">
-          {trustIndicators.map((item, index) => {
-            const Icon = item.icon
-             return(
-                      
-            <div key={index} className="trust-item">
-              <div className="trust-icon"><Icon size={50}/></div>
-              <div className="trust-text">{item.text}</div>
-            </div>
-             )
-           })}
+    <section className="trust-indicators">
+  <h2 className="trust-title">
+    Trusted by Leading Healthcare Organizations
+  </h2>
+
+  <div className="trust-logos">
+    {trustIndicators.map((item, index) => {
+      const Icon = item.icon;
+
+      return (
+        <div key={index} className="trust-item">
+          <div className="trust-icon">
+            {item.isImage ? (
+              <img src={Icon} alt={item.text} width={50} />
+            ) : (
+              <Icon size={50} />
+            )}
+          </div>
+
+          <div className="trust-text">{item.text}</div>
         </div>
-      </section>
+      );
+    })}
+  </div>
+</section>
       
       <Services />
       
