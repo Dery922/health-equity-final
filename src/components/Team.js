@@ -96,7 +96,7 @@ const Team = () => {
 
   {/* Text Overlay */}
   <div className="team-overlay">
-    <h3 className="team-name">{member.name}</h3>
+    <h1 className="team-name">{member.name}</h1>
     <p className="team-position">{member.position}</p>
   </div>
 
