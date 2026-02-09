@@ -41,18 +41,20 @@
 
 /* Team Card */
 .team-card {
-  background: white;
-  border-radius: 15px;
+  position: relative;
+  height: 360px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  border: 1px solid #e9ecef;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
+
 
 /* Team Image */
 .team-image {
@@ -86,33 +88,80 @@
   transition: all 0.3s ease;
 }
 
+.team-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.2) 40%,
+    rgba(0,0,0,0) 70%
+  );
+}
+
+.team-overlay .team-name {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.team-overlay .team-position {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
 .team-card:hover .team-social {
   opacity: 1;
   transform: translateY(0);
 }
 
-.social-icon {
+.team-social-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
   width: 36px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255,255,255,0.9);
+  color: #1d3b55; /* LinkedIn blue */
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1d3b55;
-  text-decoration: none;
+
   font-weight: bold;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+  z-index: 3;
 }
 
-.social-icon:hover {
-  background: #2a6e6a;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.team-social-icon:hover {
+  transform: scale(1.1);
+  background:  #02b94b;
+  color: #fff;
 }
+
 
 /* Team Content */
 .team-content {

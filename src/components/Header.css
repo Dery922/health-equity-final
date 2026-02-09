@@ -2,25 +2,26 @@
 
 /* Base Header Styles */
 .header {
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   position: fixed;
-  display: flex;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0.5rem 0;
-  transition: all 0.3s ease-in-out;
+
+  background: transparent;
+  box-shadow: none;
+
+  transition: all 0.3s ease;
 }
+
 
 .header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98); /* 👈 white when scrolling */
+  backdrop-filter: blur(10px);                 /* restore blur */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   padding: 0.4rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  color:"black"
 }
-
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -37,6 +38,7 @@
   height: 70px;
   display: flex; 
   align-items: center;
+  padding:35px;
   flex-shrink: 0;
   text-decoration: none;
   z-index: 1001;
@@ -108,9 +110,9 @@
   position: relative;
 }
 
-.nav-link {
+.header .nav-link {
   text-decoration: none;
-  color: #555;
+  color: #fff;
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0.7rem 0.9rem;
@@ -121,11 +123,10 @@
   gap: 0.3rem;
   white-space: nowrap;
 }
-
-.nav-link:hover {
-  color: #2a6e6a;
-  background-color: rgba(42, 110, 106, 0.05);
+.header.scrolled .nav-link {
+  color: black;
 }
+
 
 /* Dropdown Arrow */
 .dropdown-arrow {

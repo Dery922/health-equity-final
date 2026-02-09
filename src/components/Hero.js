@@ -6,6 +6,7 @@ import heroImg1 from "../assets/images/conf.jpeg";
 import heroImg2 from "../assets/images/our.jpeg";
 import heroImg3 from "../assets/images/pic1.jpeg";
 import heroImg4 from "../assets/images/pic2.jpeg";
+import ajlogo from "../assets/images/AJ LOGO Transaparent.png";
 
  const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,6 +14,12 @@ import heroImg4 from "../assets/images/pic2.jpeg";
 
   // Array of hero images
   const heroImages = [
+    {
+      image: heroImg1,
+      icon : ajlogo,
+      title: "AJ Health and Research Consultancy",
+      description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector"
+    },
     {
       image: heroImg1,
       title: "Bridging Evidence into Action for A Healthier Ghana",
@@ -94,7 +101,7 @@ import heroImg4 from "../assets/images/pic2.jpeg";
             className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
             style={{
               backgroundImage: `
-                linear-gradient(rgba(29, 80, 77, 0.7), rgba(42, 110, 106, 0.8)),
+                   linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
                 url(${slide.image})
               `
             }}

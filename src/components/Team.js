@@ -73,27 +73,36 @@ const Team = () => {
         
         <div className="team-grid">
           {teamMembers.map(member => (
-            <div key={member.id} className="team-card">
-              <div className="team-image">
-                <div className="image-placeholder">
-                     <img 
-                      style={{width:350,height:300}}
-                      src={member.image} 
-                      alt={member.name} />
-                </div>
-                <div className="team-social">
-                  <a href={member.linkedin} className="social-icon" aria-label={`${member.name} LinkedIn`}>
-                    in
-                  </a>
-             
-                </div>
-              </div>
-              
-              <div className="team-content">
-                <h3 className="team-name">{member.name}</h3>
-                <p className="team-position">{member.position}</p>
-              </div>
-            </div>
+         <div key={member.id} className="team-card">
+
+  <img
+    src={member.image}
+    alt={member.name}
+    className="team-photo"
+  />
+
+  {/* Social Icon */}
+  {member.linkedin && (
+    <a
+      href={member.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="team-social-icon"
+      aria-label={`${member.name} LinkedIn`}
+    >
+      in
+    </a>
+  )}
+
+  {/* Text Overlay */}
+  <div className="team-overlay">
+    <h3 className="team-name">{member.name}</h3>
+    <p className="team-position">{member.position}</p>
+  </div>
+
+</div>
+
+
           ))}
         </div>
         
