@@ -44,7 +44,7 @@ const Team = () => {
     },
         {
       id: 9,
-      name: "Emmanuel Nii Obodai Mensah",
+      name: "Emmanuel Nii Obodai ",
       position: "GHS/ER Research Coodinator",
       image: teamImg4,
       linkedin: "https://www.linkedin.com/in/nii-obodai-mensah-9862a095",
