@@ -58,8 +58,8 @@ const Mentorship = () => {
   // Mentorship categories
   const categories = [
     { id: 'all', name: 'All Activities' },
-    { id: 'conferences', name: 'Conferences', icon: '👨‍🏫' },
-    { id: 'mentees', name: 'Mentees', icon: '🎤' },
+    { id: 'conferences', name: 'Conferences', },
+    { id: 'mentees', name: 'Mentees',  },
  
   ];
 

@@ -18,7 +18,7 @@ import {
  
 } from 'react-icons/fa'; // Feather icons (clean, professional)
 // Alternatively use: egChartBar, FaRegChartPie, etc from 'react-icons/fa
-  import Rea from "../assets/images/reseach.svg"
+  import Rea from "../assets/images/research institution.svg"
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 

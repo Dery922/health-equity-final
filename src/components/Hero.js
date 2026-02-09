@@ -15,13 +15,13 @@ import heroImg4 from "../assets/images/pic2.jpeg";
   const heroImages = [
     {
       image: heroImg1,
-      title: "Bridging Evidence into Action for A Healthier Ghana  ",
-      description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector..."
+      title: "Bridging Evidence into Action for A Healthier Ghana",
+      description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector"
     },
     {
       image: heroImg2,
       title: "Evidence-Based Solutions",
-      description: "Specializing in research, data analytics, and health economics to drive......"
+      description: "Specializing in research, data analytics, and health economics to drive"
     },
     {
       image: heroImg3,

@@ -131,7 +131,7 @@
 .primary-btn,
 .secondary-btn {
   padding: 0.8rem 1.8rem; /* Reduced padding */
-  border-radius: 30px;
+  border-radius: 6px;
   font-weight: 600;
   border: none;
   cursor: pointer;
