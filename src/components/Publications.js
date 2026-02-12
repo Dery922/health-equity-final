@@ -98,7 +98,7 @@ const Publications = () => {
       'COST OF MEDICATION ERRORS IN PUBLIC HEALTH FACILITIES OF EASTERN REGION, GHANA Van der Puije et. al, 2019'
 ,
     tags: ['health', 'research', 'ghana'],
-    featured: true
+
   },
 //           {
 //     id: 3,
@@ -129,7 +129,7 @@ const Publications = () => {
       'OKOTAH, A.N., Vanderpuije, L., Osarfo, J., Obiri-Yeboa, I., Ofosu, W., MENSAH, N.O. and Buabin, D., 2025. HSD117 '
 ,
     tags: ['health', 'research', 'ghana'],
-    featured: true
+ 
   },
               {
     id: 5,
@@ -145,7 +145,7 @@ const Publications = () => {
       'Healthcare Providers Strategies and Challenges in Managing Medication Errors in Eastern Region, Ghana A Qualitative Study on Interventions, Communication, and Safety Improvements'
 ,
     tags: ['health', 'research', 'ghana'],
-    featured: true
+
   },
 
     {
@@ -162,7 +162,7 @@ const Publications = () => {
       'Medication Error Interventions in Health Facilities: A qualitative Study of healthcare providers’ Experiences, Strategies and Challenges in Eastern region of Ghana'
 ,
     tags: ['health', 'research', 'ghana'],
-    featured: true
+
   },
 
       {
@@ -179,7 +179,7 @@ const Publications = () => {
       'Trends and Economic Impact of Medication Errors in Public Hospitals of Eastern Region, Ghana: A Retrospective Analysis from 2018 to 2024'
 ,
     tags: ['health', 'research', 'ghana'],
-    featured: true
+
   },
         {
     id: 8,
@@ -195,7 +195,7 @@ const Publications = () => {
       'Trends and Economic Impact of Medication Errors in Public Hospitals of Eastern Region, Ghana: A Retrospective Analysis from 2018 to 2024'
 ,
     tags: ['health', 'research', 'ghana'],
-    featured: true
+
     },
   ]); 
 
