@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import logoImage from "../assets/images/newLogo.png";
+import logoImage2 from "../assets/images/ajwhite.png";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -117,6 +118,19 @@ const handleNavClick = (path, e) => {
     setDesktopDropdownOpen(null);
   };
 
+    useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50; // threshold
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
@@ -125,7 +139,8 @@ const handleNavClick = (path, e) => {
 
       <Link to="/">
            <img 
-          src={logoImage}   
+           
+          src={scrolled ? logoImage : logoImage2}
           alt="AJHealth Logo" 
           className="logo-image"
         /> 
