@@ -7,7 +7,7 @@ import partnerImg2 from "../assets/images/Health Keepers Network.jpg.jpeg";
 import partnerImg3 from "../assets/images/National Aids Control Program.jpg.jpeg";
 import partnerPlaceholder1 from "../assets/images/ghanahealth.jpeg";
 import partnerPlaceholder2 from "../assets/images/Buni Banda.jpg.jpeg";
-import partnerPlaceholder3 from "../assets/images/healthaccess.jpeg";
+import partnerPlaceholder3 from "../assets/images/healthaccess.png";
 // import partnerPlaceholder3 from "../assets/images/m3.jpeg";
 
 const Partners = () => {

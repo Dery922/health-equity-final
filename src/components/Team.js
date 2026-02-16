@@ -21,7 +21,7 @@ const Team = () => {
     },
         {
       id: 20,
-      name: "Archibold Nii Boye ",
+      name: "Archibald Nii Boye Okotah",
       position: "Project Management and Health Economics Lead ",
       linkedin: "#",
 

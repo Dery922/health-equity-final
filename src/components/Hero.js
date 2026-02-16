@@ -14,12 +14,12 @@ import ajlogo from "../assets/images/AJ LOGO Transaparent.png";
 
   // Array of hero images
   const heroImages = [
-    {
-      image: heroImg1,
-      icon : ajlogo,
-      title: "AJ Health and Research Consultancy",
-      description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector"
-    },
+    // {
+    //   image: heroImg1,
+    //   icon : ajlogo,
+    //   title: "AJ Health and Research Consultancy",
+    //   description: "We are an independent health and research consultancy dedicated to strengthening Ghana's health sector"
+    // },
     {
       image: heroImg1,
       title: "Bridging Evidence into Action for A Healthier Ghana",
