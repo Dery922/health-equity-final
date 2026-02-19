@@ -23,7 +23,7 @@ const Team = () => {
       id: 20,
       name: "Archibald Nii Boye Okotah",
       position: "Project Management and Health Economics Lead ",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/archibald-okotah-mph-pg-dip-health-econs-1870b721/",
 
     },
     {

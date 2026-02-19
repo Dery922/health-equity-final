@@ -501,7 +501,7 @@ const handleDownload = (doc) => {
                     </div>
                   </div>
                   
-                  <div className="document-footer">
+                  <div className="document-footer" style={{textAlign:"center", justifyContent:"center"}}>
            
                     
                     <button 
