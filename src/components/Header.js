@@ -134,23 +134,14 @@ const handleNavClick = (path, e) => {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo">
-     
-
-      <Link to="/">
-           <img 
-           
+        
+        <Link to="/" className="logo">
+        <img 
           src={scrolled ? logoImage : logoImage2}
-          alt="AJHealth Logo" 
+          alt="AJHealth Logo"
           className="logo-image"
-        /> 
-      </Link>
-   
-          {/* <div className="logo-text">
-            <h1><Link to="/">AJHealth</Link></h1>
-            <p>Evidence to Action, Healthier Ghana</p>
-          </div> */}
-        </div>
+        />
+       </Link>
         
         {/* Hamburger Menu Button */}
         <button 

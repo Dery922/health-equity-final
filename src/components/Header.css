@@ -7,10 +7,8 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-
   background: transparent;
   box-shadow: none;
-
   transition: all 0.3s ease;
 }
 
@@ -20,11 +18,13 @@
   backdrop-filter: blur(10px);                 /* restore blur */
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   padding: 0.4rem 0;
-  color:"black"
+  color: #000;
 }
 .header-container {
   display: flex;
   justify-content: space-between;
+
+  overflow: visible;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -36,12 +36,13 @@
 /* ========== LOGO SECTION ========== */
 .logo {
   height: 70px;
-  display: flex; 
+  display: flex;
   align-items: center;
-  padding:35px;
+  padding: 0 10px; /* change this */
   flex-shrink: 0;
   text-decoration: none;
   z-index: 1001;
+  margin-top: 12px;
 }
 
 .logo-image {
@@ -62,17 +63,19 @@
 
 /* ========== HAMBURGER MENU - DEFAULT: HIDDEN ========== */
 .menu-toggle {
-  display: none; /* Hidden on desktop by default */
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  z-index: 1002;
+  z-index: 2000;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 24px;
-  position: relative;
 }
 
 .hamburger-line {
@@ -328,6 +331,15 @@
 
 /* Tablet and Mobile (992px and below) - SHOW HAMBURGER */
 @media (max-width: 992px) {
+    .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    padding: 0;
+  }
   .menu-toggle {
     display: flex !important; /* Force show on mobile */
   }
@@ -365,6 +377,8 @@
   
   .hamburger-line {
     height: 4px;
+    color: #02b94b;
+    background-color: #02b94b;
   }
   
   .menu-toggle.open .hamburger-line:nth-child(1) {
@@ -416,33 +430,3 @@
   }
 }
 
-/* For very large hamburger bars on mobile */
-@media (max-width: 992px) {
-  .menu-toggle {
-    width: 44px;
-    height: 36px;
-    padding: 12px;
-  }
-  
-  .hamburger-line {
-    height: 5px;
-    margin: 3px 0;
-  }
-  
-  .menu-toggle.open .hamburger-line:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
-    margin: 0;
-  }
-  
-  .menu-toggle.open .hamburger-line:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  
-  .menu-toggle.open .hamburger-line:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
-    margin: 0;
-  }
-}
-
-/* Remove duplicate/conflicting styles at the bottom of your file */

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Team.css';
 import { Link } from 'react-router-dom';
-import teamImg1 from "../assets/images/jso.jpeg";
+import teamImg1 from "../assets/images/Josupdate.jpeg";
 import teamImg2 from "../assets/images/healthpolicy.jpeg";
-import teamImg3 from "../assets/images/bonne.jpeg";
+
 import teamImg4 from "../assets/images/joss.jpeg";
 import teamImg5 from "../assets/images/bonne.jpeg";
 import teamImg6 from "../assets/images/lifc.jpeg";
